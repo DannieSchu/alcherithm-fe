@@ -1,5 +1,7 @@
+require('dotenv').config();
+
 export const fetchChallenges = () => {
-  return fetch('http://alcherithm-staging.herkouapp.com')
+  return fetch(process.env.API_URL)
     .then(res => res.json())
     .then(res => res.results.map(json => ({
       id: json.id,
