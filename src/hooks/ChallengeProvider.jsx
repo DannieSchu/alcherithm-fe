@@ -23,3 +23,7 @@ ChallengeProvider.propTypes = {
   children: PropTypes.node
 };
 
+export const useChallenge = () => {
+  const { challenges } = useContext(ChallengeContext);
+  return challenges;
+};
