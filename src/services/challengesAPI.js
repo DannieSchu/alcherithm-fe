@@ -1,5 +1,5 @@
 export const fetchChallenges = () => {
-  return fetch(process.env.API_URL)
+  return fetch(`${process.env.API_URL}/challenges`)
     .then(res => res.json())
     .then(res => res.results.map(json => ({
       id: json.id,
