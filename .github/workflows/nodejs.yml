@@ -16,3 +16,4 @@ jobs:
     - run: npm test
       env:
         CI: true
+        API_URL: http://alcherithm-staging.herkouapp.com
