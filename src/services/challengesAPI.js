@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 export const fetchChallenges = () => {
   return fetch(process.env.API_URL)
     .then(res => res.json())
