@@ -2,7 +2,7 @@
 
 import React, { createContext, useState, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { postSignup, postLogin } from '../services/authAPI';
+import { postSignup, postLogin, getLogout } from '../services/authAPI';
 
 const AuthContext = createContext();
 
@@ -19,8 +19,17 @@ export const AuthProvider = ({ children }) => {
       .then (user => setUser(user));
   };
 
+  const currentUser = (user) => {
+    return user;
+  };
+
+  const logout = (user) => {
+    return getLogout(user)
+      .then (setUser(null));
+  };
+
   return (
-    <AuthContext.Provider value={{ user, signup, login }}>
+    <AuthContext.Provider value={{ user, signup, login, currentUser, logout }}>
       {children}
     </AuthContext.Provider>
   );
@@ -38,4 +47,14 @@ export const useSignUp = () =>{
 export const useLogin = () => {
   const { login } = useContext(AuthContext);
   return login;
+};
+
+export const useCurrentUser = () => {
+  const { currentUser } = useContext(AuthContext);
+  return currentUser;
+};
+
+export const useLogout = () => {
+  const { logout } = useContext(AuthContext);
+  return logout;
 };
