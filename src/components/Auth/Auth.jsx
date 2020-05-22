@@ -2,14 +2,16 @@ import React from 'react';
 import { useSignUp, useHandleChange, useSignupHandler, useLoginHandler } from '../../hooks/AuthProvider';
 
 const Auth = () => {
-  const {
-    email,
-    password,
-    firstName,
-    lastName,
-    cohort,
-    avatar
-  } = useSignUp();
+  // const {
+  //   email,
+  //   password,
+  //   firstName,
+  //   lastName,
+  //   cohort,
+  //   avatar
+  // } = useSignUp();
+
+  const { signup } = useSignUp();
 
   const handleChange = useHandleChange();
 
@@ -17,9 +19,11 @@ const Auth = () => {
 
   const loginHandler = useLoginHandler();
 
+
+
   return (
     <>
-      <form>
+      <form onSubmit={signupHandler}>
         <input type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
 
         <input type="password" name="password" value={password} onChange={handleChange} placeholder="password" />
@@ -33,6 +37,13 @@ const Auth = () => {
         <input type="text" name="avatar" value={avatar} onChange={handleChange} placeholder="avatar" />
 
         <button type="button" onClick={signupHandler}>Signup</button>
+
+      </form>
+        
+      <form onSubmit={loginHandler}>
+        <input type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
+
+        <input type="password" name="password" value={password} onChange={handleChange} placeholder="password" />
 
         <button type="button" onClick={loginHandler}>Login</button>
       </form>

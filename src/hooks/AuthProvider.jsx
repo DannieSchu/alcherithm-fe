@@ -1,6 +1,6 @@
 //write some functions for login, signup, currentUser, logout, verify
 
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { postSignup, postLogin, getLogout, getVerify } from '../services/authAPI';
 
@@ -9,14 +9,19 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
+  useEffect(() => {
+    getVerify()
+      .then(user => setUser(user));
+  });
+
   const signup = (email, password, firstName, lastName, cohort, avatar) => {
     return postSignup(email, password, firstName, lastName, cohort, avatar)
-      .then (user => setUser(user));
+      .then(user => setUser(user));
   };
 
   const login = (email, password) => {
     return postLogin(email, password)
-      .then (user => setUser(user));
+      .then(user => setUser(user));
   };
 
   const currentUser = (user) => {
@@ -25,8 +30,13 @@ export const AuthProvider = ({ children }) => {
 
   const logout = (user) => {
     return getLogout(user)
-      .then (setUser(null));
+      .then(() => setUser(null));
   };
+
+  // const logout = (user) => {
+  //   return getLogout(user)
+  //     .then (setUser(null));
+  // };
 
   const verify = (user) => {
     return getVerify(user);
