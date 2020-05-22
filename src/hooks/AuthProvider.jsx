@@ -32,8 +32,20 @@ export const AuthProvider = ({ children }) => {
     return getVerify(user);
   };
 
+  const handleChange = () => {
+
+  };
+
+  const signupHandler = () => {
+
+  };
+
+  const loginHandler = () => {
+
+  };
+
   return (
-    <AuthContext.Provider value={{ user, signup, login, currentUser, logout, verify }}>
+    <AuthContext.Provider value={{ user, signup, login, currentUser, logout, verify, handleChange, signupHandler, loginHandler }}>
       {children}
     </AuthContext.Provider>
   );
@@ -66,4 +78,19 @@ export const useLogout = () => {
 export const useVerify = () => {
   const { verify } = useContext(AuthContext);
   return verify;
+};
+
+export const useHandleChange = () => {
+  const { handleChange } = useContext(AuthContext);
+  return handleChange;
+};
+
+export const useSignupHandler = () => {
+  const { signupHandler } = useContext(AuthContext);
+  return signupHandler;
+};
+
+export const useLoginHandler = () => {
+  const { loginHandler } = useContext(AuthContext);
+  return loginHandler;
 };
