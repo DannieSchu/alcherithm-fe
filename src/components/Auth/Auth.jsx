@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { useSignUp, useLogin, useLogout, useError, useLoading } from '../../hooks/AuthProvider';
+import { useSignUp, useLogin, useLogout, useError } from '../../hooks/AuthProvider';
 import { useHistory } from 'react-router-dom';
-
 
 const Auth = () => {
   const [email, setEmail] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [cohort, setCohort] = useState('');
+  const [avatar, setAvatar] = useState('');
 
   const history = useHistory();
 
@@ -20,15 +20,17 @@ const Auth = () => {
 
   const handleChange = ({ target }) => {
     if(target.name === 'email') setEmail(target.value);
+    if(target.name === 'password') setPassword(target.value);
+    if(target.name === 'firstName') setFirstName(target.value);
+    if(target.name === 'lastName') setLastName(target.value);
+    if(target.name === 'cohort') setCohort(target.value);
+    if(target.name === 'avatar') setAvatar(target.value);
   };
 
   const error = useError();
 
-  const loading = useLoading();
-
-  // const signupHandler = useSignupHandler();
-
-  // const loginHandler = useLoginHandler();
+  //if we want to disable buttons while loading
+  // const loading = useLoading();
 
   const handleSignUpSubmit = event => {
     event.preventDefault();
@@ -41,6 +43,12 @@ const Auth = () => {
     login(email, password)
       .then (() => history.push('/dashboard'));
   };
+
+  if(error) return (
+    <section>
+      <h2>Sorry, your email or password is incorrect</h2>
+    </section>
+  );
 
   return (
     <>
