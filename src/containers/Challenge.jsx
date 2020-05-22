@@ -28,7 +28,7 @@ const Challenge = () => {
   return (
     <section>
       <h2>Cool Challenege Stuff</h2>
-      <ChallengeDisplay />
+      {/* <ChallengeDisplay /> */}
       <Editor code={starterCode} handleCodeChange={setStarterCode} />
       <Editor code={qunitTest} />
       <button onClick={onClick}>Run</button> 
