@@ -8,7 +8,7 @@ export const ChallengeProvider = ({ children }) => {
   const [challenges, setChallenges] = useState({});
 
   useEffect(() => {
-    fetchChallenges
+    fetchChallenges()
       .then(json => setChallenges(json));
   }, []);
 
