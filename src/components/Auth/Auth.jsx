@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSignUp, useLogin, useLogout, useError } from '../../hooks/AuthProvider';
+import { useSignUp, useLogin, useLogout, useError, useLoading } from '../../hooks/AuthProvider';
 import { useHistory } from 'react-router-dom';
 
 const Auth = () => {
@@ -27,7 +27,7 @@ const Auth = () => {
   const error = useError();
 
   //if we want to disable buttons while loading
-  // const loading = useLoading();
+  const loading = useLoading();
 
   const handleSignUpSubmit = event => {
     event.preventDefault();
@@ -44,6 +44,12 @@ const Auth = () => {
   if(error) return (
     <section>
       <h2>Sorry, your email or password is incorrect</h2>
+    </section>
+  );
+
+  if(loading) return (
+    <section>
+      <h2>loading...</h2>
     </section>
   );
 
