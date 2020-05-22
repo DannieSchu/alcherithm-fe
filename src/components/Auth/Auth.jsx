@@ -11,11 +11,8 @@ const Auth = () => {
   const [avatar, setAvatar] = useState('');
 
   const history = useHistory();
-
   const signup = useSignUp();
-
   const login = useLogin();
-
   const logout = useLogout();
 
   const handleChange = ({ target }) => {

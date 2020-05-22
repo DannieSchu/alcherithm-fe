@@ -1,5 +1,3 @@
-//write some functions for login, signup, currentUser, logout, verify
-
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { postSignup, postLogin, getLogout, getVerify } from '../services/authAPI';
@@ -41,23 +39,6 @@ export const AuthProvider = ({ children }) => {
     return getLogout(user)
       .then(() => setUser(null));
   };
-
-  // const logout = (user) => {
-  //   return getLogout(user)
-  //     .then (setUser(null));
-  // };
-
-  // const handleChange = () => {
-
-  // };
-
-  // const signupHandler = () => {
-
-  // };
-
-  // const loginHandler = () => {
-
-  // };
 
   return (
     <AuthContext.Provider value={{ user, signup, login, currentUser, logout, error, loading }}>
@@ -104,4 +85,3 @@ export const useLoading = () => {
   const { loading } = useContext(AuthContext);
   return loading;
 };
-
