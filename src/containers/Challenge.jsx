@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Editor from '../components/Editors/Editor.jsx';
 import Tester from '../components/QUnit/QUnit.jsx';
+import ChallengeDisplay from '../components/ChallengeDisplay/ChallengeDisplay.jsx';
 
 const Challenge = () => {
   const [challenge, setChallenge] = useState(`const addValues = (arr, value) => {
@@ -25,6 +26,7 @@ const addNumbers = (num, arr, times, callback) => {
   return (
     <section>
       <h2>Cool Challenege Stuff</h2>
+      <ChallengeDisplay />
       <Editor code={challenge} handleCodeChange={setChallenge} />
       <Editor code={test} />
       <Tester tests={`${challenge} \n \n ${test}`} />
