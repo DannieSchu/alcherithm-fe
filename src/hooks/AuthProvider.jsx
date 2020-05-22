@@ -8,20 +8,29 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getVerify()
-      .then(user => setUser(user));
+      .then(user => setUser(user))
+      .finally(() => setLoading(false));
   });
 
   const signup = (email, password, firstName, lastName, cohort, avatar) => {
+    setLoading(true);
     return postSignup(email, password, firstName, lastName, cohort, avatar)
-      .then(user => setUser(user));
+      .then(user => setUser(user))
+      .catch(error => setError(error))
+      .finally(() => setLoading(false));
   };
 
   const login = (email, password) => {
+    setLoading(true);
     return postLogin(email, password)
-      .then(user => setUser(user));
+      .then(user => setUser(user))
+      .catch(error => setError(error))
+      .finally(() => setLoading(false));
   };
 
   const currentUser = (user) => {
@@ -38,20 +47,20 @@ export const AuthProvider = ({ children }) => {
   //     .then (setUser(null));
   // };
 
-  const handleChange = () => {
+  // const handleChange = () => {
 
-  };
+  // };
 
-  const signupHandler = () => {
+  // const signupHandler = () => {
 
-  };
+  // };
 
-  const loginHandler = () => {
+  // const loginHandler = () => {
 
-  };
+  // };
 
   return (
-    <AuthContext.Provider value={{ user, signup, login, currentUser, logout, handleChange, signupHandler, loginHandler }}>
+    <AuthContext.Provider value={{ user, signup, login, currentUser, logout, error, loading }}>
       {children}
     </AuthContext.Provider>
   );
@@ -86,17 +95,13 @@ export const useVerify = () => {
   return verify;
 };
 
-export const useHandleChange = () => {
-  const { handleChange } = useContext(AuthContext);
-  return handleChange;
+export const useError = () => {
+  const { error } = useContext(AuthContext);
+  return error;
 };
 
-export const useSignupHandler = () => {
-  const { signupHandler } = useContext(AuthContext);
-  return signupHandler;
+export const useLoading = () => {
+  const { loading } = useContext(AuthContext);
+  return loading;
 };
 
-export const useLoginHandler = () => {
-  const { loginHandler } = useContext(AuthContext);
-  return loginHandler;
-};

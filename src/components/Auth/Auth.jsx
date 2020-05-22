@@ -1,29 +1,50 @@
-import React from 'react';
-import { useSignUp, useHandleChange, useSignupHandler, useLoginHandler } from '../../hooks/AuthProvider';
+import React, { useState } from 'react';
+import { useSignUp, useLogin, useLogout, useError, useLoading } from '../../hooks/AuthProvider';
+import { useHistory } from 'react-router-dom';
+
 
 const Auth = () => {
-  // const {
-  //   email,
-  //   password,
-  //   firstName,
-  //   lastName,
-  //   cohort,
-  //   avatar
-  // } = useSignUp();
+  const [email, setEmail] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [email, setEmail] = useState('');
 
-  const { signup } = useSignUp();
+  const history = useHistory();
 
-  const handleChange = useHandleChange();
+  const signup = useSignUp();
 
-  const signupHandler = useSignupHandler();
+  const login = useLogin();
 
-  const loginHandler = useLoginHandler();
+  const logout = useLogout();
 
+  const handleChange = ({ target }) => {
+    if(target.name === 'email') setEmail(target.value);
+  };
 
+  const error = useError();
+
+  const loading = useLoading();
+
+  // const signupHandler = useSignupHandler();
+
+  // const loginHandler = useLoginHandler();
+
+  const handleSignUpSubmit = event => {
+    event.preventDefault();
+    signup(email, password, firstName, lastName, cohort, avatar)
+      .then (() => history.push('/dashboard'));
+  };
+
+  const handleLoginSubmit = event => {
+    event.preventDefault();
+    login(email, password)
+      .then (() => history.push('/dashboard'));
+  };
 
   return (
     <>
-      <form onSubmit={signupHandler}>
+      <form onSubmit={handleSignUpSubmit}>
         <input type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
 
         <input type="password" name="password" value={password} onChange={handleChange} placeholder="password" />
@@ -36,17 +57,19 @@ const Auth = () => {
 
         <input type="text" name="avatar" value={avatar} onChange={handleChange} placeholder="avatar" />
 
-        <button type="button" onClick={signupHandler}>Signup</button>
+        <button type="button">Signup</button>
 
       </form>
         
-      <form onSubmit={loginHandler}>
+      <form onSubmit={handleLoginSubmit}>
         <input type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
 
         <input type="password" name="password" value={password} onChange={handleChange} placeholder="password" />
 
-        <button type="button" onClick={loginHandler}>Login</button>
+        <button type="button">Login</button>
       </form>
+
+      <button type="button" onClick={logout}>Logout</button>
     </>
   );
 };
