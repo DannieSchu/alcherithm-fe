@@ -8,22 +8,31 @@ import { useParams } from 'react-router-dom';
 const Challenge = () => {
   const [starterCode, setStarterCode] = useState('');
   const [qunitTest, setQunitTest] = useState('');
-  
+  const [runCode, setRunCode] = useState('');
+
   let { id } = useParams();
 
   useEffect(() => {
     fetchChallengeById(id)
-      .then(json => setStarterCode(json))
-      .then(json => setQunitTest(json));
+      .then(challenge => {
+        setStarterCode(challenge.starterCode);
+        setQunitTest(challenge.qunitTest);
+      });
   }, []);
 
+  const onClick = () => {
+    setRunCode(`${starterCode} \n \n ${qunitTest}`);
+  }; 
+
+  // add a new piece of state for the 'runableCode' for onClick (run)
   return (
     <section>
       <h2>Cool Challenege Stuff</h2>
       <ChallengeDisplay />
       <Editor code={starterCode} handleCodeChange={setStarterCode} />
       <Editor code={qunitTest} />
-      <Tester tests={`${starterCode} \n \n ${qunitTest}`} />
+      <button onClick={onClick}>Run</button> 
+      <Tester tests={runCode} />
     </section>
   );
 };
