@@ -1,11 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
 import App from './components/App/App';
-import { ChallengeProvider } from './hooks/ChallengeProvider';
+import './index.css';
 
 render(
-  <ChallengeProvider>
-    <App />
-  </ChallengeProvider>,
+  <App />,
   document.getElementById('root')
 );

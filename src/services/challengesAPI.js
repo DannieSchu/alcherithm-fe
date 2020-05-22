@@ -1,5 +1,5 @@
 export const fetchChallenges = () => {
-  return fetch(`${process.env.REACT_APP_API_URL_KEY}/api/v1/challenges`)
+  return fetch('https://alcherithm-staging.herokuapp.com/api/v1/challenges')
     .then(res => res.json());
 };
 
