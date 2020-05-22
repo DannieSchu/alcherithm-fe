@@ -1,35 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Editor from '../components/Editors/Editor.jsx';
 import Tester from '../components/QUnit/QUnit.jsx';
 import ChallengeDisplay from '../components/ChallengeDisplay/ChallengeDisplay.jsx';
+import { fetchChallengeById } from '../services/challengesAPI.js';
+import { useParams } from 'react-router-dom';
 
 const Challenge = () => {
-  const [challenge, setChallenge] = useState(`const addValues = (arr, value) => {
-    arr.push(value);
-};
+  const [starterCode, setStarterCode] = useState('');
+  const [qunitTest, setQunitTest] = useState('');
+  
+  let { id } = useParams();
 
-const addNumbers = (num, arr, times, callback) => {
-    for(let i = 0; i < times; i++) {
-        callback(arr, num);
-    }
-    return arr;
-};
-`);
-  const [test, setTest] = useState(`QUnit.test('It should add the number 8 to the array five times', assert => {
-    const array = [];
-    const result = addNumbers(8, array, 5, addValues);
-    assert.equal(1, 1);
-});
-`);
-
+  useEffect(() => {
+    fetchChallengeById(id)
+      .then(json => setStarterCode(json))
+      .then(json => setQunitTest(json));
+  }, []);
 
   return (
     <section>
       <h2>Cool Challenege Stuff</h2>
       <ChallengeDisplay />
-      <Editor code={challenge} handleCodeChange={setChallenge} />
-      <Editor code={test} />
-      <Tester tests={`${challenge} \n \n ${test}`} />
+      <Editor code={starterCode} handleCodeChange={setStarterCode} />
+      <Editor code={qunitTest} />
+      <Tester tests={`${starterCode} \n \n ${qunitTest}`} />
     </section>
   );
 };
