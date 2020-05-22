@@ -38,10 +38,6 @@ export const AuthProvider = ({ children }) => {
   //     .then (setUser(null));
   // };
 
-  const verify = (user) => {
-    return getVerify(user);
-  };
-
   const handleChange = () => {
 
   };
@@ -55,7 +51,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, signup, login, currentUser, logout, verify, handleChange, signupHandler, loginHandler }}>
+    <AuthContext.Provider value={{ user, signup, login, currentUser, logout, handleChange, signupHandler, loginHandler }}>
       {children}
     </AuthContext.Provider>
   );
