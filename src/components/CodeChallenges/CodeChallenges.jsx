@@ -11,12 +11,10 @@ const CodeChallenges = () => {
       </li>
     </>
   ));
-
   return (
     <ul>
       {codeElements}
     </ul>
   );
 };
-
 export default CodeChallenges;

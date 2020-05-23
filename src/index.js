@@ -1,9 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
 import App from './components/App/App';
-import './index.css';
+import { AuthProvider } from './hooks/AuthProvider';
 
 render(
-  <App />,
+  <AuthProvider>
+    <App />
+  </AuthProvider>,
   document.getElementById('root')
 );
