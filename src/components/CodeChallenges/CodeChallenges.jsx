@@ -1,8 +1,8 @@
 import React from 'react';
 import CodeChallenge from './CodeChallenge.jsx';
-import { useChallenge } from '../../hooks/ChallengeProvider.jsx';
+// import { useChallenge } from '../../hooks/ChallengeProvider.jsx';
 const CodeChallenges = () => {
-  const codeChallenges = useChallenge();
+  const codeChallenges = [];
   const codeElements = codeChallenges.map(codeChallenge => (
     <>
       <li key={codeChallenge._id}>
