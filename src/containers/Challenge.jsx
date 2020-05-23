@@ -6,31 +6,35 @@ import { fetchChallengeById } from '../services/challengesAPI.js';
 import { useParams } from 'react-router-dom';
 
 const Challenge = () => {
-  const [starterCode, setStarterCode] = useState('');
-  const [qunitTest, setQunitTest] = useState('');
   const [runCode, setRunCode] = useState('');
+  const [challenge, setChallenge] = useState(null);
 
   let { id } = useParams();
 
   useEffect(() => {
     fetchChallengeById(id)
       .then(challenge => {
-        setStarterCode(challenge.starterCode);
-        setQunitTest(challenge.qunitTest);
+        setChallenge(challenge);
       });
   }, []);
 
   const onClick = () => {
-    setRunCode(`${starterCode} \n \n ${qunitTest}`);
+    setRunCode(`${challenge.starterCode} \n \n ${challenge.qunitTest}`);
   }; 
 
+  const handleCodeChange = (starterCode) => {
+    setChallenge(challenge => ({ ...challenge, starterCode }));
+  };
+
+  if(!challenge)
+    return <h1>loading</h1>;
   // add a new piece of state for the 'runableCode' for onClick (run)
   return (
     <section>
       <h2>Cool Challenege Stuff</h2>
-      {/* <ChallengeDisplay /> */}
-      <Editor code={starterCode} handleCodeChange={setStarterCode} />
-      <Editor code={qunitTest} />
+      <ChallengeDisplay {...challenge} {...challenge.resources} />
+      <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} />
+      <Editor code={challenge.qunitTest} />
       <button onClick={onClick}>Run</button> 
       <Tester tests={runCode} />
     </section>
