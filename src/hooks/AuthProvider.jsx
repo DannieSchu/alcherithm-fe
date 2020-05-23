@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
     getVerify()
       .then(user => setUser(user))
       .finally(() => setLoading(false));
-  });
+  }, []);
 
   const signup = (email, password, firstName, lastName, cohort, avatar) => {
     setLoading(true);
@@ -31,17 +31,13 @@ export const AuthProvider = ({ children }) => {
       .finally(() => setLoading(false));
   };
 
-  const currentUser = (user) => {
-    return user;
-  };
-
   const logout = (user) => {
     return getLogout(user)
       .then(() => setUser(null));
   };
 
   return (
-    <AuthContext.Provider value={{ user, signup, login, currentUser, logout, error, loading }}>
+    <AuthContext.Provider value={{ user, signup, login, logout, error, loading }}>
       {children}
     </AuthContext.Provider>
   );
@@ -62,18 +58,13 @@ export const useLogin = () => {
 };
 
 export const useCurrentUser = () => {
-  const { currentUser } = useContext(AuthContext);
-  return currentUser;
+  const { user } = useContext(AuthContext);
+  return user;
 };
 
 export const useLogout = () => {
   const { logout } = useContext(AuthContext);
   return logout;
-};
-
-export const useVerify = () => {
-  const { verify } = useContext(AuthContext);
-  return verify;
 };
 
 export const useError = () => {

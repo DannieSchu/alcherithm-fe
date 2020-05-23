@@ -25,27 +25,19 @@ const Auth = () => {
   };
 
   const error = useError();
-
-  //if we want to disable buttons while loading
   const loading = useLoading();
 
   const handleSignUpSubmit = event => {
     event.preventDefault();
     signup(email, password, firstName, lastName, cohort, avatar)
-      .then (() => history.push('/dashboard'));
+      .then (() => history.push('/challenges'));
   };
 
   const handleLoginSubmit = event => {
     event.preventDefault();
     login(email, password)
-      .then (() => history.push('/dashboard'));
+      .then (() => history.push('/challenges'));
   };
-
-  if(error) return (
-    <section>
-      <h2>Sorry, your email or password is incorrect</h2>
-    </section>
-  );
 
   if(loading) return (
     <section>
@@ -55,6 +47,8 @@ const Auth = () => {
 
   return (
     <>
+      {error && (<section> <h2>{error}</h2></section>)}
+
       <form onSubmit={handleSignUpSubmit}>
         <input type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
 
@@ -68,8 +62,7 @@ const Auth = () => {
 
         <input type="text" name="avatar" value={avatar} onChange={handleChange} placeholder="avatar" />
 
-        <button type="button">Signup</button>
-
+        <button>Signup</button>
       </form>
         
       <form onSubmit={handleLoginSubmit}>
@@ -77,7 +70,7 @@ const Auth = () => {
 
         <input type="password" name="password" value={password} onChange={handleChange} placeholder="password" />
 
-        <button type="button">Login</button>
+        <button>Login</button>
       </form>
 
       <button type="button" onClick={logout}>Logout</button>
