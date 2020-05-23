@@ -1,10 +1,11 @@
 .Header {
-    background-color: navy;
+    background-color: rgb(103, 200, 238);
     color: whitesmoke;
-    height: 75px;
     width: 100vw;
     margin-bottom: 25px;
-    margin-top: 0;
-    margin-left: 0;
 
+    img {
+        width: 6rem;
+        padding: 1rem 1rem 0.5rem 3rem;
+    }
 }
