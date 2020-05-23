@@ -22,13 +22,15 @@ const Challenge = () => {
     setRunCode(`${challenge.starterCode} \n \n ${challenge.qunitTest}`);
   }; 
 
+  // add a sumbit button and onSubmit
+  
   const handleCodeChange = (starterCode) => {
     setChallenge(challenge => ({ ...challenge, starterCode }));
   };
 
   if(!challenge)
     return <h1>loading</h1>;
-  // add a new piece of state for the 'runableCode' for onClick (run)
+  
   return (
     <section>
       <h2>Cool Challenege Stuff</h2>
