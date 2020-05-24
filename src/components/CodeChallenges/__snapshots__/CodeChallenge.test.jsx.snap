@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CodeChallenge component renders CodeChallenge 1`] = `
+<section
+  className="CodeChallenge"
+>
+  <h3>
+    forEach
+     
+    1
+  </h3>
+  <p>
+    Write a function named greeting that takes in a string and returns the string in all uppercase lette...
+  </p>
+</section>
+`;

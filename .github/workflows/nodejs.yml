@@ -16,4 +16,5 @@ jobs:
     - run: npm test
       env:
         CI: true
-        API_URL: http://alcherithm-staging.herokuapp.com
+        REACT_APP_API_URL: https://alcherithm-staging.herokuapp.com
+

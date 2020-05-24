@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CodeChallenges component renders CodeChallenges 1`] = `
+<section
+  className="CodeChallenges"
+>
+  <Dropdown
+    setCategory={[Function]}
+  />
+  <ul />
+</section>
+`;
