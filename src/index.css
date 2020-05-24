@@ -4,8 +4,12 @@
 
 body {
   margin: 0 auto;
-  color:  rgb(9, 49, 97);
-  
+  color: gray;
+
+  a, button, select {
+    cursor: pointer;
+  }
+
   p {
     font-family: 'Open Sans';
   }

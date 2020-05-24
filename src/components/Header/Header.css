@@ -1,11 +1,10 @@
 .Header {
     display: flex;
     align-items: center;
-    background-color: rgb(103, 200, 238);
+    background-color: rgba(48, 198, 232, 0.6);
     color: whitesmoke;
     width: 100vw;
     margin-bottom: 25px;
-
 
     img {
         width: 5.5rem;

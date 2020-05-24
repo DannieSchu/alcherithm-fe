@@ -1,26 +1,36 @@
 .CodeChallenges {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
   width: 100vw;
 
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 3rem;
+  }
+
   a {
-    height: 100%;
     text-decoration: none;
     color: gray;
-    cursor: pointer;
   }
 
   li {
-    margin: 1rem;
-    padding: 2rem;
     min-width: 5rem;
     max-width: 20rem;
     min-height: 10rem;
+    margin: 1rem;
 
     list-style-type: none;
-    border: 1px solid gray;
+    border: 1px solid rgb(187, 186, 186);
     border-radius: 5px;
-    box-shadow: 5px 10px 15px rgb(187, 186, 186);  
+    box-shadow: 5px 10px 10px rgb(187, 186, 186);  
+  }
+
+  li:hover {
+    border: 1px solid rgba(49, 232, 232, 0.6);
+    box-shadow: 10px 12px 15px rgb(170, 169, 169);
+    box-shadow: 10px 12px 15px rgba(48, 198, 232, 0.6);  
   }
 }
