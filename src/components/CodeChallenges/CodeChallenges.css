@@ -1,0 +1,26 @@
+.CodeChallenges {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100vw;
+
+  a {
+    height: 100%;
+    text-decoration: none;
+    color: gray;
+    cursor: pointer;
+  }
+
+  li {
+    margin: 1rem;
+    padding: 2rem;
+    min-width: 5rem;
+    max-width: 20rem;
+    min-height: 10rem;
+
+    list-style-type: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-shadow: 5px 10px 15px rgb(187, 186, 186);  
+  }
+}

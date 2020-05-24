@@ -7,8 +7,8 @@ const Header = () => {
   return (
     <>
       <header className={styles.Header}>
-        {/* <h1>Alcherithm</h1> */}
         <img src={logo} />
+        <h2>Alcherithm</h2>
         <nav></nav>
       </header>
     </>

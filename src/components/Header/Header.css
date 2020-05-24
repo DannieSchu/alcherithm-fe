@@ -1,11 +1,14 @@
 .Header {
+    display: flex;
+    align-items: center;
     background-color: rgb(103, 200, 238);
     color: whitesmoke;
     width: 100vw;
     margin-bottom: 25px;
 
+
     img {
-        width: 6rem;
-        padding: 1rem 1rem 0.5rem 3rem;
+        width: 5.5rem;
+        margin: 1rem 1.6rem 1rem 3rem;
     }
 }
