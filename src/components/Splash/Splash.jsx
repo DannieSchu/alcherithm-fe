@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoading, useCurrentUser } from '../../hooks/AuthProvider';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 const Splash = () => {
   const user = useCurrentUser();
@@ -17,7 +17,12 @@ const Splash = () => {
     history.push('/dashboard');
 
   return (
-    <h2>Splash goes here</h2>
+    <>
+      <h2>Splash goes here</h2>
+      <Link to='/signup'>Sign Up</Link>
+      <Link to='/login'>Login</Link>
+    </>
+
   );
 
 };
