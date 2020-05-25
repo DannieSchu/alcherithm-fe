@@ -40,7 +40,7 @@ const Login = () => {
 
         <button>Login</button>
       </form>
-      <Link to='/signup'>Create Account</Link>
+      <h4>Need an account? <Link to='/signup'>Sign Up</Link></h4>
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSignUp, useError, useLoading } from '../../hooks/AuthProvider';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -54,8 +54,9 @@ const SignUp = () => {
 
         <input type="text" name="avatar" value={avatar} onChange={handleChange} placeholder="avatar" />
 
-        <button>Signup</button>
+        <button>Sign up</button>
       </form>
+      <h4>Already have an account? <Link to='/login'>Login</Link></h4>
     </>
   );
 };
