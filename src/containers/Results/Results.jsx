@@ -1,14 +1,23 @@
-import React, { useState } from 'react';
-import YourSolution from '../../components/Results/YourSolution.jsx';
+import React, from 'react';
+import styles from './Results.css';
 
 
 const Results = () => {
-  const [yourSolution, setYourSolution] = useState();
-  
+  const { } = useGetSolutions();
+
   return (
-    <>
-      <YourSolution yourSolution={yourSolution} />
-    </>
+    <main className={styles.Results}>
+      <section>
+     //useCurrentUser
+        usersCurrentSolution
+      </section>
+      <section>
+        anotherSolution
+      </section>
+    </main>
+
+    
+    
   );
 };
 
