@@ -47,7 +47,7 @@ const Auth = () => {
 
   return (
     <>
-      {error && (<section> <h2>{error.message}</h2></section>)}
+      {error && (<section> <h2>{error}</h2></section>)}
 
       <form onSubmit={handleSignUpSubmit}>
         <input type="text" name="email" value={email} onChange={handleChange} placeholder="email" />

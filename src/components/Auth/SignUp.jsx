@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSignUp, useLogin, useLogout, useError, useLoading } from '../../hooks/AuthProvider';
 import { useHistory } from 'react-router-dom';
 
-const Auth = () => {
+const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');
@@ -33,12 +33,6 @@ const Auth = () => {
       .then (() => history.push('/challenges'));
   };
 
-  const handleLoginSubmit = event => {
-    event.preventDefault();
-    login(email, password)
-      .then (() => history.push('/challenges'));
-  };
-
   if(loading) return (
     <section>
       <h2>loading...</h2>
@@ -47,7 +41,7 @@ const Auth = () => {
 
   return (
     <>
-      {error && (<section> <h2>{error.message}</h2></section>)}
+      {error && (<section> <h2>{error}</h2></section>)}
 
       <form onSubmit={handleSignUpSubmit}>
         <input type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
@@ -64,18 +58,8 @@ const Auth = () => {
 
         <button>Signup</button>
       </form>
-        
-      <form onSubmit={handleLoginSubmit}>
-        <input type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
-
-        <input type="password" name="password" value={password} onChange={handleChange} placeholder="password" />
-
-        <button>Login</button>
-      </form>
-
-      <button type="button" onClick={logout}>Logout</button>
     </>
   );
 };
 
-export default Auth;
+export default SignUp;
