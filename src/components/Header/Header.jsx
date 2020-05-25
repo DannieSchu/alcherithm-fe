@@ -23,7 +23,7 @@ const Header = () => {
           <Link to='/'>Dashboard</Link>
           <Link to='/challenges'>Challenges</Link>
           <Link to='/history'>History</Link>
-          <button type="button" onClick={logout}>Logout</button>
+          {user && <button type="button" onClick={logout}>Logout</button>}
         </nav>
       </header>
     </>

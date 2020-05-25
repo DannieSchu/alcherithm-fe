@@ -7,23 +7,27 @@ import Header from '../Header/Header';
 import SignUp from '../Auth/SignUp.jsx';
 import Login from '../Auth/Login.jsx';
 import Dashboard from '../Dashboard/Dashboard';
+import { AuthProvider } from '../../hooks/AuthProvider.jsx';
+
 // import PrivateRoute from '../Auth/PrivateRoute.jsx';
 
 export default function App() {
   return (
     <Router>
-      {/* <Header /> */}
-      <Route path={/^(?!.*(\/splash)).*$/} component={Header} /> 
-      <Switch>
-        <Route exact path='/' component={Dashboard} />
-        <Route exact path='/auth' component={Auth} />
-        <Route exact path='/signup' component={SignUp} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/challenges' component={CodeChallenges} />
-        <Route exact path='/challenges/:id' component={Challenge} />
-        {/* <PrivateRoute exact path='/challenges' component={CodeChallenges} />
+      <AuthProvider>
+        {/* <Header /> */}
+        <Route path={/^(?!.*(\/splash)).*$/} component={Header} /> 
+        <Switch>
+          <Route exact path='/' component={Dashboard} />
+          <Route exact path='/auth' component={Auth} />
+          <Route exact path='/signup' component={SignUp} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/challenges' component={CodeChallenges} />
+          <Route exact path='/challenges/:id' component={Challenge} />
+          {/* <PrivateRoute exact path='/challenges' component={CodeChallenges} />
         <PrivateRoute exact path='/challenges/:id' component={Challenge} /> */}
-      </Switch>
+        </Switch>
+      </AuthProvider>
     </Router>
   );
 }
