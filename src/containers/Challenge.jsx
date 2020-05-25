@@ -4,6 +4,7 @@ import Tester from '../components/QUnit/QUnit.jsx';
 import ChallengeDisplay from '../components/ChallengeDisplay/ChallengeDisplay.jsx';
 import { fetchChallengeById } from '../services/challengesAPI.js';
 import { useParams } from 'react-router-dom';
+import { post } from '../services/request.js';
 
 const Challenge = () => {
   const [runCode, setRunCode] = useState('');
@@ -22,10 +23,12 @@ const Challenge = () => {
     setRunCode(`${challenge.starterCode} \n \n ${challenge.qunitTest}`);
   }; 
 
-  // add a sumbit button and onSubmit
-  
   const handleCodeChange = (starterCode) => {
     setChallenge(challenge => ({ ...challenge, starterCode }));
+  };
+  
+  const onSubmit = () => {
+    post('/api/v1/solutions', challenge);
   };
 
   if(!challenge)
@@ -38,6 +41,7 @@ const Challenge = () => {
       <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} />
       <Editor code={challenge.qunitTest} />
       <button onClick={onClick}>Run</button> 
+      <button onSubmit={onSubmit}>Submit</button>
       <Tester tests={runCode} />
     </section>
   );
