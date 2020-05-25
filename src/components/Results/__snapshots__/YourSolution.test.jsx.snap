@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the YourSolution Component renders YourSolution 1`] = `
+<section
+  className="YourSolution"
+>
+  user solution here
+</section>
+`;
