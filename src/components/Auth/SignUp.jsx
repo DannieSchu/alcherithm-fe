@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSignUp, useLogin, useLogout, useError, useLoading } from '../../hooks/AuthProvider';
+import { useSignUp, useError, useLoading } from '../../hooks/AuthProvider';
 import { useHistory } from 'react-router-dom';
 
 const SignUp = () => {
@@ -12,8 +12,6 @@ const SignUp = () => {
 
   const history = useHistory();
   const signup = useSignUp();
-  const login = useLogin();
-  const logout = useLogout();
 
   const handleChange = ({ target }) => {
     if(target.name === 'email') setEmail(target.value);
@@ -41,7 +39,7 @@ const SignUp = () => {
 
   return (
     <>
-      {error && (<section> <h2>{error}</h2></section>)}
+      {error && (<section> <h2>{error.message}</h2></section>)}
 
       <form onSubmit={handleSignUpSubmit}>
         <input type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
