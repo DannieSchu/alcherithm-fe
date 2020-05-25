@@ -27,6 +27,7 @@ const Challenge = () => {
     setChallenge(challenge => ({ ...challenge, starterCode }));
   };
   
+  // using post from 'request' to apply current challenge to solutions db
   const onSubmit = () => {
     post('/api/v1/solutions', challenge);
   };
