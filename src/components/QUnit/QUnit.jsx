@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const Tester = ({ tests }) => {
+const Tester = ({ tests, setPassed }) => {
   const [details, setDetails] = useState({});
   
   useEffect(() => {
@@ -17,6 +17,7 @@ const Tester = ({ tests }) => {
       document.body.appendChild(testScript);
       QUnit.done((details) => {
         setDetails(details);
+        setPassed(details.passed);
       });
     });
 

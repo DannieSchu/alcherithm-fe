@@ -10,8 +10,8 @@ const Splash = () => {
       <section className={styles.Splash}>
         <img src={logo} />
         <h2>Alcherithm</h2>
-        <nav></nav>
       </section>
+      <div className='hexagon' className={styles.Splash}></div>
     </>
   );
 };

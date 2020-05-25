@@ -9,8 +9,9 @@ import { post } from '../services/request.js';
 const Challenge = () => {
   const [runCode, setRunCode] = useState('');
   const [challenge, setChallenge] = useState(null);
+  const [passed, setPassed] = useState(false);
 
-  let { id } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     fetchChallengeById(id)
@@ -27,9 +28,15 @@ const Challenge = () => {
     setChallenge(challenge => ({ ...challenge, starterCode }));
   };
   
-  // using post from 'request' to apply current challenge to solutions db
   const onSubmit = () => {
-    post('/api/v1/solutions', challenge);
+    post('/api/v1/solutions', {
+      challengeId: id,
+      // actually coming from the Qunit 
+      passed,
+      // backend checks current user 
+      // can't go to this page if not logged in
+      solution: challenge.starterCode
+    });
   };
 
   if(!challenge)
@@ -39,11 +46,11 @@ const Challenge = () => {
     <section>
       <h2>Cool Challenege Stuff</h2>
       <ChallengeDisplay {...challenge} {...challenge.resources} />
-      <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} />
+      <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} /><br></br>
       <Editor code={challenge.qunitTest} />
       <button onClick={onClick}>Run</button> 
-      <button onSubmit={onSubmit}>Submit</button>
-      <Tester tests={runCode} />
+      <button onClick={onSubmit}>Submit</button>
+      <Tester tests={runCode} setPassed={setPassed} />
     </section>
   );
 };
