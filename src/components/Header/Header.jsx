@@ -2,12 +2,17 @@ import React from 'react';
 import styles from './Header.css';
 import logo from '../../assets/IconWhite.png';
 import { Link } from 'react-router-dom';
-import { useLogout } from '../../hooks/AuthProvider';
-
-
+import { useLogout, useCurrentUser, loading } from '../../hooks/AuthProvider';
 
 const Header = () => {
   const logout = useLogout();
+  const user = useCurrentUser();
+  // console.log(user);
+  if(loading) return (
+    <section>
+      <h2>loading...</h2>
+    </section>
+  );
 
   return (
     <>

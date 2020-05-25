@@ -6,6 +6,7 @@ import Auth from '../Auth/Auth.jsx';
 import Header from '../Header/Header';
 import SignUp from '../Auth/SignUp.jsx';
 import Login from '../Auth/Login.jsx';
+import Dashboard from '../Dashboard/Dashboard';
 // import PrivateRoute from '../Auth/PrivateRoute.jsx';
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
       {/* <Header /> */}
       <Route path={/^(?!.*(\/splash)).*$/} component={Header} /> 
       <Switch>
+        <Route exact path='/' component={Dashboard} />
         <Route exact path='/auth' component={Auth} />
         <Route exact path='/signup' component={SignUp} />
         <Route exact path='/login' component={Login} />
