@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLogin, useError, useLoading } from '../../hooks/AuthProvider';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -40,6 +40,7 @@ const Login = () => {
 
         <button>Login</button>
       </form>
+      <Link to='/signup'>Create Account</Link>
     </>
   );
 };
