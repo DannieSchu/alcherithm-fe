@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './YourSolution.css';
 
-const YourResults = () => (
+const YourSolution = ({ userSolution }) => (
+  <section className={styles.YourSolution} >
+    {userSolution}
+  </section>
 
 );
 
-YourResults.propTypes = {
-
+YourSolution.propTypes = {
+  userSolution: PropTypes.string.isRequired
 };
 
-export default YourResults
+export default YourSolution;
