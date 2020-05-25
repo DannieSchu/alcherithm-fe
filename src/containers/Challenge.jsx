@@ -22,7 +22,7 @@ const Challenge = () => {
     setRunCode(`${challenge.starterCode} \n \n ${challenge.qunitTest}`);
   }; 
 
-  // add a sumbit button and onSubmit
+  // add a submit button and onSubmit
   
   const handleCodeChange = (starterCode) => {
     setChallenge(challenge => ({ ...challenge, starterCode }));
@@ -33,7 +33,7 @@ const Challenge = () => {
   
   return (
     <section>
-      <h2>Cool Challenege Stuff</h2>
+      <h2>Cool Challenge Stuff</h2>
       <ChallengeDisplay {...challenge} {...challenge.resources} />
       <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} />
       <Editor code={challenge.qunitTest} />
