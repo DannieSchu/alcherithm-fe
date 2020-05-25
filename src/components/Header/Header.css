@@ -1,10 +1,13 @@
 .Header {
-    background-color: navy;
+    display: flex;
+    align-items: center;
+    background-color: rgba(48, 198, 232, 0.6);
     color: whitesmoke;
-    height: 75px;
     width: 100vw;
     margin-bottom: 25px;
-    margin-top: 0;
-    margin-left: 0;
 
+    img {
+        width: 5.5rem;
+        margin: 1rem 1.6rem 1rem 3rem;
+    }
 }

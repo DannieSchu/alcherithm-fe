@@ -1,11 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
 import App from './components/App/App';
-import { ChallengeProvider } from './hooks/ChallengeProvider';
+import { AuthProvider } from './hooks/AuthProvider';
+import './index.css';
 
 render(
-  <ChallengeProvider>
+  <AuthProvider>
     <App />
-  </ChallengeProvider>,
+  </AuthProvider>,
   document.getElementById('root')
 );
