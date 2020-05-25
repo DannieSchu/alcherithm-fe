@@ -17,8 +17,7 @@ const Header = () => {
   return (
     <>
       <header className={styles.Header}>
-        <img src={logo} />
-        <h2>Alcherithm</h2>
+        <h2><Link to='/'><img src={logo} />Alcherithm</Link></h2>
         <nav>
           {user && 
           <>

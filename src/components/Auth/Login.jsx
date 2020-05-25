@@ -20,7 +20,7 @@ const Login = () => {
   const handleLoginSubmit = event => {
     event.preventDefault();
     login(email, password)
-      .then (() => history.push('/dashboard'));
+      .then (() => history.push('/'));
   };
 
   if(loading) return (
