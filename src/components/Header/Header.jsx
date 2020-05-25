@@ -7,13 +7,12 @@ import { useLogout, useCurrentUser, loading } from '../../hooks/AuthProvider';
 const Header = () => {
   const logout = useLogout();
   const user = useCurrentUser();
-  // console.log(user);
   if(loading) return (
     <section>
       <h2>loading...</h2>
     </section>
   );
-
+  
   return (
     <>
       <header className={styles.Header}>
@@ -23,8 +22,10 @@ const Header = () => {
           <Link to='/'>Dashboard</Link>
           <Link to='/challenges'>Challenges</Link>
           <Link to='/history'>History</Link>
+          <Link to='/about'>About</Link>
           {user && <button type="button" onClick={logout}>Logout</button>}
         </nav>
+        {user && <h3>hello {user?.firstName}</h3>}
       </header>
     </>
   );
