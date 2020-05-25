@@ -1,7 +1,8 @@
 import React from 'react';
-import { loading } from '../../hooks/AuthProvider';
+import { useLoading } from '../../hooks/AuthProvider';
 
 const History = () => {
+  const loading = useLoading();
   if(loading) return (
     <section>
       <h2>loading...</h2>

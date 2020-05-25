@@ -1,10 +1,11 @@
 import React from 'react';
-import { loading, useCurrentUser } from '../../hooks/AuthProvider';
+import { useLoading, useCurrentUser } from '../../hooks/AuthProvider';
 import { useHistory } from 'react-router-dom';
 
 const Dashboard = () => {
   const history = useHistory();
   const user = useCurrentUser();
+  const loading = useLoading();
   
   if(loading) return (
     <section>
@@ -13,7 +14,7 @@ const Dashboard = () => {
   );
 
   if(!user)
-    history.push('/login');
+    history.push('/splash');
 
   return (
     <h2>Dashboard goes here</h2>

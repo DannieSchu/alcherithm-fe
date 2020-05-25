@@ -1,13 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import CodeChallenges from '../CodeChallenges/CodeChallenges.jsx';
-import Challenge from '../../containers/Challenge.jsx';
 import Header from '../Header/Header';
+import Dashboard from '../Dashboard/Dashboard';
 import SignUp from '../Auth/SignUp.jsx';
 import Login from '../Auth/Login.jsx';
-import Dashboard from '../Dashboard/Dashboard';
 import About from '../About/About.jsx';
+import CodeChallenges from '../CodeChallenges/CodeChallenges.jsx';
+import Challenge from '../../containers/Challenge.jsx';
 import History from '../History/History.jsx';
+import Splash from '../Splash/Splash.jsx';
 import { AuthProvider } from '../../hooks/AuthProvider.jsx';
 
 // import PrivateRoute from '../Auth/PrivateRoute.jsx';
@@ -25,6 +26,7 @@ export default function App() {
           <Route exact path='/challenges' component={CodeChallenges} />
           <Route exact path='/challenges/:id' component={Challenge} />
           <Route exact path='/history' component={History} />
+          <Route exact path='/splash' component={Splash} />
           {/* <PrivateRoute exact path='/' component={Dashboard} />
           <PrivateRoute exact path='/challenges' component={CodeChallenges} />
           <PrivateRoute exact path='/challenges/:id' component={Challenge} />

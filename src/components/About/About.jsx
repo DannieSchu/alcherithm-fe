@@ -1,7 +1,8 @@
 import React from 'react';
-import { loading } from '../../hooks/AuthProvider';
+import { useLoading } from '../../hooks/AuthProvider';
 
 const About = () => {
+  const loading = useLoading();
   if(loading) return (
     <section>
       <h2>loading...</h2>
@@ -9,7 +10,7 @@ const About = () => {
   );
 
   return (
-    <h2>about goes here</h2>
+    <h2>About goes here</h2>
   );
 
 };
