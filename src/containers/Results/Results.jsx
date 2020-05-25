@@ -1,12 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import YourSolution from '../../components/Results/YourSolution.jsx';
 
-const Results = () => (
 
-);
-
-Results.propTypes = {
-
+const Results = () => {
+  const [yourSolution, setYourSolution] = useState();
+  
+  return (
+    <>
+      <YourSolution yourSolution={yourSolution} />
+    </>
+  );
 };
 
-export default Results
+export default Results;
