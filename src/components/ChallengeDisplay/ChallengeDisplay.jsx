@@ -13,7 +13,11 @@ const ChallengeDisplay = ({ category, challengeNumber, instructions, overview, d
     <>
       <section className="instructions">
         <h3>{category} {challengeNumber}</h3>
-        <p>{instructions}</p>
+        <ReactMarkdown
+          source={instructions}
+          language='javascript'
+          renderers={{ code: CodeBlock }}
+        />
       </section>
       <section className="resources">
         <ReactMarkdown
