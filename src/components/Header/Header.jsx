@@ -10,9 +10,8 @@ const Header = () => {
   const loading = useLoading();
   
   if(loading) return (
-    <section>
-      <h2>loading...</h2>
-    </section>
+    <>
+    </>
   );
   
   return (
@@ -42,7 +41,3 @@ const Header = () => {
 };
 
 export default Header; 
-
-
-// this.props.history.push('/login');
-{/* <button type="button" onClick={logout}>Logout</button>; */}
