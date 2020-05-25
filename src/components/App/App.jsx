@@ -18,6 +18,7 @@ export default function App() {
     <Router>
       <AuthProvider>
         <Route path={/^(?!.*(\/splash)).*$/} component={Header} /> 
+        {/* <Route path="^(?!.*(\/splash)).*$" component={Header} /> */}
         <Switch>
           {/* <Route exact path='/' component={Dashboard} /> */}
           <Route exact path='/signup' component={SignUp} />

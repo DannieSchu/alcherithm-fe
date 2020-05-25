@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useSignUp, useError, useLoading } from '../../hooks/AuthProvider';
 import { useHistory, Link } from 'react-router-dom';
+import { cohortsDropdown } from '../../utils/cohorts';
+import styles from './SignUp.css';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -12,6 +14,10 @@ const SignUp = () => {
 
   const history = useHistory();
   const signup = useSignUp();
+
+  const cohortOptions = cohortsDropdown.map(cohorts => (
+    <option key={cohorts} value={cohorts}>{cohorts}</option>
+  ));
 
   const handleChange = ({ target }) => {
     if(target.name === 'email') setEmail(target.value);
@@ -50,7 +56,12 @@ const SignUp = () => {
 
         <input type="text" name="lastName" value={lastName} onChange={handleChange} placeholder="last name" />
 
-        <input type="text" name="cohort" value={cohort} onChange={handleChange} placeholder="cohort" />
+        {/* <input type="text" name="cohort" value={cohort} onChange={handleChange} placeholder="cohort" /> */}
+
+        <select className={styles.SignUp} id="cohort" onChange={({ target }) => setCohort(target.value)}>
+          <option value="allCohorts">Choose Cohort</option>
+          {cohortOptions}
+        </select>
 
         <input type="text" name="avatar" value={avatar} onChange={handleChange} placeholder="avatar" />
 
