@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLogin, useLogout, useError, useLoading } from '../../hooks/AuthProvider';
+import { useLogin, useError, useLoading } from '../../hooks/AuthProvider';
 import { useHistory } from 'react-router-dom';
 
 const Login = () => {
@@ -8,7 +8,6 @@ const Login = () => {
 
   const history = useHistory();
   const login = useLogin();
-  const logout = useLogout();
 
   const handleChange = ({ target }) => {
     if(target.name === 'email') setEmail(target.value);
@@ -41,8 +40,6 @@ const Login = () => {
 
         <button>Login</button>
       </form>
-
-      <button type="button" onClick={logout}>Logout</button>
     </>
   );
 };
