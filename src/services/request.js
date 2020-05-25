@@ -1,7 +1,7 @@
 const BODY_METHODS = ['POST', 'PATCH', 'PUT'];
 const request = (path, method, body = null) => {
   const headers = BODY_METHODS.includes(method) ? { 'Content-Type': 'application/json' } : {};
-  return fetch(`${process.env.API_URL}${path}`, {
+  return fetch(`${process.env.REACT_APP_API_URL}${path}`, {
     method,
     headers,
     credentials: 'include',
