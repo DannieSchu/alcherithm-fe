@@ -1,10 +1,11 @@
 import React from 'react';
-import { loading, useCurrentUser } from '../../hooks/AuthProvider';
+import { useLoading, useCurrentUser } from '../../hooks/AuthProvider';
 import { useHistory } from 'react-router-dom';
 
 const Splash = () => {
   const user = useCurrentUser();
   const history = useHistory();
+  const loading = useLoading();
 
   if(loading) return (
     <section>

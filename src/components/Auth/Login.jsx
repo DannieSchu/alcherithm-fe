@@ -21,7 +21,7 @@ const Login = () => {
   const handleLoginSubmit = event => {
     event.preventDefault();
     login(email, password)
-      .then (() => history.push('/challenges'));
+      .then (() => history.push('/dashboard'));
   };
 
   if(loading) return (

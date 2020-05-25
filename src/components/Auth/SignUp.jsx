@@ -28,7 +28,7 @@ const SignUp = () => {
   const handleSignUpSubmit = event => {
     event.preventDefault();
     signup(email, password, firstName, lastName, cohort, avatar)
-      .then (() => history.push('/challenges'));
+      .then (() => history.push('/dashboard'));
   };
 
   if(loading) return (
