@@ -1,4 +1,4 @@
-p {
+.devs p {
   font-size: .5rem;
   font-weight: lighter;
   margin-top: -.25rem;
@@ -35,7 +35,7 @@ p {
   width: 3%;
   border-radius: 90%;
   margin: 0 auto;
-  margin-bottom: 10px;
+  margin-bottom: .5rem;
 }
 
 .links img{
@@ -50,14 +50,13 @@ p {
 .icons {
   max-width: 1rem;
   display: flex;
-  margin: 10px auto;
+  margin: .5rem auto .5rem;
 }
 
 .para {
   width: 50%;
   text-align: center;
   margin: 0 auto;
-  font-size: 14px;
+  font-size: .5rem;
   background-color: rgb(250, 245, 241)
-  
 }
