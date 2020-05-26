@@ -36,7 +36,8 @@ const Challenge = () => {
       // backend checks current user 
       // can't go to this page if not logged in
       solution: challenge.starterCode
-    });
+    })
+      .then(history.push('/results/solutionId'));
   };
 
   if(!challenge)
