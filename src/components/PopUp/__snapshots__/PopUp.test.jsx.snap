@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopUp component renders PopUp 1`] = `
+<section
+  className="PopUp"
+>
+  <span
+    onClick={[Function]}
+  >
+    ✖️
+  </span>
+  <article>
+    <h3>
+      Your Solutions
+    </h3>
+    <ul>
+      <li
+        key="0"
+      >
+        <Editor
+          code="
+    const removeOne = (num, arr) => {
+    if(num % 3 === 2) {
+        arr.pop();  
+    }
+    };
+    
+    const removeElements = (arr, callback) => {
+    for(let i = 0; i < arr.length; i++) {
+        const arrayItem = arr[i];
+        callback(arrayItem, arr);
+    }
+    return arr;
+    };
+    "
+        />
+      </li>
+      <li
+        key="1"
+      >
+        <Editor
+          code="
+    const removeOne = (num, arr) => {
+    if(num % 3 === 2) {
+        arr.pop();  
+    }
+    };
+    
+    const removeElements = (arr, callback) => {
+    for(let i = 0; i < arr.length; i++) {
+        const arrayItem = arr[i];
+        callback(arrayItem, arr);
+    }
+    return arr;
+    };
+    "
+        />
+      </li>
+      ;
+    </ul>
+  </article>
+</section>
+`;
