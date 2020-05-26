@@ -31,10 +31,7 @@ const Challenge = () => {
   const onSubmit = () => {
     post('/api/v1/solutions', {
       challengeId: id,
-      // actually coming from the Qunit 
       passed,
-      // backend checks current user 
-      // can't go to this page if not logged in
       solution: challenge.starterCode
     });
   };
