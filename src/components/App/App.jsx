@@ -18,15 +18,10 @@ export default function App() {
     <Router>
       <AuthProvider>
         <Route path={/^(?!.*(\/splash)).*$/} component={Header} /> 
-        {/* <Route path="^(?!.*(\/splash)).*$" component={Header} /> */}
         <Switch>
-          {/* <Route exact path='/' component={Dashboard} /> */}
           <Route exact path='/signup' component={SignUp} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/about' component={About} />
-          {/* <Route exact path='/challenges' component={CodeChallenges} />
-          <Route exact path='/challenges/:id' component={Challenge} />
-          <Route exact path='/history' component={History} /> */}
           <Route exact path='/splash' component={Splash} />
           <PrivateRoute exact path='/' component={Dashboard} />
           <PrivateRoute exact path='/challenges' component={CodeChallenges} />
