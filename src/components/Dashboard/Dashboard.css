@@ -22,15 +22,20 @@
     button {
       display: flex;
       flex-wrap: wrap;
-      
-      min-width: 5rem;
+      justify-content: center;
+      margin: 10rem;
+      min-width: 20rem;
       max-width: 20rem;
-      min-height: 10rem;
+      min-height: 12rem;
       margin: 1rem;
   
       border: 1px solid rgb(187, 186, 186);
       border-radius: 5px;
       box-shadow: 5px 10px 10px rgb(187, 186, 186);
+    }
+
+    p {
+      font-size: 20px;
     }
   
     button:hover {
