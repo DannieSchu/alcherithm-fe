@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoading } from '../../hooks/AuthProvider';
+// import { useLoading } from '../../hooks/AuthProvider';
 import githubIcon from '../../assets/profile/Github-Icon.png';
 import linkedInIcon from '../../assets/profile/LinkedIn-Icon.png';
 import Dakota from '../../assets/profile/Dakota.png';
@@ -10,12 +10,12 @@ import Will from '../../assets/profile/Will.jpg';
 import styles from './About.css';
 
 const About = () => {
-  const loading = useLoading();
-  if(loading) return (
-    <section>
-      <h2>loading...</h2>
-    </section>
-  );
+  // const loading = useLoading();
+  // if(loading) return (
+  //   <section>
+  //     <h2>loading...</h2>
+  //   </section>
+  // );
 
   return (
     <>
@@ -36,17 +36,15 @@ const About = () => {
         <div className={styles.devs}>
           <div className={styles.dev}>
             <img src={Dakota} alt="Dakota Profile Picture"/>
-            <br></br>
-            <p>DAKOTA DRULEY Et lorem ipsum tempor sit sed eirmod erat et gubergren, duo justo lorem sed no ipsum invidunt ipsum erat kasd, clita takimata diam kasd ipsum dolor sanctus nonumy, sed est ut magna magna aliquyam nonumy sanctus est et, amet et et voluptua diam clita vero sadipscing, kasd amet vero dolor.</p>
             <div className={styles.links}>
               <a href="https://github.com/dakotadruley" target="_blank" rel="noopener noreferrer">
                 <img src={githubIcon} alt="github-icon" className={styles.icons}/>
               </a>
               <a href="https://www.linkedin.com/in/dakota-druley/" target="_blank" rel="noopener noreferrer">
                 <img src={linkedInIcon} alt="linkedin-icon" className={styles.icons}></img>
-              </a>
-                    
+              </a>  
             </div>
+            <p>DAKOTA DRULEY Et lorem ipsum tempor sit sed eirmod erat et gubergren, duo justo lorem sed no ipsum invidunt ipsum erat kasd, clita takimata diam kasd ipsum dolor sanctus nonumy, sed est ut magna magna aliquyam nonumy sanctus est et, amet et et voluptua diam clita vero sadipscing, kasd amet vero dolor.</p>
           </div>
 
           <div className={styles.dev}>
