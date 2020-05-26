@@ -1,12 +1,28 @@
 .Dashboard {
     display: flex;
+    flex-flow: row wrap;
     align-items: center;
+    justify-content: center;
+    margin-left: 10rem;
+    margin-right: 10rem;
   
-    h2 {
-      
+    section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 70rem;
+      max-width: 70rem;
+      min-height: 20rem;
+      margin: 4rem;
+  
+      border: 1px solid rgb(187, 186, 186);
+      border-radius: 5px;
     }
   
     button {
+      display: flex;
+      flex-wrap: wrap;
+      
       min-width: 5rem;
       max-width: 20rem;
       min-height: 10rem;

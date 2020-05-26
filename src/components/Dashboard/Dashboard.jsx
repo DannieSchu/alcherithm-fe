@@ -14,9 +14,10 @@ const Dashboard = () => {
   );
 
   return (
-    <section className={styles.Dashboard}>
-      <h2>Dashboard goes here</h2>
-
+    <main className={styles.Dashboard}>
+      <section>
+        <h2>Placeholder for Data Viz</h2>
+      </section>
       <Link to="/challenges">
         <Button>
           <p>Find a Challenge</p>
@@ -28,7 +29,7 @@ const Dashboard = () => {
           <p>View Completed Challenges</p>
         </Button>
       </Link>
-    </section>
+    </main>
   );
 
 };
