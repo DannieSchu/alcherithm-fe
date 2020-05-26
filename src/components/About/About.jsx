@@ -49,8 +49,6 @@ const About = () => {
 
           <div className={styles.dev}>
             <img src={Dannie} alt="Dannie Profile Picture"/>
-            <br></br>
-            <p>DANNIE SCHUMAKER Gubergren stet sea accusam lorem no sanctus. Amet voluptua clita et nonumy lorem sanctus et, rebum lorem voluptua dolor sed rebum takimata gubergren, erat et eirmod amet dolores labore erat diam rebum, tempor ut et tempor gubergren. Diam diam magna dolor sadipscing consetetur est accusam et. Et et nonumy gubergren.</p>
             <div className={styles.links}>
               <a href="https://github.com/DannieSchu" target="_blank" rel="noopener noreferrer">
                 <img src={githubIcon} alt="github-icon" className={styles.icons}/>
@@ -58,14 +56,12 @@ const About = () => {
               <a href="https://www.linkedin.com/in/dannieschumaker/" target="_blank" rel="noopener noreferrer">
                 <img src={linkedInIcon} alt="linkedin-icon" className={styles.icons}></img>
               </a>
-                   
             </div>  
+            <p>DANNIE SCHUMAKER Gubergren stet sea accusam lorem no sanctus. Amet voluptua clita et nonumy lorem sanctus et, rebum lorem voluptua dolor sed rebum takimata gubergren, erat et eirmod amet dolores labore erat diam rebum, tempor ut et tempor gubergren. Diam diam magna dolor sadipscing consetetur est accusam et. Et et nonumy gubergren.</p>
           </div>
 
           <div className={styles.dev}>
             <img src={Janelle} alt="Janelle Profile Picture"/>
-            <br></br>
-            <p>JANELLE MELLOR Takimata duo dolor ea et sanctus sadipscing takimata, ut et ut vero duo amet takimata. Eirmod et est sit et sed lorem clita lorem accusam, kasd invidunt no stet aliquyam diam labore ipsum, ea consetetur rebum est labore dolor sed duo, no duo stet gubergren et. No invidunt diam magna.</p>
             <div className={styles.links}>
               <a href="https://github.com/janellemellor" target="_blank" rel="noopener noreferrer">
                 <img src={githubIcon} alt="github-icon" className={styles.icons}/>
@@ -73,28 +69,25 @@ const About = () => {
               <a href="https://www.linkedin.com/in/janellemellor/" target="_blank" rel="noopener noreferrer">
                 <img src={linkedInIcon} alt="linkedin-icon" className={styles.icons}></img>
               </a>
-                  
             </div>
+            <p>JANELLE MELLOR Takimata duo dolor ea et sanctus sadipscing takimata, ut et ut vero duo amet takimata. Eirmod et est sit et sed lorem clita lorem accusam, kasd invidunt no stet aliquyam diam labore ipsum, ea consetetur rebum est labore dolor sed duo, no duo stet gubergren et. No invidunt diam magna.</p>
           </div>
 
           <div className={styles.dev}>
-            <img src={Mikey} alt="Mikey Profile Picture"/><br></br>
-            <p>MICHAEL ROMAY is a musician and an installation artist who loves to make weird digital visual and interactive art.  Code, music and art go hand in hand for him.  He also has a baby bird named Rico that is very sweet.</p>
+            <img src={Mikey} alt="Mikey Profile Picture"/>
             <div className={styles.links}>
               <a href="https://github.com/mikeymasonic" target="_blank" rel="noopener noreferrer">
                 <img src={githubIcon} alt="github-icon" className={styles.icons}/>
               </a>
               <a href="https://www.linkedin.com/in/michaelromay/" target="_blank" rel="noopener noreferrer">
                 <img src={linkedInIcon} alt="linkedin-icon" className={styles.icons}></img>
-              </a>
-                   
+              </a> 
             </div>   
+            <p>MICHAEL ROMAY is a musician and an installation artist who makes weird digital visual and interactive art.  Code, music and art go hand in hand for him.  He also has a baby bird named Rico that is very sweet.</p>
           </div>
 
           <div className={styles.dev}>
             <img src={Will} alt="Will Profile Picture"/>
-            <br></br>
-            <p>WILL PIRO Est kasd duo no stet et sanctus tempor duo duo nonumy. Nonumy tempor est stet erat et ea. Ipsum erat nonumy eirmod no ea no dolore eirmod, ipsum dolor invidunt sea at stet consetetur, diam et voluptua et et kasd, et ipsum et ea diam amet lorem tempor dolor eos,.</p>
             <div className={styles.links}>
               <a href="https://github.com/Shaka2Pass" target="_blank" rel="noopener noreferrer">
                 <img src={githubIcon} alt="github-icon" className={styles.icons}/>
@@ -102,8 +95,8 @@ const About = () => {
               <a href="https://www.linkedin.com/in/willpiro/" target="_blank" rel="noopener noreferrer">
                 <img src={linkedInIcon} alt="linkedin-icon" className={styles.icons}></img>
               </a>
-                  
             </div>
+            <p>WILL PIRO Est kasd duo no stet et sanctus tempor duo duo nonumy. Nonumy tempor est stet erat et ea. Ipsum erat nonumy eirmod no ea no dolore eirmod, ipsum dolor invidunt sea at stet consetetur, diam et voluptua et et kasd, et ipsum et ea diam amet lorem tempor dolor eos,.</p>
           </div>
 
         </div>
