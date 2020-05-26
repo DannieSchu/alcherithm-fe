@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { postSignup, postLogin, getLogout, getVerify } from '../services/authAPI';
+import { useHistory } from 'react-router-dom';
 
 const AuthContext = createContext();
 
@@ -8,6 +9,8 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  
+  const history = useHistory();
 
   useEffect(() => {
     getVerify()
@@ -33,7 +36,8 @@ export const AuthProvider = ({ children }) => {
 
   const logout = (user) => {
     return getLogout(user)
-      .then(() => setUser(null));
+      .then(() => setUser(null))
+      .then(history.push('/login'));
   };
 
   return (

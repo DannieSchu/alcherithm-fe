@@ -1,26 +1,36 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Header from '../Header/Header';
+import Dashboard from '../Dashboard/Dashboard';
+import SignUp from '../Auth/SignUp.jsx';
+import Login from '../Auth/Login.jsx';
+import About from '../About/About.jsx';
 import CodeChallenges from '../CodeChallenges/CodeChallenges.jsx';
 import Challenge from '../../containers/Challenge.jsx';
-import Results from '../../containers/Results/Results.jsx';
-import Auth from '../Auth/Auth.jsx';
-import Header from '../Header/Header';
+import History from '../History/History.jsx';
 import Splash from '../Splash/Splash.jsx';
-// import PrivateRoute from '../Auth/PrivateRoute.jsx';
+import Results from '../../containers/Results.jsx';
+import { AuthProvider } from '../../hooks/AuthProvider.jsx';
+
+import PrivateRoute from '../Auth/PrivateRoute.jsx';
 
 export default function App() {
   return (
     <Router>
-      <Route path={/^(?!.*(\/splash)).*$/} component={Header} />
-      <Switch>
-        <Route exact path='/splash' component={Splash} />
-        <Route exact path='/auth' component={Auth} />
-        <Route exact path='/challenges' component={CodeChallenges} />
-        <Route exact path='/challenges/:id' component={Challenge} />
-        <Route exact path='/results' component={Results} />
-        {/* <PrivateRoute exact path='/challenges' component={CodeChallenges} />
-        <PrivateRoute exact path='/challenges/:id' component={Challenge} /> */}
-      </Switch>
+      <AuthProvider>
+        <Route path={/^(?!.*(\/splash)).*$/} component={Header} /> 
+        <Switch>
+          <Route exact path='/signup' component={SignUp} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/about' component={About} />
+          <Route exact path='/splash' component={Splash} />
+          <PrivateRoute exact path='/' component={Dashboard} />
+          <PrivateRoute exact path='/challenges' component={CodeChallenges} />
+          <PrivateRoute exact path='/challenges/:id' component={Challenge} />
+          <PrivateRoute exact path='/results/challenges/:id' component={Results} />
+          <PrivateRoute exact path='/history' component={History} />
+        </Switch>
+      </AuthProvider>
     </Router>
   );
 }

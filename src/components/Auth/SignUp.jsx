@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { useSignUp, useLogin, useLogout, useError, useLoading } from '../../hooks/AuthProvider';
-import { useHistory } from 'react-router-dom';
+import { useSignUp, useError, useLoading } from '../../hooks/AuthProvider';
+import { useHistory, Link } from 'react-router-dom';
+import { cohortsDropdown } from '../../utils/cohorts';
+import styles from './SignUp.css';
 
-const Auth = () => {
+const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');
@@ -12,8 +14,10 @@ const Auth = () => {
 
   const history = useHistory();
   const signup = useSignUp();
-  const login = useLogin();
-  const logout = useLogout();
+
+  const cohortOptions = cohortsDropdown.map(cohorts => (
+    <option key={cohorts} value={cohorts}>{cohorts}</option>
+  ));
 
   const handleChange = ({ target }) => {
     if(target.name === 'email') setEmail(target.value);
@@ -30,13 +34,7 @@ const Auth = () => {
   const handleSignUpSubmit = event => {
     event.preventDefault();
     signup(email, password, firstName, lastName, cohort, avatar)
-      .then (() => history.push('/challenges'));
-  };
-
-  const handleLoginSubmit = event => {
-    event.preventDefault();
-    login(email, password)
-      .then (() => history.push('/challenges'));
+      .then (() => history.push('/'));
   };
 
   if(loading) return (
@@ -47,7 +45,7 @@ const Auth = () => {
 
   return (
     <>
-      {error && (<section> <h2>{error}</h2></section>)}
+      {error && (<section> <h2>{error.message}</h2></section>)}
 
       <form onSubmit={handleSignUpSubmit}>
         <input type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
@@ -58,24 +56,20 @@ const Auth = () => {
 
         <input type="text" name="lastName" value={lastName} onChange={handleChange} placeholder="last name" />
 
-        <input type="text" name="cohort" value={cohort} onChange={handleChange} placeholder="cohort" />
+        {/* <input type="text" name="cohort" value={cohort} onChange={handleChange} placeholder="cohort" /> */}
+
+        <select className={styles.SignUp} id="cohort" onChange={({ target }) => setCohort(target.value)}>
+          <option value="allCohorts">Choose Cohort</option>
+          {cohortOptions}
+        </select>
 
         <input type="text" name="avatar" value={avatar} onChange={handleChange} placeholder="avatar" />
 
-        <button>Signup</button>
+        <button>Sign up</button>
       </form>
-        
-      <form onSubmit={handleLoginSubmit}>
-        <input type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
-
-        <input type="password" name="password" value={password} onChange={handleChange} placeholder="password" />
-
-        <button>Login</button>
-      </form>
-
-      <button type="button" onClick={logout}>Logout</button>
+      <h4>Already have an account? <Link to='/login'>Login</Link></h4>
     </>
   );
 };
 
-export default Auth;
+export default SignUp;

@@ -7,11 +7,11 @@ const PrivateRoute = (props) => {
   const loading = useLoading();
 
   if(!user && !loading) {
-    return <Redirect to="/auth" />;
+    return <Redirect to="/splash" />;
   }
 
   if(loading) {
-    return <h1>Loading</h1>;
+    return <h2>loading...</h2>;
   }
 
   // if we are logged in route normally
