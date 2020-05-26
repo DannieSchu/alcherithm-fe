@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CodeChallenge from '../CodeChallenges/CodeChallenge';
 import Dropdown from '../Dropdown/Dropdown';
 import PopUp from '../PopUp/PopUp';
 import { useGetChallenges } from '../../hooks/getChallenges';
 import { useLoading } from '../../hooks/AuthProvider';
 import { fetchUserChallengesWithSolutions } from '../../services/solutionsAPI';
-import styles from '../CodeChallenges/CodeChallenges.css';
 import { useToggleSolutions } from '../../hooks/toggleSolutions';
+import styles from '../CodeChallenges/CodeChallenges.css';
 
 const History = () => {
   const loading = useLoading();
   const { selectedChallenges, setCategory } = useGetChallenges(fetchUserChallengesWithSolutions);
-
   const { visible, selectedSolutions, togglePopUp, handleClick } = useToggleSolutions();
 
   const codeElements = selectedChallenges.map((challenge) => (
