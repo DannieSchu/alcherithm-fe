@@ -2,11 +2,12 @@ import React from 'react';
 import CodeChallenge from './CodeChallenge';
 import Dropdown from '../Dropdown/Dropdown';
 import { useGetChallenges } from '../../hooks/getChallenges';
+import { fetchChallenges } from '../../services/challengesAPI';
 import { Link } from 'react-router-dom';
 import styles from './CodeChallenges.css';
 
 const CodeChallenges = () => {
-  const { selectedChallenges, category, setCategory, loading } = useGetChallenges(category);
+  const { selectedChallenges, setCategory, loading } = useGetChallenges(fetchChallenges);
 
   const codeElements = selectedChallenges.map(challenge => (
     <li key={challenge._id}>
