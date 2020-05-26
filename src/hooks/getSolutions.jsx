@@ -8,13 +8,17 @@ export const useGetSolutions = () => {
   //get a solution for this challenge from database.
   const [sampleSolution, setSampleSolution] = useState('');
 
-  const { challengeId } = useParams;
+  const { challengeId } = useParams();
+
+  //handleSubmit 
 
   useEffect(() => {
   // grab our service call to fetch challenges with solutions. 
     fetchChallengesWithSolutions(challengeId)
       .then(fetchedSolutions => {
-        setSampleSolution(fetchedSolutions.solution);
+        setSampleSolution(fetchedSolutions[0].solution);
       });
   }, []);
+
+
 };
