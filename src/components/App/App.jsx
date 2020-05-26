@@ -11,7 +11,6 @@ import History from '../History/History.jsx';
 import Splash from '../Splash/Splash.jsx';
 import Results from '../../containers/Results/Results.jsx';
 import { AuthProvider } from '../../hooks/AuthProvider.jsx';
-
 import PrivateRoute from '../Auth/PrivateRoute.jsx';
 
 export default function App() {
