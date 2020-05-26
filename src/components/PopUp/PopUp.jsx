@@ -5,9 +5,9 @@ import styles from './PopUp.css';
 
 const PopUp = ({ toggle, solutions }) => {
   const solutionElements = solutions.map((solution, i) => (
-    <li key={i} >
+    <div key={i} >
       <Editor code={solution} />
-    </li>
+    </div>
   ));
 
   return (
@@ -15,9 +15,7 @@ const PopUp = ({ toggle, solutions }) => {
       <span onClick={() => toggle()}>✖️</span>
       <article>
         <h3>Your Solutions</h3>
-        <ul>
-          {solutionElements};
-        </ul>
+        {solutionElements};
       </article>
     </section>
   );
