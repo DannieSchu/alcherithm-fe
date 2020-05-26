@@ -13,12 +13,11 @@ exports[`PopUp component renders PopUp 1`] = `
     <h3>
       Your Solutions
     </h3>
-    <ul>
-      <li
-        key="0"
-      >
-        <Editor
-          code="
+    <div
+      key="0"
+    >
+      <Editor
+        code="
     const removeOne = (num, arr) => {
     if(num % 3 === 2) {
         arr.pop();  
@@ -33,13 +32,13 @@ exports[`PopUp component renders PopUp 1`] = `
     return arr;
     };
     "
-        />
-      </li>
-      <li
-        key="1"
-      >
-        <Editor
-          code="
+      />
+    </div>
+    <div
+      key="1"
+    >
+      <Editor
+        code="
     const removeOne = (num, arr) => {
     if(num % 3 === 2) {
         arr.pop();  
@@ -54,10 +53,9 @@ exports[`PopUp component renders PopUp 1`] = `
     return arr;
     };
     "
-        />
-      </li>
-      ;
-    </ul>
+      />
+    </div>
+    ;
   </article>
 </section>
 `;
