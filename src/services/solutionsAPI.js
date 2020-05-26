@@ -17,3 +17,8 @@ export const fetchUserChallengesWithSolutions = userId => get(`/api/v1/solutions
     solutions: challenge.solutions
   })));
 
+export const fetchResults = solutionId => get(`/api/v1/solutions/results?solutionId=${solutionId}`)
+  .then(solutions => solutions.map(solution => ({
+    _id:
+  })));
+
