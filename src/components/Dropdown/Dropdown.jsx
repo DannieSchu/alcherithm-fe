@@ -1,7 +1,7 @@
 import React from 'react';
 import { categories } from '../../utils/categories';
 import PropTypes from 'prop-types';
-import styles from './dropdown.css';
+import styles from './Dropdown.css';
 
 const Dropdown = ({ setCategory }) => {
   const categoryOptions = categories.map(category => (
