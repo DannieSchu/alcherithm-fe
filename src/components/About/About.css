@@ -6,8 +6,10 @@
 
 .alcherithmHeader{
   margin-top: -3rem;
+  margin-bottom: -.5rem;
   color: black;
   text-align: center;
+  text-decoration: none;
 }
 
 .devs {
