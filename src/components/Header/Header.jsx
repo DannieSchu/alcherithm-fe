@@ -9,10 +9,7 @@ const Header = () => {
   const user = useCurrentUser();
   const loading = useLoading();
   
-  if(loading) return (
-    <>
-    </>
-  );
+  if(loading) return null;
   
   return (
     <>

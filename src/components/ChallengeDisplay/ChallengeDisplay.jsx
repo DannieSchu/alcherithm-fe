@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 const ReactMarkdown = require('react-markdown');
 import CodeBlock from './CodeBlock';
 import styles from './ChallengeDisplay.css';
 
 const ChallengeDisplay = ({ category, challengeNumber, instructions, overview, documentation, video }) => {
+  const [selectedTab, setSelectedTab] = useState('Instructions');
+
+  const handleTabChange = ({ target }) => {
+    setSelectedTab(target.id);
+  };
+
   const documentationList = documentation.map((link, i) => (
     <li key={i}>
       <a href={link}>{link}</a>
@@ -13,41 +19,35 @@ const ChallengeDisplay = ({ category, challengeNumber, instructions, overview, d
   return (
     <main className={styles.ChallengeDisplay}>
       
-      {/* first tab */}
-      <input type="radio" id="instructionsTab" name="tabbed" checked></input>
-      <section className="instructions">
-        <h2>
-          <label htmlFor="instructionsTab">Instructions</label>
-        </h2>
-        <div>
-          <h3>{category} {challengeNumber}</h3>
-          <ReactMarkdown
-            source={instructions}
-            language='javascript'
-            renderers={{ code: CodeBlock }}
-          />
-        </div>
-      </section>
+      <section className={styles.tabs}>
+        <input type="radio" id="Instructions" name="tabbed" onChange={handleTabChange}></input>
+        <input type="radio" id="Resources" name="tabbed" onChange={handleTabChange}></input>
 
-      {/* secound tab */}
-      <input type="radio" id="resourcesTab" name="tabbed"></input>
-      <section className="resources">
-        <h2>
-          <label htmlFor="resourcesTab">Resources</label>
-        </h2>
-        <div>
-          <ReactMarkdown
-            source={overview}
-            language='javascript'
-            renderers={{ code: CodeBlock }}
-          />
-          <h4>References</h4>
-          <ul>
-            {documentationList}
-          </ul>
-          <p>{video}</p>
-        </div>
+        <label htmlFor="Instructions" className={selectedTab === 'Instructions' && styles.active}>Instructions</label>
+        <label htmlFor="Resources" className={selectedTab === 'Resources' && styles.active}>Resources</label>
       </section>
+     
+      { selectedTab === 'Instructions' && <section className={styles.content}>     
+        <h3>{category} {challengeNumber}</h3>
+        <ReactMarkdown
+          source={instructions}
+          language='javascript'
+          renderers={{ code: CodeBlock }}/>
+      </section>}
+
+      { selectedTab === 'Resources' && <section className={styles.content}>
+        <ReactMarkdown
+          source={overview}
+          language='javascript'
+          renderers={{ code: CodeBlock }}
+        />
+        <h4>References</h4>
+        <ul>
+          {documentationList}
+        </ul>
+        <p>{video}</p>
+      </section>}
+      
     </main>
   );
 };
