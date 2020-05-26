@@ -1,0 +1,79 @@
+.alcherithmHeader{
+  margin-top: 15px;
+  color: black;
+  text-align: center;
+}
+
+.devs {
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+
+.dev {
+  font-size: 15px;
+  width: 20%;
+  margin: 30px;
+
+}
+
+.dev img {
+  display: block;
+  width: 80%;
+  border-radius: 90%;
+  margin: 0 auto;
+}
+
+.team-dev img {
+  display: block;
+  width: 3%;
+  border-radius: 90%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.links img{
+  /* display: block;*/
+  width: 12%;
+  border-radius: 90%;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  display: inline-flex;
+  text-align: right;
+}
+
+.icons {
+  max-width: 1rem;
+  display: flex;
+  margin: 10px auto;
+}
+
+
+.footer {
+  background-color: rgb(241, 239, 239);
+}
+
+.thanks {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 60px;
+  padding-left: 90px;
+  margin-top:5px;
+  background-color: rgb(250, 245, 241);
+  font-style: italic;
+}
+
+.para {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 14px;
+  background-color: rgb(250, 245, 241)
+  
+}
+
+
+
+
