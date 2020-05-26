@@ -44,7 +44,7 @@ const Challenge = () => {
   
   return (
     <section>
-      <h2>Cool Challenege Stuff</h2>
+      <h2>Cool Challenge Stuff</h2>
       <ChallengeDisplay {...challenge} {...challenge.resources} />
       <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} /><br></br>
       <Editor code={challenge.qunitTest} />
