@@ -17,23 +17,25 @@ const Header = () => {
   return (
     <>
       <header className={styles.Header}>
-        <h2><Link to='/'><img src={logo} />Alcherithm</Link></h2>
+        <h2 className={styles.Alcherithm}><Link to='/'><img src={logo} />Alcherithm</Link></h2>
         <nav>
           {user && 
           <>
-            <Link to='/'>Dashboard</Link>
-            <Link to='/challenges'>Challenges</Link>
-            <Link to='/history'>History</Link>
+            <Link className={styles.navLink} to='/'>Dashboard</Link>
+            <Link className={styles.navLink} to='/challenges'>Challenges</Link>
+            <Link className={styles.navLink} to='/history'>History</Link>
           </> }
           {!user && 
           <>
-            <Link to='/signup'>Sign Up</Link>
-            <Link to='/login'>Login</Link>
+            <Link className={styles.navLink} to='/signup'>Sign Up</Link>
+            <Link className={styles.navLink} to='/login'>Login</Link>
           </> }
-          <Link to='/about'>About</Link>
-          {user && <button type="button" onClick={logout}>Logout</button>}
+          <Link className={styles.navLink} to='/about'>About</Link>
         </nav>
-        {user && <h3>hello {user?.firstName}</h3>}
+        <div className={styles.User}>
+          {user && <h3>hello {user?.firstName}</h3>}
+        </div>
+        {user && <button type="button" onClick={logout}>Logout</button>}
       </header>
     </>
   );

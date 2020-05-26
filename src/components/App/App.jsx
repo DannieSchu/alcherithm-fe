@@ -10,7 +10,6 @@ import Challenge from '../../containers/Challenge.jsx';
 import History from '../History/History.jsx';
 import Splash from '../Splash/Splash.jsx';
 import { AuthProvider } from '../../hooks/AuthProvider.jsx';
-
 import PrivateRoute from '../Auth/PrivateRoute.jsx';
 
 export default function App() {
