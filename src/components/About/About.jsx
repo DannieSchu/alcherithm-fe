@@ -110,12 +110,6 @@ const About = () => {
 
         </div>
       </main>
-      {/* 
-      <footer className={styles.footer}>
-        <div className={styles.thanks}>
-            Air Supply would like to extend a special thanks to Everest Pimpkin. Without their mission of compiling a compendium of artist residencies around the globe—and their further willingness to share that information—this project would not have been possible. 
-        </div>
-      </footer> */}
     </>
   );
 
