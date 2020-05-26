@@ -1,9 +1,29 @@
+a {
+    text-decoration: none;
+  }
+  
+  a:link {
+    color: white;
+  }
+  
+  a:visited {
+    color: white;
+  }
+  
+  a:hover {
+    color: hotpink;
+  }
+  
+  a:active {
+    color: hotpink;
+  }
+
 .Header {
     display: flex;
     align-items: center;
     background-color: rgba(48, 198, 232, 0.6);
     color: whitesmoke;
-    width: 100vw;
+    width: 100%;
     margin-bottom: 25px;
 
     img {
@@ -13,4 +33,23 @@
     h2 {
         text-decoration: none;
     }
+
+    .navLink {
+        margin-right: 1rem;
+    }
+
+}
+
+.User {
+    margin-right: .5rem;
+}
+
+.Alcherithm {
+    a:hover {
+        color: white;
+      }
+      
+      a:active {
+        color: white;
+      }
 }
