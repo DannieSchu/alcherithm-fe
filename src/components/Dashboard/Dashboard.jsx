@@ -14,7 +14,7 @@ const Dashboard = () => {
   );
 
   return (
-    <section className={styles.CodeChallenges}>
+    <section className={styles.Dashboard}>
       <h2>Dashboard goes here</h2>
 
       <Link to="/challenges">
