@@ -6,21 +6,13 @@ import { useGetChallenges } from '../../hooks/getChallenges';
 import { useLoading } from '../../hooks/AuthProvider';
 import { fetchUserChallengesWithSolutions } from '../../services/solutionsAPI';
 import styles from '../CodeChallenges/CodeChallenges.css';
+import { useToggleSolutions } from '../../hooks/toggleSolutions';
 
 const History = () => {
   const loading = useLoading();
   const { selectedChallenges, setCategory } = useGetChallenges(fetchUserChallengesWithSolutions);
-  const [selectedSolutions, setSelectedSolutions] = useState([]);
-  const [visible, setVisibility] = useState(false);
 
-  const togglePopUp = () => {
-    setVisibility(!visible);
-  };
-
-  const handleClick = solutions => {
-    setSelectedSolutions(solutions.map(solution => solution.solution));
-    togglePopUp();
-  };
+  const { visible, selectedSolutions, togglePopUp, handleClick } = useToggleSolutions();
 
   const codeElements = selectedChallenges.map((challenge) => (
     <li key={challenge._id}>
@@ -34,7 +26,7 @@ const History = () => {
       <h2>loading...</h2>
     </section>
   );
-  
+
   return (
     <section className={styles.CodeChallenges}>
       <Dropdown setCategory={setCategory} />
