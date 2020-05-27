@@ -29,9 +29,11 @@ const Results = () => {
         </Button>
       </Link>
 
-      <Button>
-        <button>More Solutions</button>
-      </Button>
+      <Link to="/history">
+        <Button>
+          <button>History</button>
+        </Button>
+      </Link>
     </main>
   );
 };
