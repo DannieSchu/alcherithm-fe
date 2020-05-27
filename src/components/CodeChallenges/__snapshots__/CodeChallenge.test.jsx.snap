@@ -12,5 +12,13 @@ exports[`CodeChallenge component renders CodeChallenge 1`] = `
   <p>
     Write a function named greeting that takes in a string and returns the string in all uppercase lette...
   </p>
+  <div>
+    <h4>
+      ✔
+    </h4>
+    <h4>
+      03/02/20
+    </h4>
+  </div>
 </section>
 `;
