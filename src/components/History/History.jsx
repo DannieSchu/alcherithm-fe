@@ -15,7 +15,7 @@ const History = () => {
 
   const codeElements = selectedChallenges.map((challenge) => (
     <li key={challenge._id}>
-      <CodeChallenge {...challenge} />
+      <CodeChallenge {...challenge} char={300} />
       <button onClick={() => handleClick(challenge.solutions)}>Your Solutions</button>
     </li>
   ));
@@ -28,11 +28,14 @@ const History = () => {
 
   return (
     <section className={styles.CodeChallenges}>
-      <Dropdown setCategory={setCategory} />
-      {visible && <PopUp toggle={togglePopUp} solutions={selectedSolutions} />}
-      <ul>
-        {codeElements}
-      </ul>
+      <article>
+        <h1>Completed Challenges</h1>
+        <Dropdown setCategory={setCategory} />
+        {visible && <PopUp toggle={togglePopUp} solutions={selectedSolutions} />}
+        <ul className={`${styles.CodeChallenges} ${styles.column}`}>
+          {codeElements}
+        </ul>
+      </article>
     </section>
   );
 };

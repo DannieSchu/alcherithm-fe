@@ -12,7 +12,7 @@ const CodeChallenges = () => {
   const codeElements = selectedChallenges.map(challenge => (
     <li key={challenge._id}>
       <Link to={`/challenges/${challenge._id}`}>
-        <CodeChallenge {...challenge} />
+        <CodeChallenge {...challenge} char={100} />
       </Link>
     </li>
   ));
@@ -21,7 +21,7 @@ const CodeChallenges = () => {
     <section className={styles.CodeChallenges}>
       <Dropdown setCategory={setCategory} />
       {loading && <h3>Loading</h3>}
-      <ul>
+      <ul className={`${styles.CodeChallenges} ${styles.row}`}>
         {codeElements}
       </ul>
     </section>
