@@ -2,8 +2,6 @@ import { get } from './request';
 
 export const fetchUserSolutionsToChallenge = (challengeId, userId) => get(`/api/v1/solutions?challengeId=${challengeId}&userId=${userId}`);
 
-// PREVIOUS SERVICE NAME:
-// export const fetchChallengesWithSolutions = challengeId => get(`/api/v1/solutions?challengeId=${challengeId}`);
 export const fetchAllSolutionsToChallenge = challengeId => get(`/api/v1/solutions?challengeId=${challengeId}`);
 
 // PREVIOUS SERVICE NAME:
@@ -16,4 +14,7 @@ export const fetchUserChallengesWithSolutions = userId => get(`/api/v1/solutions
     instructions: challenge.challenge.instructions,
     solutions: challenge.solutions
   })));
+
+export const fetchResults = solutionId => get(`/api/v1/solutions/results/${solutionId}`);
+export const fetchUserChallengesWithSolutions = userId => get(`/api/v1/solutions?userId=${userId}`);
 

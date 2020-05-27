@@ -22,7 +22,7 @@ const PopUp = ({ toggle, solutions }) => {
 };
 
 PopUp.propTypes = {
-  solutions: PropTypes.array.isRequired,
+  solutions: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   toggle: PropTypes.func.isRequired
 };
 
