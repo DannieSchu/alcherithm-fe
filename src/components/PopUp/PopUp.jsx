@@ -6,7 +6,7 @@ import styles from './PopUp.css';
 const PopUp = ({ toggle, solutions }) => {
   const solutionElements = solutions.map((solution, i) => (
     <div key={i} >
-      <Editor code={solution} />
+      <Editor code={solution} readOnly={true} />
     </div>
   ));
 
