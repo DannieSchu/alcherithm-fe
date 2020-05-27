@@ -1,26 +1,24 @@
 import { useState, useEffect } from 'react';
-import { fetchChallengesWithSolutions } from '../services/challengesAPI';
+import { fetchResults } from '../services/solutionsAPI';
 import { useParams } from 'react-router-dom';
 
 export const useGetSolutions = () => {
-  //get current solution state
-  const [userSolution, setUserSolution] = useState('');
-  //get a solution for this challenge from database.
+  //get all solutions by challengeId and userId state
+  const [userSolutions, setUserSolutions] = useState([]);
+  //get a single solution for this challenge from database.
   const [sampleSolution, setSampleSolution] = useState('');
 
-  const { challengeId } = useParams();
-
-  //handleSubmit 
+  const { id } = useParams(id);
 
   useEffect(() => {
   // grab our service call to fetch challenges with solutions. 
-  //Update this service call. 
-    fetchChallengesWithSolutions(challengeId)
-      .then(fetchedSolutions => {
-        setSampleSolution(fetchedSolutions[0].solution);
+  //update this service call. 
+    fetchResults(id)
+      .then(({ userSolutions, suggestedSolution }) => {
+        setUserSolutions(userSolutions);
+        setSampleSolution(suggestedSolution.solution);
       });
   }, []);
 
-  
-
+  return { userSolutions, sampleSolution };
 };

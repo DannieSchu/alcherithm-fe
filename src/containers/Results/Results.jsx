@@ -1,22 +1,27 @@
 import React from 'react';
 import styles from './Results.css';
-// import { useParams } from 'react-router-dom';
+import { useGetSolutions } from '../../hooks/getSolutions';
 
 
 const Results = () => {
-  // const { } = useGetSolutions();
+  const { userSolutions, sampleSolution } = useGetSolutions();
 
-  // const { id } = useParams();
+  const solutionElements = userSolutions.map(userSolution => (
+    <li key={userSolution._id}>
+      {userSolution.solution}
+      {/* {userSolution.passed} */}
+      {userSolution.updatedAt}
+    </li>
+  ));
 
   return (
     <main className={styles.Results}>
       <section>
-        {/*
-        usersCurrentSolution */}
+        {solutionElements}
       </section>
-      <section>
-        {/* anotherSolution */}
-      </section>
+      <div>
+        {sampleSolution }
+      </div>
     </main>
   );
 };

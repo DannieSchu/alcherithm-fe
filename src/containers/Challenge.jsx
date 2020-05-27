@@ -3,7 +3,7 @@ import Editor from '../components/Editors/Editor.jsx';
 import Tester from '../components/QUnit/QUnit.jsx';
 import ChallengeDisplay from '../components/ChallengeDisplay/ChallengeDisplay.jsx';
 import { fetchChallengeById } from '../services/challengesAPI.js';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { post } from '../services/request.js';
 
 const Challenge = () => {
@@ -12,6 +12,7 @@ const Challenge = () => {
   const [passed, setPassed] = useState(false);
 
   const { id } = useParams();
+  const history = useHistory();
 
   useEffect(() => {
     fetchChallengeById(id)
@@ -37,7 +38,7 @@ const Challenge = () => {
       // can't go to this page if not logged in
       solution: challenge.starterCode
     })
-      .then(history.push('/results/solution/:id'));
+      .then(solution => history.push(`/results/solution/${solution._id}`));
   };
 
   if(!challenge)
