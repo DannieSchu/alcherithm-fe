@@ -13,7 +13,7 @@ const ChallengeDisplay = ({ category, challengeNumber, instructions, overview, d
 
   const documentationList = documentation.map((link, i) => (
     <li key={i}>
-      <a href={link}>{link}</a>
+      <a href={link} target="_blank" rel="noopener noreferrer">{link}</a>
     </li>));
 
   return (
