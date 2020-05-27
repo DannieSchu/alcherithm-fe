@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './CodeChallenge.css';
 
-const CodeChallenge = ({ category, challengeNumber, instructions, solutions }) => {
-  const slicedInstructions = `${instructions.slice(0, 100)}...`;
+const CodeChallenge = ({ category, challengeNumber, instructions, solutions, char }) => {
+  const slicedInstructions = `${instructions.slice(0, char)}...`;
   const icon = solutions[0].passed ? '✔' : '✖️';
 
   return (
@@ -22,7 +22,8 @@ CodeChallenge.propTypes = {
   solutions: PropTypes.arrayOf(PropTypes.shape({
     passed: PropTypes.boolean,
     date: PropTypes.string
-  }))
+  })),
+  char: PropTypes.number.isRequired
 };
 
 export default CodeChallenge;
