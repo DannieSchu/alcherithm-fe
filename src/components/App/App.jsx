@@ -9,6 +9,7 @@ import CodeChallenges from '../CodeChallenges/CodeChallenges.jsx';
 import Challenge from '../../containers/Challenge.jsx';
 import History from '../History/History.jsx';
 import Splash from '../Splash/Splash.jsx';
+import Results from '../../containers/Results/Results.jsx';
 import { AuthProvider } from '../../hooks/AuthProvider.jsx';
 import PrivateRoute from '../Auth/PrivateRoute.jsx';
 
@@ -16,7 +17,7 @@ export default function App() {
   return (
     <Router>
       <AuthProvider>
-        <Route path={/^(?!.*(\/splash)).*$/} component={Header} /> 
+        <Route path={/^(?!.*(\/splash)).*$/} component={Header} />
         <Switch>
           <Route exact path='/signup' component={SignUp} />
           <Route exact path='/login' component={Login} />
@@ -25,6 +26,7 @@ export default function App() {
           <PrivateRoute exact path='/' component={Dashboard} />
           <PrivateRoute exact path='/challenges' component={CodeChallenges} />
           <PrivateRoute exact path='/challenges/:id' component={Challenge} />
+          <PrivateRoute exact path='/results/solution/:id' component={Results} />
           <PrivateRoute exact path='/history' component={History} />
         </Switch>
       </AuthProvider>
