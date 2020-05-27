@@ -1,35 +1,36 @@
 import React, { useState } from 'react';
-import { useLogin, useError, useLoading } from '../../hooks/AuthProvider';
-import { useHistory, Link } from 'react-router-dom';
+import { useLogin, useError, useLoading, useCurrentUser } from '../../hooks/AuthProvider';
+import { useHistory, Link, Redirect } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const history = useHistory();
+  const user = useCurrentUser();
   const login = useLogin();
+  const error = useError();
+  const loading = useLoading();
+
+  if(user) return <Redirect to = '/' />;
 
   const handleChange = ({ target }) => {
     if(target.name === 'email') setEmail(target.value);
     if(target.name === 'password') setPassword(target.value);
   };
 
-  const error = useError();
-  const loading = useLoading();
+
 
   const handleLoginSubmit = async(event) => {
-    event.preventDefault();
-    await login(email, password);
-    if(error){
-      alert('Incorrect Username / Password');} else {
-      history.push('/');}
-
-    // .then (() => history.push('/'))
-    // .catch((error) => {
-    //   alert('Incorrect Username / Password');
-    //   console.log(error);
-    // });
+    event.preventDefault(); 
+    login(email, password); 
   };
+
+  // const handleLoginSubmit = event => {
+  //   event.preventDefault();
+  //   login(email, password)
+  //     .then (() => history.push('/'));
+  // };
 
   if(loading) return (
     <section>

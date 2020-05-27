@@ -46,7 +46,7 @@ const Challenge = () => {
     <section className={styles.Challenge}>
       <ChallengeDisplay {...challenge} {...challenge.resources} />
       <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} /><br></br>
-      <Editor code={challenge.qunitTest} />
+      <Editor code={challenge.qunitTest} readOnly={true} />
       <button onClick={onClick}>Run</button> 
       <button onClick={onSubmit}>Submit</button>
       <Tester tests={runCode} setPassed={setPassed} />
