@@ -10,7 +10,7 @@ const CodeChallenge = ({ category, challengeNumber, instructions, solutions, cha
     <section className={styles.CodeChallenge}>
       <h3>{category} {challengeNumber}</h3>
       <p>{slicedInstructions}</p>
-      {solutions[0]?.date && <div><h4>{icon}</h4><h4>{solutions[0].date}</h4></div>}
+      {solutions[0].date && <div><h4>{icon}</h4><h4>{solutions[0].date}</h4></div>}
     </section>
   );
 };

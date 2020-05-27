@@ -21,7 +21,7 @@ const CodeChallenges = () => {
     <section className={styles.CodeChallenges}>
       <Dropdown setCategory={setCategory} />
       {loading && <h3>Loading</h3>}
-      <ul className={`${styles.CodeChallenges} ${styles.row}`}>
+      <ul className={styles.row}>
         {codeElements}
       </ul>
     </section>

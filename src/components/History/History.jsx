@@ -32,7 +32,7 @@ const History = () => {
         <h1>Completed Challenges</h1>
         <Dropdown setCategory={setCategory} />
         {visible && <PopUp toggle={togglePopUp} solutions={selectedSolutions} />}
-        <ul className={`${styles.CodeChallenges} ${styles.column}`}>
+        <ul className={styles.column}>
           {codeElements}
         </ul>
       </article>
