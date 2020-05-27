@@ -18,17 +18,19 @@ const Dashboard = () => {
       <section>
         <h2>Placeholder for Data Viz</h2>
       </section>
-      <Link to="/challenges">
-        <Button>
-          <p>Find a Challenge</p>
-        </Button>
-      </Link>
+      <section>
+        <Link to="/challenges">
+          <Button>
+            <p>Find a Challenge</p>
+          </Button>
+        </Link>
 
-      <Link to="/history">
-        <Button>
-          <p>View Completed Challenges</p>
-        </Button>
-      </Link>
+        <Link to="/history">
+          <Button>
+            <p>View Completed Challenges</p>
+          </Button>
+        </Link>
+      </section>
     </main>
   );
 
