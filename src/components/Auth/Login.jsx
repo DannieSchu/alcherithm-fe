@@ -17,10 +17,18 @@ const Login = () => {
   const error = useError();
   const loading = useLoading();
 
-  const handleLoginSubmit = event => {
+  const handleLoginSubmit = async(event) => {
     event.preventDefault();
-    login(email, password)
-      .then (() => history.push('/'));
+    await login(email, password);
+    if(error){
+      alert('Incorrect Username / Password');} else {
+      history.push('/');}
+
+    // .then (() => history.push('/'))
+    // .catch((error) => {
+    //   alert('Incorrect Username / Password');
+    //   console.log(error);
+    // });
   };
 
   if(loading) return (
