@@ -46,7 +46,6 @@ const SignUp = () => {
 
   return (
     <>
-
       <form onSubmit={handleSignUpSubmit}>
         <input type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
 
