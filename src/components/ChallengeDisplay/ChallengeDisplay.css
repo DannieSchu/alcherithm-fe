@@ -1,0 +1,39 @@
+.ChallengeDisplay {
+
+    .tabs {
+        margin: 0rem;
+        background-color: white;
+
+        input[type="radio"] {
+            display: none;
+        }
+        
+        label {
+            font-family: monospace;
+            display: inline;
+            padding: 0.75rem;
+            margin: 0 0.08rem;
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+            background-color:rgb(230, 228, 228);
+            box-shadow: 0 4px 2px rgba(0, 0, 0, 0.125);
+        }
+        
+        .active {
+            border-bottom: 1px solid rgb(230, 228, 228);
+            font-weight: bolder;
+            box-shadow: none;
+        }
+    }
+
+    .content {
+        background-color:rgb(230, 228, 228);
+        margin-top: 0.75rem;
+
+        h3 {
+            margin: 0rem;
+        }
+    }
+
+
+}

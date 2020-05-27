@@ -5,6 +5,7 @@ import ChallengeDisplay from '../components/ChallengeDisplay/ChallengeDisplay.js
 import { fetchChallengeById } from '../services/challengesAPI.js';
 import { useParams } from 'react-router-dom';
 import { post } from '../services/request.js';
+import styles from './Challenge.css';
 
 const Challenge = () => {
   const [runCode, setRunCode] = useState('');
@@ -31,10 +32,7 @@ const Challenge = () => {
   const onSubmit = () => {
     post('/api/v1/solutions', {
       challengeId: id,
-      // actually coming from the Qunit 
       passed,
-      // backend checks current user 
-      // can't go to this page if not logged in
       solution: challenge.starterCode
     });
   };
@@ -43,8 +41,7 @@ const Challenge = () => {
     return <h1>loading</h1>;
   
   return (
-    <section>
-      <h2>Cool Challenge Stuff</h2>
+    <section className={styles.Challenge}>
       <ChallengeDisplay {...challenge} {...challenge.resources} />
       <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} /><br></br>
       <Editor code={challenge.qunitTest} />
