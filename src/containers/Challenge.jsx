@@ -6,6 +6,7 @@ import { fetchChallengeById } from '../services/challengesAPI.js';
 import { useParams, useHistory } from 'react-router-dom';
 import { post } from '../services/request.js';
 import styles from './Challenge.css';
+import Button from '../components/Button/Button.jsx';
 
 const Challenge = () => {
   const [runCode, setRunCode] = useState('');
@@ -47,8 +48,8 @@ const Challenge = () => {
       <ChallengeDisplay {...challenge} {...challenge.resources} />
       <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} /><br></br>
       <Editor code={challenge.qunitTest} />
-      <button onClick={onClick}>Run</button> 
-      <button onClick={onSubmit}>Submit</button>
+      <Button buttonClass="primary" buttonText="Run" onClick={onClick} /> 
+      <Button buttonClass="primary" buttonText="Submit" onClick={onSubmit} />
       <Tester tests={runCode} setPassed={setPassed} />
     </section>
   );

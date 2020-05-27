@@ -1,0 +1,28 @@
+.primary {
+    
+    margin: 2rem;
+    width: 6.5em;
+    height: 3.5em;
+    background-color: #31e89f90;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 0.95rem;
+    box-shadow: 4px 7px 7px rgb(187, 186, 186);
+    border: 1px #31e89f90;
+    color: rgb(101, 101, 101);
+}
+
+.secondary {
+
+    margin: 2rem;
+    width: 35em;
+    height: 4.5em;
+    background-color: #31e89f90;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 0.95rem;
+    box-shadow: 4px 7px 7px rgb(187, 186, 186);
+    border: 1px #31e89f90;
+    color: rgb(101, 101, 101);
+}
+
+/* small button */
+

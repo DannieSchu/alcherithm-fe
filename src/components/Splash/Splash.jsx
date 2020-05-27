@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoading, useCurrentUser } from '../../hooks/AuthProvider';
 import { useHistory, Link } from 'react-router-dom';
-import logo from '../../assets/IconWhite.png';
+import logo from '../../assets/LogoWhiteDescription.png';
 import styles from './Splash.css';
 
 const Splash = () => {
@@ -19,15 +19,16 @@ const Splash = () => {
     history.push('/dashboard');
 
   return (
-    <>
-      <section className={styles.Splash}>
+    <body className={styles.Splash}>
+      <section>
         <img src={logo} />
-        <h2>Alcherithm</h2>
+        {/* <h2>Alcherithm</h2> */}
       </section>
-      <h2>Splash goes here</h2>
-      <Link to='/signup'>Sign Up</Link>
-      <Link to='/login'>Login</Link>
-    </>
+      <nav>
+        <Link to='/signup'>Sign Up</Link>
+        <Link to='/login'>Login</Link>
+      </nav>
+    </body>
 
   );
 

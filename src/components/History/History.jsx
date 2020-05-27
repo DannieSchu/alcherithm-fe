@@ -7,6 +7,7 @@ import { useLoading } from '../../hooks/AuthProvider';
 import { fetchUserChallengesWithSolutions } from '../../services/solutionsAPI';
 import { useToggleSolutions } from '../../hooks/toggleSolutions';
 import styles from '../CodeChallenges/CodeChallenges.css';
+import Button from '../Button/Button.jsx';
 
 const History = () => {
   const loading = useLoading();
@@ -16,7 +17,7 @@ const History = () => {
   const codeElements = selectedChallenges.map((challenge) => (
     <li key={challenge._id}>
       <CodeChallenge {...challenge} char={300} />
-      <button onClick={() => handleClick(challenge.solutions)}>Your Solutions</button>
+      <Button buttonClass="primary" buttonText="Your Solutions" onClick={() => handleClick(challenge.solutions)} />
     </li>
   ));
   
