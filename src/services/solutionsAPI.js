@@ -16,5 +16,3 @@ export const fetchUserChallengesWithSolutions = userId => get(`/api/v1/solutions
   })));
 
 export const fetchResults = solutionId => get(`/api/v1/solutions/results/${solutionId}`);
-export const fetchUserChallengesWithSolutions = userId => get(`/api/v1/solutions?userId=${userId}`);
-
