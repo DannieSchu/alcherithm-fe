@@ -75,7 +75,7 @@ const About = () => (
               <img src={linkedInIcon} alt="linkedin-icon" className={styles.icons}></img>
             </a> 
           </div>   
-          <p>MICHAEL ROMAY is a musician and an installation artist who makes weird digital visual and interactive art.  Code, music and art go hand in hand for him.  He also has a baby bird named Rico that is very sweet.</p>
+          <p>MICHAEL ROMAY is an installation artist and musician who makes weird digital visual and interactive art.  Code, music and art go hand in hand for him.  He also has a baby bird named Rico that is very sweet.</p>
         </div>
 
         <div className={styles.dev}>

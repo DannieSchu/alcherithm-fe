@@ -14,6 +14,13 @@ body {
     font-family: 'Open Sans';
   }
   
+  h1 {
+    font-family: 'Ubuntu Mono', monospace;
+    font-weight: 400;
+    font-size: 3rem;
+    margin: 0;
+  }
+
   h2 {
     font-family: 'Ubuntu Mono', monospace;
     font-weight: 400;

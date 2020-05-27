@@ -13,7 +13,7 @@ const ChallengeDisplay = ({ category, challengeNumber, instructions, overview, d
 
   const documentationList = documentation.map((link, i) => (
     <li key={i}>
-      <a href={link}>{link}</a>
+      <a href={link} target="_blank" rel="noopener noreferrer">{link}</a>
     </li>));
 
   return (
@@ -58,7 +58,7 @@ ChallengeDisplay.propTypes = {
   challengeNumber: PropTypes.number.isRequired,
   instructions: PropTypes.string.isRequired,
   overview: PropTypes.string.isRequired,
-  documentation: PropTypes.array.isRequired,
+  documentation: PropTypes.arrayOf(PropTypes.shape(PropTypes.string)).isRequired,
   video: PropTypes.string.isRequired
 };
 
