@@ -1,6 +1,8 @@
 import React from 'react';
-import styles from './Results.css';
+// import styles from './Results.css';
 import { useGetSolutions } from '../../hooks/getSolutions';
+import { Link } from 'react-router-dom';
+import { Button } from 'semantic-ui-react';
 
 
 const Results = () => {
@@ -9,19 +11,27 @@ const Results = () => {
   const solutionElements = userSolutions.map(userSolution => (
     <li key={userSolution._id}>
       {userSolution.solution}
-      {/* {userSolution.passed} */}
       {userSolution.updatedAt}
     </li>
   ));
 
   return (
-    <main className={styles.Results}>
+    <main>
       <section>
-        {solutionElements}
+        <ul>{solutionElements}</ul>
       </section>
-      <div>
-        {sampleSolution }
-      </div>
+      <section>
+        {sampleSolution}
+      </section>
+      <Link to="/challenges">
+        <Button>
+          <button>New Challenge</button>
+        </Button>
+      </Link>
+
+      <Button>
+        <button>More Solutions</button>
+      </Button>
     </main>
   );
 };
