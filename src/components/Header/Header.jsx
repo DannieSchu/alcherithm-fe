@@ -2,12 +2,15 @@ import React from 'react';
 import styles from './Header.css';
 import logo from '../../assets/IconWhite.png';
 import { Link } from 'react-router-dom';
-import { useLogout, useCurrentUser, useLoading } from '../../hooks/AuthProvider';
+import { useLogout, useCurrentUser, useLoading, useUserPassed } from '../../hooks/AuthProvider';
 
 const Header = () => {
   const logout = useLogout();
   const user = useCurrentUser();
   const loading = useLoading();
+  const passed = useUserPassed();
+
+  console.log(passed);
   
   if(loading) return null;
   
@@ -31,6 +34,7 @@ const Header = () => {
         </nav>
         <div className={styles.User}>
           {user && <h3>hello {user?.firstName}</h3>}
+          {/* {passed && <h3>Total Passed: {passed?}</h3>} */}
         </div>
         {user && <button type="button" onClick={logout}>Logout</button>}
       </header>

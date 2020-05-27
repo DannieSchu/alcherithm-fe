@@ -1,7 +1,8 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { postSignup, postLogin, getLogout, getVerify } from '../services/authAPI';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
+import { getUserPassFailAttempted } from '../services/userAPI';
 
 const AuthContext = createContext();
 
@@ -9,13 +10,29 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [passed, setPassed] = useState(null);
+  const [failed, setFailed] = useState(null);
+  const [attempted, setAttempted] = useState(null)''
+  const [total, setTotal] = useState(null);
   
   const history = useHistory();
+
+  const { id } = useParams(id);
 
   useEffect(() => {
     getVerify()
       .then(user => setUser(user))
       .finally(() => setLoading(false));
+  }, []);
+
+  useEffect(() => {
+    getUserPassFailAttempted(id)
+      .then(({ passed, failed, attempted, totalNumberOfChallenges }) => {
+        setPassed(passed);
+        setFailed(failed);
+        setAttempted(attempted);
+        setTotal(totalNumberOfChallenges);
+      });
   }, []);
 
   const signup = (email, password, firstName, lastName, cohort, avatar) => {
@@ -41,7 +58,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, signup, login, logout, error, loading }}>
+    <AuthContext.Provider value={{ user, signup, login, logout, error, loading, passed, failed, attempted, total }}>
       {children}
     </AuthContext.Provider>
   );
@@ -79,4 +96,24 @@ export const useError = () => {
 export const useLoading = () => {
   const { loading } = useContext(AuthContext);
   return loading;
+};
+
+export const useUserPassed = () => {
+  const { passed } = useContext(AuthContext);
+  return passed;
+};
+
+export const useUserFailed = () => {
+  const { failed } = useContext(AuthContext);
+  return failed;
+};
+
+export const useUserAttempted = () => {
+  const { attempted } = useContext(AuthContext);
+  return attempted;
+};
+
+export const useUserTotal = () => {
+  const { total } = useContext(AuthContext);
+  return total;
 };
