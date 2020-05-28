@@ -1,0 +1,58 @@
+.inputForm {
+  padding: 1rem 1rem;
+  line-height: .5rem;
+  border: dotted .1vw rgb(197, 197, 197);
+  border-radius: 1rem;
+  font-size: 1rem;
+  margin: auto;
+}
+
+.formWrap {
+  display: flex;
+  margin: auto;
+  justify-items: center;
+  border: solid .1vw rgb(197, 197, 197);
+  border-radius: 1rem;
+  width: 50%;
+  margin-bottom: 1rem;
+}
+
+.errorDisplay {
+  display: flex;
+  margin: auto;
+  justify-items: center;
+  width: 50%;
+  margin-top: -1rem;
+  padding-left: .5rem;
+  color: red;
+}
+
+.needAccount {
+  display: flex;
+  margin: auto;
+  justify-items: center;
+  width: 50%;
+  margin-top: -.5rem;
+  padding-left: .5rem;
+
+  a {
+    margin-left: .5rem;
+    color: var(--main-blue);
+  }
+
+  a:link {
+    color: var(--main-blue);
+  }
+
+  a:visited {
+    color: var(--main-blue);
+  }
+
+  a:hover {
+    color: hotpink;
+  }
+
+  a:active {
+    color: hotpink;
+  }
+}
