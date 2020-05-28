@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import { useLoading, useCurrentUser } from '../../hooks/AuthProvider';
 import ProgressBar from '../ProgressBar/ProgressBar';
-import SuccessChart from '../Chart.js/SuccessChart';
+import SuccessChart from '../Charts/SuccessChart';
 import styles from './Dashboard.css'; 
 // import PieChart from '../Chart.js/chart.js';
 
