@@ -1,0 +1,34 @@
+@import '../../styles/variables.css';
+
+.primary {
+  border: 2px solid var(--white);  
+  color: var(--white);
+  background-color: var(--green);
+  
+  font-family: var(--body-font);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+
+  &:hover {
+    box-shadow: var(--dark-blue-box-shadow);
+    background-color: var(--secondary-blue);
+}
+}
+
+.secondary {
+  border: 2px solid var(--white);  
+  color: var(--white);
+  background-color: var(--main-blue);
+  
+  font-family: var(--body-font);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+  
+  &:hover {
+    box-shadow: var(--dark-blue-box-shadow);
+    background-color: var(--secondary-blue);
+    /*background-color: var(--green);*/
+  }
+}
