@@ -1,10 +1,9 @@
 import React from 'react';
-// import styles from './Results.css';
-import { useGetSolutions } from '../../hooks/getSolutions';
 import { Link } from 'react-router-dom';
-// import { Button } from 'semantic-ui-react';
 import Editor from '../Editors/Editor';
 import Button from '../Button/Button';
+import { useGetSolutions } from '../../hooks/getSolutions';
+// import styles from './Results.css';
 
 const Results = () => {
   const { userSolutions, sampleSolution } = useGetSolutions();
@@ -14,6 +13,7 @@ const Results = () => {
       {userSolution.updatedAt}
     </li>
   ));
+  
   return (
     <main>
       <section>
@@ -33,4 +33,5 @@ const Results = () => {
     </main>
   );
 };
+
 export default Results;
