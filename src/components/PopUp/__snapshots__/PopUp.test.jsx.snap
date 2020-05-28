@@ -32,6 +32,7 @@ exports[`PopUp component renders PopUp 1`] = `
     return arr;
     };
     "
+        readOnly={true}
       />
     </div>
     <div
@@ -53,6 +54,7 @@ exports[`PopUp component renders PopUp 1`] = `
     return arr;
     };
     "
+        readOnly={true}
       />
     </div>
     ;

@@ -20,6 +20,7 @@ export const AuthProvider = ({ children }) => {
 
   const signup = (email, password, firstName, lastName, cohort, avatar) => {
     setLoading(true);
+    setError(null);
     return postSignup(email, password, firstName, lastName, cohort, avatar)
       .then(user => setUser(user))
       .catch(error => setError(error))
@@ -28,6 +29,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = (email, password) => {
     setLoading(true);
+    setError(null);
     return postLogin(email, password)
       .then(user => setUser(user))
       .catch(error => setError(error))
@@ -35,8 +37,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = (user) => {
+    setUser(null);
     return getLogout(user)
-      .then(() => setUser(null))
       .then(history.push('/login'));
   };
 

@@ -9,7 +9,7 @@ import CodeChallenges from '../CodeChallenges/CodeChallenges.jsx';
 import Challenge from '../../containers/Challenge.jsx';
 import History from '../History/History.jsx';
 import Splash from '../Splash/Splash.jsx';
-import Results from '../../containers/Results/Results.jsx';
+import Results from '../Results/Results.jsx';
 import { AuthProvider } from '../../hooks/AuthProvider.jsx';
 import PrivateRoute from '../Auth/PrivateRoute.jsx';
 

@@ -50,7 +50,6 @@ const Challenge = () => {
       <Editor code={challenge.qunitTest} />
       <Button buttonStyle="secondary" buttonSize="medium" buttonText="Run" onClick={onClick} />
       <Button buttonStyle="primary" buttonSize="medium" buttonText="Submit" onClick={onSubmit} />
-
       <Tester tests={runCode} setPassed={setPassed} />
     </section>
   );

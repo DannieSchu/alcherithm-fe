@@ -6,7 +6,7 @@ import 'ace-builds/src-noconflict/mode-javascript';
 import 'ace-builds/src-noconflict/theme-monokai';
 import 'ace-builds/src-noconflict/ext-language_tools.js';
 
-const Editor = ({ code, handleCodeChange }) => {
+const Editor = ({ code, handleCodeChange, readOnly = false }) => {
 // dynamically pass in the code 
 
   return (
@@ -29,13 +29,15 @@ const Editor = ({ code, handleCodeChange }) => {
         showLineNumbers: true,
         tabSize: 2,
         maxLines: 15,
+        readOnly
       }}/>
   );
 };
 
 Editor.propTypes = {
   code: PropTypes.string.isRequired,
-  handleCodeChange: PropTypes.func
+  handleCodeChange: PropTypes.func,
+  readOnly: PropTypes.bool
 //   not required so you can use this for the code and the test
 };
 
