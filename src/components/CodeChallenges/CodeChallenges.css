@@ -55,7 +55,13 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    max-width: 120em;
-    min-width: 40em;
+    max-width: 100em;
+    min-width: 50em;
+    min-height: 15em;
+    padding: 2rem;
+
+    section {
+      width: 75%;
+    }
   }
 }
