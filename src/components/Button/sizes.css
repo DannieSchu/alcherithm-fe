@@ -1,5 +1,3 @@
-@import '../../styles/variables.css';
-
 .large {
   padding: 2rem;
   font-family: var(--display-font);

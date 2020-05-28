@@ -64,7 +64,7 @@ ChallengeDisplay.propTypes = {
   challengeNumber: PropTypes.number.isRequired,
   instructions: PropTypes.string.isRequired,
   overview: PropTypes.string.isRequired,
-  documentation: PropTypes.arrayOf(PropTypes.shape(PropTypes.string)).isRequired,
+  documentation: PropTypes.arrayOf(PropTypes.string).isRequired,
   video: PropTypes.string.isRequired
 };
 
