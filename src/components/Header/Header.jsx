@@ -14,8 +14,16 @@ const Header = () => {
   return (
     <>
       <header className={styles.Header}>
-        <h2 className={styles.Alcherithm}><Link to='/'><img src={logo} />Alcherithm</Link></h2>
-        <nav>
+      
+        <Link className={styles.logotext} to='/'><h2>Alcherithm</h2></Link><Link className={styles.image} to='/'><img className={styles.image} src={logo} /></Link>
+
+        <div className={styles.User}>
+          {user && <h3>hello {user?.firstName}</h3>}
+          <h4>Successful Challenges: 20 / 68</h4>
+          
+        </div>
+
+        <nav className={styles.navbar}>
           {user && 
           <>
             <Link className={styles.navLink} to='/'>Dashboard</Link>
@@ -28,11 +36,14 @@ const Header = () => {
             <Link className={styles.navLink} to='/login'>Login</Link>
           </> }
           <Link className={styles.navLink} to='/about'>About</Link>
+          {user &&
+          <>
+            <Link className={styles.navLink} onClick={logout}>Logout</Link>
+          </>
+          }
         </nav>
-        <div className={styles.User}>
-          {user && <h4>hello {user?.firstName}</h4>} <h4>Successful Challenges: 20 / 68</h4>
-        </div>
-        {user && <button type="button" onClick={logout}>Logout</button>}
+        
+        
       </header>
     </>
   );
