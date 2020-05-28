@@ -33,7 +33,7 @@ const Header = () => {
         <div className={styles.User}>
           {user && <h3>hello {user?.firstName}</h3>}
         </div>
-        {user && <Button buttonStyle="secondary" buttonText="Logout" buttonSize="medium" onClick={logout} />}
+        {user && <Button buttonStyle="secondary" backgroundColor="mainBlue" buttonText="Logout" buttonSize="small" onClick={logout} />}
       </header>
     </>
   );
