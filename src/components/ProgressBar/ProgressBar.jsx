@@ -8,6 +8,7 @@ const ProgressBar = () => {
 
   return (
     <div className={styles.ProgressBar}>
+      Total number of completed challenges
       <progress max={total} value={attempted}></progress>
     </div>
   );
