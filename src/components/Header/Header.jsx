@@ -3,13 +3,13 @@ import styles from './Header.css';
 import Button from '../Button/Button';
 import logo from '../../assets/IconWhite.png';
 import { Link } from 'react-router-dom';
-import { useLogout, useCurrentUser, useLoading } from '../../hooks/AuthProvider';
+import { useLogout, useCurrentUser, useLoading, useUserPassed } from '../../hooks/AuthProvider';
 
 const Header = () => {
   const logout = useLogout();
   const user = useCurrentUser();
   const loading = useLoading();
-
+  const passed = useUserPassed();
   if(loading) return null;
 
   return (
@@ -32,6 +32,7 @@ const Header = () => {
         </nav>
         <div className={styles.User}>
           {user && <h3>hello {user?.firstName}</h3>}
+          {passed && <h3>Total Passed: {passed}</h3>}
         </div>
         {user && <Button buttonStyle="secondary" backgroundColor="mainBlue" buttonText="Logout" buttonSize="small" onClick={logout} />}
       </header>
