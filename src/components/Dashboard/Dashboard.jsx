@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
-import { useLoading } from '../../hooks/AuthProvider';
+import { useLoading, useCurrentUser } from '../../hooks/AuthProvider';
 import styles from './Dashboard.css'; 
 import PieChart from '../Chart.js/chart.js';
 
 const Dashboard = () => {
   const loading = useLoading();
+  const user = useCurrentUser();
   
   if(loading) return (
     <section>
@@ -17,8 +18,13 @@ const Dashboard = () => {
   return (
     <main className={styles.Dashboard}>
       <section>
-        <PieChart />
+        <h2>Welcome, {user.firstName} to your Dashboard!</h2>
+        <h3>Cohort: {user.cohort}</h3>
+
+        {/* <PieChart /> */}
+        
       </section>
+
       <section>
         <Link to="/challenges">
           <Button buttonStyle="primary" backgroundColor="green" buttonSize="large" buttonText="Find a Challenge" />
