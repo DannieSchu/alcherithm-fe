@@ -18,15 +18,15 @@ const Results = () => {
 
   return (
     <main className={styles.Results}>
-      <section>
+      <section className={styles.userName}>
         <h3>Nice Work, {user.firstName}!</h3>
       </section>
-      <section>
+      <section className={styles.editors}>
         <ul>
           {solutionElements} 
         </ul>
       </section>
-      <section>
+      <section className={styles.editors}>
         <Editor code={sampleSolution} readOnly={true} />
       </section>
       <Link to="/challenges">

@@ -1,4 +1,23 @@
 .Results {
+  display: flex;
+  
+  li {
+    list-style-type: none;
+  }
+  
+  .userName {
+    display: flex;
+   
+  }
 
+  .editors {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     
+  }
+
+
+  
+
 }
