@@ -39,7 +39,7 @@ const Header = () => {
           <Link className={styles.navLink} to='/about'>About</Link>
           {user &&
           <>
-            <Link className={styles.navLink} onClick={logout}>Logout</Link>
+            <Link onClick={logout}>Logout</Link>
           </>
           }
         </nav>
