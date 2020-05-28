@@ -47,19 +47,30 @@ const Challenge = () => {
     <section className={styles.Challenge}>
       <section className={styles.overview}>
         <ChallengeDisplay {...challenge} {...challenge.resources} />
-        <h3>Test</h3>
-        <article>
-          <Editor code={challenge.qunitTest} />
-          <Button buttonStyle="primary" backgroundColor="green" buttonSize="small" buttonText="Run" onClick={onClick} />
-        </article>
+        <section className={styles.testResults}>
+          <article>
+            <div>
+              <h3>Test Results</h3>
+              <Tester className={styles.testResults} tests={runCode} setPassed={setPassed} />
+            </div>
+            <Button buttonStyle="primary" buttonSize="medium" backgroundColor="green" buttonText="Submit" onClick={onSubmit} />
+          </article>
+        </section>
       </section>
       <section className={styles.solution}>
-        <h3>Starter Code</h3>
-        <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} />
-        <Tester tests={runCode} setPassed={setPassed} />
-        <div className={styles.button}>
-          <Button buttonStyle="primary" buttonSize="medium" backgroundColor="mainBlue" buttonText="Submit" onClick={onSubmit} />
-        </div>
+        <section className={styles.tabs}>
+          <input type="radio" id="solution" />
+          <label htmlFor="solution" >Challenge</label>
+        </section>
+        <section className={styles.content}>
+          <h3>Starter Code</h3>
+          <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} />
+          <article>
+            <h3>Test</h3>
+            <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="small" buttonText="Run" onClick={onClick} />
+          </article>
+          <Editor code={challenge.qunitTest} />
+        </section>
       </section>
     </section>
   );

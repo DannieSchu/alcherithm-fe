@@ -29,11 +29,12 @@
     .content {
         background-color: var(--muted-gray);
         margin-top: 0.75rem;
-        width: 40vw;
         min-width: 37rem;
         padding: 1rem;
         overflow: scroll;
         height: 24rem;
+        border-top: .9rem solid var(--muted-gray);
+        border-bottom: .9rem solid var(--muted-gray);
 
         h3 {
             margin: 0rem;
