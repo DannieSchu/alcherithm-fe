@@ -18,10 +18,10 @@ const Dashboard = () => {
   return (
     <main className={styles.Dashboard}>
       <section>
-        <h2>Welcome, {user.firstName} to your Dashboard!</h2>
+        <h2>{user.firstName}'s Dashboard!</h2>
         <h3>Cohort: {user.cohort}</h3>
 
-        {/* <PieChart /> */}
+        <PieChart />
         
       </section>
 
