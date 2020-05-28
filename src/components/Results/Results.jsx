@@ -19,23 +19,25 @@ const Results = () => {
   
   return (
     <main className={styles.Results}>
-      <section className={styles.userName}>
+      <section className={styles.displayName}>
         <h3>Nice Work, {user.firstName}!</h3>
       </section>
       <section className={styles.editors}>
-        <ul>
-          {solutionElements} 
-        </ul>
+        <section>
+          <ul>
+            {solutionElements} 
+          </ul>
+        </section>
+        <section>
+          <Editor code={sampleSolution} readOnly={true} />
+        </section>
+        <Link to="/challenges">
+          <Button buttonStyle="primary" buttonSize="small" backgroundColor="green" buttonText="New Challenge" />
+        </Link>
+        <Link to="/history">
+          <Button buttonStyle="primary" buttonSize="small" backgroundColor="mainBlue" buttonText="History" />
+        </Link>
       </section>
-      <section className={styles.editors}>
-        <Editor code={sampleSolution} readOnly={true} />
-      </section>
-      <Link to="/challenges">
-        <Button buttonStyle="primary" buttonSize="small" backgroundColor="green" buttonText="New Challenge" />
-      </Link>
-      <Link to="/history">
-        <Button buttonStyle="primary" buttonSize="small" backgroundColor="mainBlue" buttonText="History" />
-      </Link>
     </main>
   );
 };
