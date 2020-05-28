@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Editor from '../components/Editors/Editor.jsx';
 import Tester from '../components/QUnit/QUnit.jsx';
+import Button from '../components/Button/Button';
 import ChallengeDisplay from '../components/ChallengeDisplay/ChallengeDisplay.jsx';
 import { fetchChallengeById } from '../services/challengesAPI.js';
 import { useParams, useHistory } from 'react-router-dom';
@@ -41,14 +42,15 @@ const Challenge = () => {
 
   if(!challenge)
     return <h1>loading</h1>;
-  
+
   return (
     <section className={styles.Challenge}>
       <ChallengeDisplay {...challenge} {...challenge.resources} />
       <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} /><br></br>
       <Editor code={challenge.qunitTest} />
-      <button onClick={onClick}>Run</button> 
-      <button onClick={onSubmit}>Submit</button>
+      <Button buttonStyle="secondary" buttonSize="medium" buttonText="Run" onClick={onClick} />
+      <Button buttonStyle="primary" buttonSize="medium" buttonText="Submit" onClick={onSubmit} />
+
       <Tester tests={runCode} setPassed={setPassed} />
     </section>
   );

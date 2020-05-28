@@ -8,7 +8,7 @@ body {
   margin: 0 auto;
   color: var(--gray);
 
-  a, button, select {
+  a, button, select, label {
     cursor: pointer;
   }
 
