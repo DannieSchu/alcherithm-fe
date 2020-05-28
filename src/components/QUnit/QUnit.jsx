@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styles from './QUnit.css';
 
 const Tester = ({ tests, setPassed }) => {
   const [details, setDetails] = useState({});
@@ -28,11 +29,11 @@ const Tester = ({ tests, setPassed }) => {
   }, [tests]);
 
   return (
-    <>
+    <section className={styles.QUnit}>
       <p>Total: {details.total}</p>
       <p>Passed: {details.passed}</p>
       <p>Failed: {details.failed}</p>
-    </>
+    </section>
   );
 };
 
