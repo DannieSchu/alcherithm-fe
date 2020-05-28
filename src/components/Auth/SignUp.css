@@ -1,11 +1,74 @@
 .SignUp {
-	display: block;
-	color: rgb(95, 95, 95);
-  padding: 1rem 1.4em;
-  width: 11rem;
-  height: 2.2rem;
-  font-size: .8rem;
-	box-shadow: inset -1px -1px 10px rgb(106, 198, 235);
-  background-color: rgba(48, 198, 232, 0.6);
-  background-color: rgba(49, 232, 232, 0.6);
+	color: rgb(117, 117, 117);
+  padding: 1rem 1rem;
+  width: 12.5rem;
+  height: 3rem;
+  font-size: 1rem;
+  line-height: .5rem;
+  background-color: white;
+  margin: auto;
+  margin-top: .5rem;
+  border: dotted .1vw rgb(197, 197, 197);
+  border-radius: 1rem;
+}
+
+.inputForm {
+  padding: 1rem 1rem;
+  line-height: .5rem;
+  border: dotted .1vw rgb(197, 197, 197);
+  border-radius: 1rem;
+  font-size: 1rem;
+  margin: auto;
+  margin-top: .5rem;
+}
+
+.formWrap {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-items: center;
+  border: solid .1vw rgb(197, 197, 197);
+  border-radius: 1rem;
+  width: 50%;
+  margin-bottom: 1rem;
+}
+
+.errorDisplay {
+  display: flex;
+  margin: auto;
+  justify-items: center;
+  width: 50%;
+  margin-top: -1rem;
+  padding-left: .5rem;
+  color: red;
+}
+
+.haveAccount {
+  display: flex;
+  margin: auto;
+  justify-items: center;
+  width: 50%;
+  margin-top: -.5rem;
+  padding-left: .5rem;
+
+  a {
+    margin-left: .5rem;
+    color: var(--main-blue);
+  }
+
+  a:link {
+    color: var(--main-blue);
+  }
+
+  a:visited {
+    color: var(--main-blue);
+  }
+
+  a:hover {
+    color: hotpink;
+  }
+
+  a:active {
+    color: hotpink;
+  }
 }
