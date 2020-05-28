@@ -25,11 +25,11 @@ const Dashboard = () => {
         </Link>
 
         <Link to="/history">
-          <Button buttonStyle="primary" backgroundColor="green" buttonSize="large" buttonText="View Completed Challenges" />
+          <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="large" buttonText="View Completed Challenges" />
         </Link>
       </section>
     </main>
   );
-
 };
+
 export default Dashboard;
