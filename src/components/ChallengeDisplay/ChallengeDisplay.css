@@ -1,7 +1,6 @@
-@import '../../styles/variables.css';
-
 .ChallengeDisplay {
-    
+    width: 100%;
+
     .tabs {
         margin: 0rem;
         background-color: white;
@@ -23,7 +22,6 @@
         
         .active {
             border-bottom: 1px solid var(--muted-gray);
-            color: var(--gray);
             box-shadow: none;
         }
     }
@@ -31,11 +29,19 @@
     .content {
         background-color: var(--muted-gray);
         margin-top: 0.75rem;
+        width: 40vw;
+        min-width: 37rem;
+        padding: 1rem;
+        overflow: scroll;
+        min-height: 20rem;
+        max-height: 55vh;
 
         h3 {
             margin: 0rem;
         }
     }
 
-
+    a {
+        color: #728FCB;
+    }
 }
