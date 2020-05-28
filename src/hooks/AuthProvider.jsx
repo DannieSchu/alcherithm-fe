@@ -19,6 +19,10 @@ export const AuthProvider = ({ children }) => {
 
   const { id } = useParams(id);
 
+  // console.log(?user);
+
+  const currentUser = useCurrentUser();
+
   useEffect(() => {
     getVerify()
       .then(user => setUser(user))
@@ -26,7 +30,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    getUserPassFailAttempted(id)
+    getUserPassFailAttempted(currentUser?._id)
       .then(({ passed, failed, attempted, totalNumberOfChallenges }) => {
         setPassed(passed);
         setFailed(failed);
@@ -34,6 +38,16 @@ export const AuthProvider = ({ children }) => {
         setTotal(totalNumberOfChallenges);
       });
   }, []);
+
+  // useEffect(() => {
+  //   getUserPassFailAttempted(id)
+  //     .then(({ passed, failed, attempted, totalNumberOfChallenges }) => {
+  //       setPassed(passed);
+  //       setFailed(failed);
+  //       setAttempted(attempted);
+  //       setTotal(totalNumberOfChallenges);
+  //     });
+  // }, []);
 
   const signup = (email, password, firstName, lastName, cohort, avatar) => {
     setLoading(true);

@@ -8,9 +8,9 @@ const Header = () => {
   const logout = useLogout();
   const user = useCurrentUser();
   const loading = useLoading();
-  const passed = useUserPassed();
+  // const passed = useUserPassed('5ecee1735469760017fee27a');
 
-  // console.log(passed('5ecee1735469760017fee27a'));
+  // console.log(passed);
   
   if(loading) return null;
   
