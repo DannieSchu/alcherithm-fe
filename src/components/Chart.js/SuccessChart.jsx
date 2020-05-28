@@ -15,10 +15,8 @@ const SuccessChart = () => {
           'rgba(49, 232, 232, 0.6)'
         ],
         hoverBackgroundColor: 'rgba(48, 198, 232, 0.6)'
-
       }
     ],
-
     labels: ['Passed', 'Failed']
   };
 
@@ -29,19 +27,17 @@ const SuccessChart = () => {
         options={{
           title:{
             display:true,
-            text:'Your Success Rate',
+            text:'Challenges Completed Successfully',
             fontSize:20
           },
           legend:{
             display:true,
-            position:'right'
+            position:'bottom'
           }
         }}
       />
     </section>
-    
-  )
-
-}
+  );
+};
 
 export default SuccessChart;
