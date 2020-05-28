@@ -2,6 +2,7 @@ import React from 'react';
 import CodeChallenge from '../CodeChallenges/CodeChallenge';
 import Dropdown from '../Dropdown/Dropdown';
 import PopUp from '../PopUp/PopUp';
+import Button from '../Button/Button';
 import { useGetChallenges } from '../../hooks/getChallenges';
 import { useLoading } from '../../hooks/AuthProvider';
 import { fetchUserChallengesWithSolutions } from '../../services/solutionsAPI';
@@ -16,11 +17,11 @@ const History = () => {
   const codeElements = selectedChallenges.map((challenge) => (
     <li key={challenge._id}>
       <CodeChallenge {...challenge} char={300} />
-      <button onClick={() => handleClick(challenge.solutions)}>Your Solutions</button>
+      <Button buttonStyle="primary" backgroundColor="green" buttonSize="medium" buttonText="Your Solutions" onClick={() => handleClick(challenge.solutions)} />
     </li>
   ));
-  
-  if(loading) return (
+
+  if (loading) return (
     <section>
       <h2>loading...</h2>
     </section>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from 'semantic-ui-react';
+import Button from '../Button/Button';
 import { useLoading } from '../../hooks/AuthProvider';
 import styles from './Dashboard.css'; 
 import PieChart from '../Chart.js/chart.js';
@@ -21,15 +21,11 @@ const Dashboard = () => {
       </section>
       <section>
         <Link to="/challenges">
-          <Button>
-            <p>Find a Challenge</p>
-          </Button>
+          <Button buttonStyle="primary" backgroundColor="green" buttonSize="large" buttonText="Find a Challenge" />
         </Link>
 
         <Link to="/history">
-          <Button>
-            <p>View Completed Challenges</p>
-          </Button>
+          <Button buttonStyle="primary" backgroundColor="green" buttonSize="large" buttonText="View Completed Challenges" />
         </Link>
       </section>
     </main>

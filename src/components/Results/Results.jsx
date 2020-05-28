@@ -4,6 +4,7 @@ import { useGetSolutions } from '../../hooks/getSolutions';
 import { Link } from 'react-router-dom';
 import Editor from '../Editors/Editor';
 import { useCurrentUser } from '../../hooks/AuthProvider';
+import Button from '../Button/Button';
 
 const Results = () => {
   const { userSolutions, sampleSolution } = useGetSolutions();
@@ -15,7 +16,7 @@ const Results = () => {
       {userSolution.updatedAt}
     </li>
   ));
-
+  
   return (
     <main className={styles.Results}>
       <section className={styles.userName}>
@@ -30,11 +31,10 @@ const Results = () => {
         <Editor code={sampleSolution} readOnly={true} />
       </section>
       <Link to="/challenges">
-        <button>New Challenge</button>
+        <Button buttonStyle="primary" buttonSize="small" backgroundColor="green" buttonText="New Challenge" />
       </Link>
-
       <Link to="/history">
-        <button>History</button>
+        <Button buttonStyle="primary" buttonSize="small" backgroundColor="mainBlue" buttonText="History" />
       </Link>
     </main>
   );
