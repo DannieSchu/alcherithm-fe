@@ -30,7 +30,7 @@ const Header = () => {
           <Link className={styles.navLink} to='/about'>About</Link>
         </nav>
         <div className={styles.User}>
-          {user && <h3>hello {user?.firstName}</h3>}
+          {user && <h4>hello {user?.firstName}</h4>} <h4>Successful Challenges: 20 / 68</h4>
         </div>
         {user && <button type="button" onClick={logout}>Logout</button>}
       </header>

@@ -24,14 +24,22 @@ a {
     background-color: rgba(48, 198, 232, 0.6);
     color: whitesmoke;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 2rem;
+    flex-direction: row;
 
     img {
         width: 5.5rem;
-        margin: 1rem 1.6rem 1rem 3rem;
+        margin: .5rem .5rem .2rem 1rem;
     }
+
     h2 {
-        text-decoration: none;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    h4 {
+      font-size: .75rem;
+      margin: .01rem;
     }
 
     .navLink {
@@ -45,11 +53,12 @@ a {
 }
 
 .Alcherithm {
-    a:hover {
+      a:hover {
         color: white;
       }
       
       a:active {
         color: white;
       }
+
 }
