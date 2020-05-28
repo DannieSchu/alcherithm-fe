@@ -1,26 +1,26 @@
 import React, { useState } from 'react';
-import { useLogin, useError, useLoading } from '../../hooks/AuthProvider';
-import { useHistory, Link } from 'react-router-dom';
+import { useLogin, useError, useLoading, useCurrentUser } from '../../hooks/AuthProvider';
+import { Link, Redirect } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const history = useHistory();
+  const user = useCurrentUser();
   const login = useLogin();
+  const error = useError();
+  const loading = useLoading();
+
+  if(user) return <Redirect to = '/' />;
 
   const handleChange = ({ target }) => {
     if(target.name === 'email') setEmail(target.value);
     if(target.name === 'password') setPassword(target.value);
   };
 
-  const error = useError();
-  const loading = useLoading();
-
-  const handleLoginSubmit = event => {
-    event.preventDefault();
-    login(email, password)
-      .then (() => history.push('/'));
+  const handleLoginSubmit = (event) => {
+    event.preventDefault(); 
+    login(email, password); 
   };
 
   if(loading) return (
@@ -31,8 +31,6 @@ const Login = () => {
 
   return (
     <>
-      {error && (<section> <h2>{error.message}</h2></section>)}
-        
       <form onSubmit={handleLoginSubmit}>
         <input type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
 
@@ -40,6 +38,7 @@ const Login = () => {
 
         <button>Login</button>
       </form>
+      {error && (<section> <h4>{error.message}</h4></section>)}
       <h4>Need an account? <Link to='/signup'>Sign Up</Link></h4>
     </>
   );

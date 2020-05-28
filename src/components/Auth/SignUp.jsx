@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useSignUp, useError, useLoading } from '../../hooks/AuthProvider';
-import { useHistory, Link } from 'react-router-dom';
+import { useSignUp, useError, useLoading, useCurrentUser } from '../../hooks/AuthProvider';
+import { Link, Redirect } from 'react-router-dom';
 import { cohortsDropdown } from '../../utils/cohorts';
 import styles from './SignUp.css';
 
@@ -12,8 +12,10 @@ const SignUp = () => {
   const [cohort, setCohort] = useState('');
   const [avatar, setAvatar] = useState('');
 
-  const history = useHistory();
   const signup = useSignUp();
+  const user = useCurrentUser();
+
+  if(user) return <Redirect to = '/' />;
 
   const cohortOptions = cohortsDropdown.map(cohorts => (
     <option key={cohorts} value={cohorts}>{cohorts}</option>
@@ -33,8 +35,7 @@ const SignUp = () => {
 
   const handleSignUpSubmit = event => {
     event.preventDefault();
-    signup(email, password, firstName, lastName, cohort, avatar)
-      .then (() => history.push('/'));
+    signup(email, password, firstName, lastName, cohort, avatar);
   };
 
   if(loading) return (
@@ -45,8 +46,6 @@ const SignUp = () => {
 
   return (
     <>
-      {error && (<section> <h2>{error.message}</h2></section>)}
-
       <form onSubmit={handleSignUpSubmit}>
         <input type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
 
@@ -55,8 +54,6 @@ const SignUp = () => {
         <input type="text" name="firstName" value={firstName} onChange={handleChange} placeholder="first name" />
 
         <input type="text" name="lastName" value={lastName} onChange={handleChange} placeholder="last name" />
-
-        {/* <input type="text" name="cohort" value={cohort} onChange={handleChange} placeholder="cohort" /> */}
 
         <select className={styles.SignUp} id="cohort" onChange={({ target }) => setCohort(target.value)}>
           <option value="allCohorts">Choose Cohort</option>
@@ -67,6 +64,7 @@ const SignUp = () => {
 
         <button>Sign up</button>
       </form>
+      {error && (<section> <h4>{error.message}</h4></section>)}
       <h4>Already have an account? <Link to='/login'>Login</Link></h4>
     </>
   );
