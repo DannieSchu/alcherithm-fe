@@ -1,0 +1,14 @@
+.large {
+  border-radius: 1.5rem;
+  margin: 2rem;
+  width: 40em;
+  height: 5em;
+}
+
+.medium {
+  border-radius: 2rem;
+  padding: .8rem 2rem;
+  margin: 2rem;
+  /*width: 9em;
+  height: 4em;*/
+}
