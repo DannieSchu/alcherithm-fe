@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [passed, setPassed] = useState(null);
   const [failed, setFailed] = useState(null);
-  const [attempted, setAttempted] = useState(null)''
+  const [attempted, setAttempted] = useState(null);
   const [total, setTotal] = useState(null);
   
   const history = useHistory();

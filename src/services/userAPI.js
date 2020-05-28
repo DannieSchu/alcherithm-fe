@@ -1,3 +1,3 @@
 import { get } from './request';
 
-export const getUserPassFail = (id) => get(`/api/v1/users/${id}/counts`);
+export const getUserPassFailAttempted = (id) => get(`/api/v1/users/${id}/counts`);
