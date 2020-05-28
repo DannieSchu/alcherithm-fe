@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import { useLoading, useCurrentUser } from '../../hooks/AuthProvider';
+import ProgressBar from '../ProgressBar/ProgressBar';
 import styles from './Dashboard.css'; 
 import PieChart from '../Chart.js/chart.js';
 
@@ -20,8 +21,8 @@ const Dashboard = () => {
       <section>
         <h2>{user.firstName}'s Dashboard!</h2>
         <h3>Cohort: {user.cohort}</h3>
-
-        <PieChart />
+        <ProgressBar />
+        {/* <PieChart /> */}
         
       </section>
 
