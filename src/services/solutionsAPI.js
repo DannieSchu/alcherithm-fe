@@ -4,8 +4,6 @@ export const fetchUserSolutionsToChallenge = (challengeId, userId) => get(`/api/
 
 export const fetchAllSolutionsToChallenge = challengeId => get(`/api/v1/solutions?challengeId=${challengeId}`);
 
-// PREVIOUS SERVICE NAME:
-// export const fetchUserSolutions = userId => get(`/api/v1/solutions?userId=${userId}`);
 export const fetchUserChallengesWithSolutions = userId => get(`/api/v1/solutions?userId=${userId}`);
 
 export const fetchResults = solutionId => get(`/api/v1/solutions/results/${solutionId}`);
