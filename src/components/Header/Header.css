@@ -40,6 +40,7 @@ a {
   .navbar { 
     grid-area: navbar;
     margin-top: 1rem;
+    margin-right: 1rem;
    }
   
   .User { 
