@@ -19,16 +19,14 @@ const Splash = () => {
     history.push('/dashboard');
 
   return (
-    <>
-      <section className={styles.Splash}>
+    <main className={styles.Splash}>
+      <section>
         <img src={logo} />
         <h2>Alcherithm</h2>
       </section>
-      <h2>Splash goes here</h2>
       <Link to='/signup'>Sign Up</Link>
       <Link to='/login'>Login</Link>
-    </>
-
+    </main>
   );
 
 };
