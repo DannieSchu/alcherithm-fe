@@ -22,7 +22,7 @@ const Header = () => {
 
         <div className={styles.User}>
           {user && <h3>Hello <Link className={styles.nameLink} to='/'>{user?.firstName}</Link></h3>}
-          {passed && <h4>Successful Challenges: {passed} / {total}</h4>}
+          {total && <h4>Successful Challenges: {passed} / {total}</h4>}
         </div>
 
         <nav className={styles.navbar}>
@@ -39,7 +39,13 @@ const Header = () => {
           </> }
           <Link className={styles.navLink} to='/about'>About</Link>
           {user &&
+<<<<<<< HEAD
             <Link className={styles.navLink} onClick={logout}>Logout</Link>
+=======
+          <>
+            <Link onClick={logout}>Logout</Link>
+          </>
+>>>>>>> 0ae0ae96c43fcd3b1c623b3f097385639334aa9d
           }
           {/* {user && <Button buttonStyle="secondary" backgroundColor="mainBlue" buttonText="Logout" buttonSize="small" onClick={logout} />} */}
         </nav>
