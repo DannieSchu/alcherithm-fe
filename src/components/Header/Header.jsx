@@ -1,7 +1,7 @@
 import React from 'react';
 // import Button from '../Button/Button';
 import styles from './Header.css';
-import logo from '../../assets/CenterAlignLogo.png';
+import logo from '../../assets/logos/CenterAlignLogo.png';
 import { Link } from 'react-router-dom';
 import { useLogout, useCurrentUser, useLoading, useUserPassed, useUserTotal } from '../../hooks/AuthProvider';
 
@@ -39,13 +39,9 @@ const Header = () => {
           </> }
           <Link className={styles.navLink} to='/about'>About</Link>
           {user &&
-<<<<<<< HEAD
-            <Link className={styles.navLink} onClick={logout}>Logout</Link>
-=======
           <>
             <Link onClick={logout}>Logout</Link>
           </>
->>>>>>> 0ae0ae96c43fcd3b1c623b3f097385639334aa9d
           }
           {/* {user && <Button buttonStyle="secondary" backgroundColor="mainBlue" buttonText="Logout" buttonSize="small" onClick={logout} />} */}
         </nav>

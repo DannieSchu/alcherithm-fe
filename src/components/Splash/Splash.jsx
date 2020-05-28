@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoading, useCurrentUser } from '../../hooks/AuthProvider';
 import { useHistory, Link } from 'react-router-dom';
-import logo from '../../assets/IconWhite.png';
+import logo from '../../assets/logos/IconWhite.png';
 import styles from './Splash.css';
 
 const Splash = () => {
