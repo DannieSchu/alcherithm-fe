@@ -21,7 +21,7 @@ const Header = () => {
 
         <div className={styles.User}>
           {user && <h3>Hello <Link className={styles.nameLink} to='/'>{user?.firstName}</Link></h3>}
-          {passed && <h4>Successful Challenges: {passed} / {total}</h4>}
+          {total && <h4>Successful Challenges: {passed} / {total}</h4>}
         </div>
 
         <nav className={styles.navbar}>
@@ -39,7 +39,7 @@ const Header = () => {
           <Link className={styles.navLink} to='/about'>About</Link>
           {user &&
           <>
-            <Link className={styles.navLink} onClick={logout}>Logout</Link>
+            <Link onClick={logout}>Logout</Link>
           </>
           }
         </nav>
