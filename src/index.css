@@ -1,41 +1,43 @@
+@import './styles/variables.css';
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0 auto;
-  color: gray;
+  color: var(--gray);
 
   a, button, select {
     cursor: pointer;
   }
 
   p, li, a {
-    font-family: 'Open Sans';
+    font-family: var(--body-font);
   }
   
   h1 {
-    font-family: 'Ubuntu Mono', monospace;
+    font-family: var(--display-font);
     font-weight: 400;
     font-size: 3rem;
     margin: 0;
   }
 
   h2 {
-    font-family: 'Ubuntu Mono', monospace;
+    font-family: var(--display-font);
     font-weight: 400;
     font-size: 2.3rem;
     margin: 0;
   }
 
   h3 {
-    font-family: 'Ubuntu Mono', monospace;
+    font-family: var(--display-font);
     font-weight: 400;
     font-size: 1.5rem;
   }
 
   h4 {
-    font-family: 'Open Sans';
+    font-family: var(--body-font);
     text-transform: uppercase;
     font-weight: 300;
   }

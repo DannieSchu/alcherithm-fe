@@ -1,3 +1,5 @@
+@import '../../styles/variables.css';
+
 .CodeChallenges {
   display: flex;
   flex-direction: column;
@@ -11,7 +13,7 @@
 
   a {
     text-decoration: none;
-    color: gray;
+    color: var(--gray);
   }
 
   article {
@@ -26,15 +28,14 @@
     margin: 2rem;
 
     list-style-type: none;
-    border: 1px solid rgb(187, 186, 186);
+    border: 1px solid var(--gray);
     border-radius: 5px;
-    box-shadow: 5px 10px 10px rgb(187, 186, 186);  
+    box-shadow: var(--box-shadow);  
   }
 
   li:hover {
     border: 1px solid rgba(49, 232, 232, 0.6);
-    box-shadow: 10px 12px 15px rgb(170, 169, 169);
-    box-shadow: 10px 12px 15px rgba(48, 198, 232, 0.6);  
+    box-shadow: var(--hover-box-shadow);
   }
 
   .row {
@@ -46,6 +47,7 @@
 
   .column {
     width: 100%;
+    padding-inline-start: 0px;
   }
 
   .column li {
@@ -55,11 +57,5 @@
     width: 100%;
     max-width: 120em;
     min-width: 40em;
-
-    button {
-      margin: 2rem;
-      width: 40em;
-      height: 5em;
-    }
   }
 }
