@@ -2,12 +2,14 @@ import React from 'react';
 import styles from './Header.css';
 import logo from '../../assets/IconWhite.png';
 import { Link } from 'react-router-dom';
-import { useLogout, useCurrentUser, useLoading } from '../../hooks/AuthProvider';
+import { useLogout, useCurrentUser, useLoading, useUserPassed, useUserTotal } from '../../hooks/AuthProvider';
 
 const Header = () => {
   const logout = useLogout();
   const user = useCurrentUser();
   const loading = useLoading();
+  const passed = useUserPassed();
+  const total = useUserTotal();
 
   if(loading) return null;
 
@@ -19,7 +21,8 @@ const Header = () => {
 
         <div className={styles.User}>
           {user && <h3>hello {user?.firstName}</h3>}
-          <h4>Successful Challenges: 20 / 68</h4>
+          {/* <h4>Successful Challenges: 20 / 68</h4> */}
+          {passed && <h4>Successful Challenges: {passed} / {total}</h4>}
         </div>
 
         <nav className={styles.navbar}>
