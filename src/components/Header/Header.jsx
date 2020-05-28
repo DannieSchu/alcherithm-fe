@@ -1,40 +1,48 @@
 import React from 'react';
 import styles from './Header.css';
-import Button from '../Button/Button';
-import logo from '../../assets/IconWhite.png';
+import logo from '../../assets/LogoWhiteTextLeft.png';
 import { Link } from 'react-router-dom';
-import { useLogout, useCurrentUser, useLoading, useUserPassed } from '../../hooks/AuthProvider';
+import { useLogout, useCurrentUser, useLoading, useUserPassed, useUserTotal } from '../../hooks/AuthProvider';
 
 const Header = () => {
   const logout = useLogout();
   const user = useCurrentUser();
   const loading = useLoading();
   const passed = useUserPassed();
+  const total = useUserTotal();
+
   if(loading) return null;
 
   return (
     <>
       <header className={styles.Header}>
-        <h2 className={styles.Alcherithm}><Link to='/'><img src={logo} />Alcherithm</Link></h2>
-        <nav>
-          {user &&
-            <>
-              <Link className={styles.navLink} to='/'>Dashboard</Link>
-              <Link className={styles.navLink} to='/challenges'>Challenges</Link>
-              <Link className={styles.navLink} to='/history'>History</Link>
-            </>}
-          {!user &&
-            <>
-              <Link className={styles.navLink} to='/signup'>Sign Up</Link>
-              <Link className={styles.navLink} to='/login'>Login</Link>
-            </>}
-          <Link className={styles.navLink} to='/about'>About</Link>
-        </nav>
+      
+        <Link className={styles.image} to='/'><img className={styles.logo} src={logo} /></Link>
+
         <div className={styles.User}>
-          {user && <h3>hello {user?.firstName}</h3>}
-          {passed && <h3>Total Passed: {passed}</h3>}
+          {user && <h3>Hello <Link className={styles.nameLink} to='/'>{user?.firstName}</Link></h3>}
+          {passed && <h4>Successful Challenges: {passed} / {total}</h4>}
         </div>
-        {user && <Button buttonStyle="secondary" backgroundColor="mainBlue" buttonText="Logout" buttonSize="small" onClick={logout} />}
+
+        <nav className={styles.navbar}>
+          {user && 
+          <>
+            <Link className={styles.navLink} to='/'>Dashboard</Link>
+            <Link className={styles.navLink} to='/challenges'>Challenges</Link>
+            <Link className={styles.navLink} to='/history'>History</Link>
+          </> }
+          {!user && 
+          <>
+            <Link className={styles.navLink} to='/signup'>Sign Up</Link>
+            <Link className={styles.navLink} to='/login'>Login</Link>
+          </> }
+          <Link className={styles.navLink} to='/about'>About</Link>
+          {user &&
+          <>
+            <Link className={styles.navLink} onClick={logout}>Logout</Link>
+          </>
+          }
+        </nav>
       </header>
     </>
   );
