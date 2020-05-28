@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import { useLoading, useCurrentUser } from '../../hooks/AuthProvider';
 import ProgressBar from '../ProgressBar/ProgressBar';
+import SuccessChart from '../Chart.js/SuccessChart';
 import styles from './Dashboard.css'; 
-import PieChart from '../Chart.js/chart.js';
+// import PieChart from '../Chart.js/chart.js';
 
 const Dashboard = () => {
   const loading = useLoading();
@@ -21,10 +22,16 @@ const Dashboard = () => {
       <section>
         <h2>{user.firstName}'s Dashboard!</h2>
         <h3>Cohort: {user.cohort}</h3>
-        <ProgressBar />
-        {/* <PieChart /> */}
-        
       </section>
+      <section>
+        <ProgressBar />
+      </section>
+      <section>
+        <SuccessChart />
+      </section>
+      {/* <section>
+        <PieChart />
+      </section> */}
 
       <section>
         <Link to="/challenges">
