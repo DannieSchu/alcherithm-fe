@@ -6,6 +6,7 @@ import ChallengeDisplay from '../components/ChallengeDisplay/ChallengeDisplay.js
 import { fetchChallengeById } from '../services/challengesAPI.js';
 import { useParams, useHistory } from 'react-router-dom';
 import { post } from '../services/request.js';
+import styles from './Challenge.css';
 
 const Challenge = () => {
   const [runCode, setRunCode] = useState('');
@@ -43,13 +44,23 @@ const Challenge = () => {
     return <h1>loading</h1>;
 
   return (
-    <section>
-      <ChallengeDisplay {...challenge} {...challenge.resources} />
-      <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} /><br></br>
-      <Editor code={challenge.qunitTest} />
-      <Button buttonStyle="primary" backgroundColor="green" buttonSize="small" buttonText="Run" onClick={onClick} />
-      <Button buttonStyle="primary" buttonSize="medium" backgroundColor="mainBlue" buttonText="Submit" onClick={onSubmit} />
-      <Tester tests={runCode} setPassed={setPassed} />
+    <section className={styles.Challenge}>
+      <section className={styles.overview}>
+        <ChallengeDisplay {...challenge} {...challenge.resources} />
+        <h3>Test</h3>
+        <article>
+          <Editor code={challenge.qunitTest} />
+          <Button buttonStyle="primary" backgroundColor="green" buttonSize="small" buttonText="Run" onClick={onClick} />
+        </article>
+      </section>
+      <section className={styles.solution}>
+        <h3>Starter Code</h3>
+        <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} />
+        <Tester tests={runCode} setPassed={setPassed} />
+        <div className={styles.button}>
+          <Button buttonStyle="primary" buttonSize="medium" backgroundColor="mainBlue" buttonText="Submit" onClick={onSubmit} />
+        </div>
+      </section>
     </section>
   );
 };
