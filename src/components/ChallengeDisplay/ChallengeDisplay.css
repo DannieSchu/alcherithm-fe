@@ -33,8 +33,7 @@
         min-width: 37rem;
         padding: 1rem;
         overflow: scroll;
-        min-height: 20rem;
-        max-height: 55vh;
+        height: 24rem;
 
         h3 {
             margin: 0rem;
