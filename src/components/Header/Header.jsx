@@ -10,7 +10,7 @@ const Header = () => {
   const loading = useLoading();
   const passed = useUserPassed();
 
-  console.log(passed);
+  // console.log(passed('5ecee1735469760017fee27a'));
   
   if(loading) return null;
   
