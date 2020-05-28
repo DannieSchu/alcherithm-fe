@@ -3,9 +3,11 @@ import React from 'react';
 import { useGetSolutions } from '../../hooks/getSolutions';
 import { Link } from 'react-router-dom';
 import Editor from '../Editors/Editor';
+import { useCurrentUser } from '../../hooks/AuthProvider';
 
 const Results = () => {
   const { userSolutions, sampleSolution } = useGetSolutions();
+  const user = useCurrentUser();
 
   const solutionElements = userSolutions.map(userSolution => (
     <li key={userSolution._id}>
@@ -16,6 +18,9 @@ const Results = () => {
 
   return (
     <main>
+      <section>
+        <h3>Nice Work, {user.firstName}!</h3>
+      </section>
       <section>
         <ul>
           {solutionElements} 
