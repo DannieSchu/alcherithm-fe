@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { postSignup, postLogin, getLogout, getVerify } from '../services/authAPI';
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { getUserPassFailAttempted } from '../services/userAPI';
 
 const AuthContext = createContext();
@@ -17,11 +17,11 @@ export const AuthProvider = ({ children }) => {
   
   const history = useHistory();
 
-  const { id } = useParams(id);
+  // const { id } = useParams(id);
 
   // console.log(?user);
 
-  const currentUser = useCurrentUser();
+  // const currentUser = useCurrentUser();
 
   useEffect(() => {
     getVerify()
@@ -30,14 +30,15 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    getUserPassFailAttempted(currentUser?._id)
+    if(!user) return;
+    getUserPassFailAttempted(user._id)
       .then(({ passed, failed, attempted, totalNumberOfChallenges }) => {
         setPassed(passed);
         setFailed(failed);
         setAttempted(attempted);
         setTotal(totalNumberOfChallenges);
       });
-  }, []);
+  }, [user]);
 
   // useEffect(() => {
   //   getUserPassFailAttempted(id)

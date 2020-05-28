@@ -1,0 +1,16 @@
+:root {
+  --main-blue: rgba(48, 198, 232, 0.6);
+  --secondary-blue: rgba(49, 232, 232, 0.6);
+  --green: rgba(48, 232, 159, 0.6);
+  --black: #000000;
+  --white: #ffffff;
+  --gray: #808080;
+
+  --display-font: 'Ubuntu Mono', monospace;
+  --body-font: 'Open Sans';
+
+  --box-shadow: 10px 10px 10px #aaa9a9;
+  --hover-box-shadow: 10px 12px 15px rgba(48, 198, 232, 0.6);
+  --dark-blue-box-shadow: 10px 10px 10px rgb(48, 198, 232);
+  
+}

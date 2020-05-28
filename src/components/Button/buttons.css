@@ -1,0 +1,28 @@
+@import '../../styles/variables.css';
+
+.primary {
+  border: 2px solid var(--white);  
+  color: var(--gray);
+  box-shadow: inset -2px -3px 10px rgb(150, 187, 202);
+
+  font-family: var(--body-font);
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: var(--secondary-blue);
+    box-shadow: inset -2px -3px 10px rgb(150, 187, 202);
+}
+}
+
+.secondary {
+  border: 2px solid var(--white);  
+  color: var(--white);
+
+  font-family: var(--body-font);
+  text-transform: uppercase;
+  
+  &:hover {
+    background-color: var(--secondary-blue);
+    box-shadow: var(--dark-blue-box-shadow);
+  }
+}
