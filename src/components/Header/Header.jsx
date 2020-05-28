@@ -8,9 +8,9 @@ const Header = () => {
   const logout = useLogout();
   const user = useCurrentUser();
   const loading = useLoading();
-  
+
   if(loading) return null;
-  
+
   return (
     <>
       <header className={styles.Header}>
@@ -20,7 +20,6 @@ const Header = () => {
         <div className={styles.User}>
           {user && <h3>hello {user?.firstName}</h3>}
           <h4>Successful Challenges: 20 / 68</h4>
-          
         </div>
 
         <nav className={styles.navbar}>
@@ -42,8 +41,6 @@ const Header = () => {
           </>
           }
         </nav>
-        
-        
       </header>
     </>
   );

@@ -1,0 +1,26 @@
+@import '../../styles/variables.css';
+
+.large {
+  padding: 2rem;
+  font-family: var(--display-font);
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.medium {
+  border-radius: 4rem;
+  margin: 2rem;
+  padding: 1.4rem 3rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.small {
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  margin: 2rem;
+  font-size: .9em;
+  font-weight: 400;
+}
