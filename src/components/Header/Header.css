@@ -20,21 +20,30 @@ a {
 
 .Header {
     display: grid;
-    grid-template-columns: .5fr .5fr 1.3fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.8fr;
     gap: 1px 1px;
-    grid-template-areas: "logotext image User navbar";
+    grid-template-areas: "logo User navbar";
     background-color: rgba(48, 198, 232, 0.6);
-    color: whitesmoke;
+    color: white;
     width: 100%;
     height: 6rem;
     margin-bottom: 2rem;
     justify-items: center;
+
+  .nameLink {
+    font-size: 1.5rem;
+    font-family: var(--display-font);
+    margin-right: 2rem;
+  }
   
-  .image { 
-    grid-area: image;
-    width: 5rem;
-    margin-right: 10rem;
+  .logo { 
+    grid-area: logo;
+    width: 18rem;
+    margin-right: 1rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    margin-left: .5rem;
    }
   
   .navbar { 
@@ -49,23 +58,6 @@ a {
     margin-bottom: -1rem;
     margin-left: -8rem;
     line-height: .1rem;
-   }
-  
-  .logotext { 
-    grid-area: logotext;
-    margin-left: 1rem;
-    margin-top: 1.5rem;
-   }
-
-   .logotext:hover { 
-    color:white;
-   }
-  
-  .image { 
-    grid-area: image;
-    margin-top: .5rem;
-    margin-bottom: .5rem;
-    margin-left: .5rem;
    }
 
   .navLink {

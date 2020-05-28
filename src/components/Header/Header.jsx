@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Header.css';
-import logo from '../../assets/IconWhite.png';
+import logo from '../../assets/LogoWhiteTextLeft.png';
 import { Link } from 'react-router-dom';
 import { useLogout, useCurrentUser, useLoading, useUserPassed, useUserTotal } from '../../hooks/AuthProvider';
 
@@ -17,11 +17,10 @@ const Header = () => {
     <>
       <header className={styles.Header}>
       
-        <Link className={styles.logotext} to='/'><h2>Alcherithm</h2></Link><Link className={styles.image} to='/'><img className={styles.image} src={logo} /></Link>
+        <Link className={styles.image} to='/'><img className={styles.logo} src={logo} /></Link>
 
         <div className={styles.User}>
-          {user && <h3>hello {user?.firstName}</h3>}
-          {/* <h4>Successful Challenges: 20 / 68</h4> */}
+          {user && <h3>Hello <Link className={styles.nameLink} to='/'>{user?.firstName}</Link></h3>}
           {passed && <h4>Successful Challenges: {passed} / {total}</h4>}
         </div>
 
