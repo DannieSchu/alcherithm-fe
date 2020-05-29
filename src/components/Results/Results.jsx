@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import styles from './Results.css';
 import { useGetSolutions } from '../../hooks/getSolutions';
 import { Link } from 'react-router-dom';
 import Editor from '../Editors/Editor';
@@ -8,17 +7,21 @@ import Button from '../Button/Button';
 import moment from 'moment';
 import ConfettiCanvas from 'react-confetti-canvas';
 import GifLoader from 'react-gif-loader';
-
-// import panda from '../../assets/prize/dancingpanda.gif';
+import styles from './Results.css';
+import tabStyle from '../../styles/tabs.css';
 
 const Results = () => {
   const { userSolutions, sampleSolution } = useGetSolutions();
   const user = useCurrentUser();
   const [confetti, setConfetti] = useState(true);
+  const [selectedTab, setSelectedTab] = useState('YourSolutions');
 
+  const handleTabChange = ({ target }) => {
+    setSelectedTab(target.id);
+  };
   const solutionElements = userSolutions.map(userSolution => (
     <li key={userSolution._id}>
-      <p>{moment(userSolution.updatedAt).format('MMMM Do YYYY h:mm a')}</p>
+      <p>Challenge Attempted:  {moment(userSolution.updatedAt).format('MM/D/YYYY')}</p>
       <Editor code={userSolution.solution} readOnly={true} />
     </li>
   ));
@@ -31,11 +34,14 @@ const Results = () => {
       clearTimeout(id);
     };
   }, []);
-  
-  const style = { 
-    marginTop: '10%',
+
+  const style = {
+    marginTop: '8%',
     position: 'relative',
-    right: '36%' };
+    right: '50%',
+    width: '15rem',
+    'z-index': '0'
+  };
 
   return (
     <main className={styles.Results}>
@@ -46,32 +52,18 @@ const Results = () => {
         colors={[
           ['#30C6E8', '#C39BD3'],
           ['#30E89F', '#76D7C4'],
-          ['#F0B27A', '#7DCEA0']]}/>}
-      <section className={styles.displayName}>
-        <h3>Nice Work, {user.firstName}!</h3>
-        <GifLoader 
-          loading={true} 
-          imageSrc="https://emojis.slackmojis.com/emojis/images/1498192826/2489/dancingpanda.gif?1498192826"
-          className={styles.panda}
-          imageStyle={style}
-          overlayBackground="rgba(0,0,0,0)"/>
-      </section>
-
-      <section className={styles.right}>
-        <section clasName={styles.editorBox}>
-          <aside className={styles.editors}>
-            <h3>Your Solutions</h3>
-            <ul>
-              {solutionElements} 
-            </ul>
-          </aside>
-
-          <aside className={styles.editors}>
-            <h3>Sample Solution</h3>
-            <Editor code={sampleSolution} readOnly={true} />
-          </aside>
+          ['#F0B27A', '#7DCEA0']]} />}
+      <section className={styles.left}>
+        <section className={styles.displayName}>
+          <h3>Nice Work, {user.firstName}!</h3>
+          <div className={styles.panda}>
+            <GifLoader
+              loading={true}
+              imageSrc="https://emojis.slackmojis.com/emojis/images/1498192826/2489/dancingpanda.gif?1498192826"
+              imageStyle={style}
+              overlayBackground="rgba(0,0,0,0)" />
+          </div>
         </section>
-
         <aside className={styles.buttons}>
           <Link to="/challenges">
             <Button buttonStyle="primary" buttonSize="small" backgroundColor="green" buttonText="New Challenge" />
@@ -80,6 +72,29 @@ const Results = () => {
             <Button buttonStyle="primary" buttonSize="small" backgroundColor="mainBlue" buttonText="History" />
           </Link>
         </aside>
+      </section>
+
+      <section className={styles.right}>
+        <section className={tabStyle.tabs}>
+          <input type="radio" id="YourSolutions" name="tabbed" onChange={handleTabChange} />
+          <input type="radio" id="SampleSolution" name="tabbed" onChange={handleTabChange} />
+
+          <label htmlFor="YourSolutions" className={selectedTab === 'YourSolutions' && tabStyle.active}>Your Solutions</label>
+          <label htmlFor="SampleSolution" className={selectedTab === 'SampleSolution' && tabStyle.active}>Sample Solution</label>
+        </section>
+
+        {selectedTab === 'YourSolutions' && <section className={styles.content}>
+          <h3>Your Solutions</h3>
+          <ul>
+            {solutionElements}
+          </ul>
+        </section>}
+
+        {selectedTab === 'SampleSolution' && <section className={styles.content}>
+          <h3>Sample Solution</h3>
+          <Editor code={sampleSolution} readOnly={true} />
+        </section>}
+
       </section>
 
     </main>
