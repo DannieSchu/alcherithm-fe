@@ -4,6 +4,7 @@ import Button from '../Button/Button';
 import { useLoading, usePassingSolutionsByCategory, useCurrentUser, useUserPassed, useUserFailed, useUserAttempted, useUserTotal } from '../../hooks/AuthProvider';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import SuccessChart from '../Charts/SuccessChart';
+import PassedByCategoryChart from '../Charts/PassedByCategoryChart';
 import styles from './Dashboard.css'; 
 
 const Dashboard = () => {
@@ -38,6 +39,7 @@ const Dashboard = () => {
       </section>
       <section className={styles.charts}>
         <SuccessChart />
+        <PassedByCategoryChart />
       </section>
       
       <section className={styles.buttons}>
