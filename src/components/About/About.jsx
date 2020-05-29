@@ -49,7 +49,7 @@ const About = () => (
               <img src={linkedInIcon} alt="linkedin-icon" className={styles.icons}></img>
             </a>
           </div>  
-          <p>DANNIE SCHUMAKER Gubergren stet sea accusam lorem no sanctus. Amet voluptua clita et nonumy lorem sanctus et, rebum lorem voluptua dolor sed rebum takimata gubergren, erat et eirmod amet dolores labore erat diam rebum, tempor ut et tempor gubergren. Diam diam magna dolor sadipscing consetetur est accusam et. Et et nonumy gubergren.</p>
+          <p>DANNIE SCHUMAKER is a lifelong creator with a passion for the intersection of science and art. Whether knitting a sweater or building an app, her favorite part of the creative process is finding an elegant solution to a complex problem.</p>
         </div>
 
         <div className={styles.dev}>
