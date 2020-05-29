@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
   const [failed, setFailed] = useState(null);
   const [attempted, setAttempted] = useState(null);
   const [total, setTotal] = useState(null);
-  const [passingSolutionsByCategory, setPassingSolutionsByCategory] = useState(null);
+  const [passingSolutionsByCategory, setPassingSolutionsByCategory] = useState([]);
   
   const history = useHistory();
 

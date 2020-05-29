@@ -1,11 +1,17 @@
 .Dashboard {
-    height: 70vh;
+    height: 145vh;
+    width: 150vh;
     display: flex;
     flex-direction: column;
     margin-left: 10rem;
     margin-right: 10rem;
-    margin-top: -3rem;
+    margin-top: 2rem;
     margin-bottom: -5rem;
+    padding: 1rem 1rem 1rem 1rem;
+    border: 1px solid var(--gray);
+    border-width: 0.1em;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow); 
 
     .trySome {
       display: flex;
@@ -22,7 +28,12 @@
     }
 
     .charts {
+      display: flex;
       flex-direction: row;
+      align-items: center;
+     
+      margin-top: 5%;
+      width: 100vw;
     }
 
     .textContainer {

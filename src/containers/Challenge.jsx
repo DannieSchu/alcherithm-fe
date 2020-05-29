@@ -8,6 +8,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import { post } from '../services/request.js';
 import styles from './Challenge.css';
 import { useFetchPassedFailed } from '../hooks/AuthProvider.jsx';
+import tabStyle from '../styles/tabs.css';
 
 const Challenge = () => {
   const [runCode, setRunCode] = useState('');
@@ -61,9 +62,9 @@ const Challenge = () => {
         </section>
       </section>
       <section className={styles.solution}>
-        <section className={styles.tabs}>
+        <section className={tabStyle.tabs}>
           <input type="radio" id="solution" />
-          <label htmlFor="solution" >Challenge</label>
+          <label htmlFor="solution" className={tabStyle.active}>Challenge</label>
         </section>
         <section className={styles.content}>
           <h3>Starter Code</h3>

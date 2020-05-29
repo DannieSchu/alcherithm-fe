@@ -35,7 +35,7 @@ const About = () => (
               <img src={linkedInIcon} alt="linkedin-icon" className={styles.icons}></img>
             </a>  
           </div>
-          <p>DAKOTA DRULEY enjoys the full stack process .</p>
+          <p>DAKOTA DRULEY enjoys the full stack process and is passionate about problem solving, integrations, and efficient code. She is also a dancer, painter, social justice advocate and proud cat mom.</p>
         </div>
 
         <div className={styles.dev}>
@@ -48,7 +48,7 @@ const About = () => (
               <img src={linkedInIcon} alt="linkedin-icon" className={styles.icons}></img>
             </a>
           </div>  
-          <p>DANNIE SCHUMAKER Gubergren stet sea accusam lorem no sanctus. Amet voluptua clita et nonumy lorem sanctus et, rebum lorem voluptua dolor sed rebum takimata gubergren, erat et eirmod amet dolores labore erat diam rebum, tempor ut et tempor gubergren. Diam diam magna dolor sadipscing consetetur est accusam et. Et et nonumy gubergren.</p>
+          <p>DANNIE SCHUMAKER is a lifelong creator with a passion for the intersection of science and art. Whether knitting a sweater or building an app, her favorite part of the creative process is finding an elegant solution to a complex problem.</p>
         </div>
 
         <div className={styles.dev}>
@@ -61,7 +61,7 @@ const About = () => (
               <img src={linkedInIcon} alt="linkedin-icon" className={styles.icons}></img>
             </a>
           </div>
-          <p>JANELLE MELLOR Takimata duo dolor ea et sanctus sadipscing takimata, ut et ut vero duo amet takimata. Eirmod et est sit et sed lorem clita lorem accusam, kasd invidunt no stet aliquyam diam labore ipsum, ea consetetur rebum est labore dolor sed duo, no duo stet gubergren et. No invidunt diam magna.</p>
+          <p>JANELLE MELLOR is a fullstack developer who enjoys leveraging her technical experience with her community building background to develop meaningful tools. She uses her lived/learned experience and privilege to support the creation of more human-centered teams, processes, and programs and finds grounding in nature and in connection with others.</p>
         </div>
 
         <div className={styles.dev}>

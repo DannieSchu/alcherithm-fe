@@ -14,12 +14,6 @@
     color: var(--gray);
   }
 
-  div {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-  }
-
   article {
     display: flex;
     flex-direction: column;
