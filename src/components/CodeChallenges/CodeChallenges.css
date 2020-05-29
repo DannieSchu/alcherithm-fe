@@ -15,8 +15,9 @@
   }
 
   div {
+    margin-top: 2rem;
     display: flex;
-    flex-direction: 
+    justify-content: center;
   }
 
   article {
