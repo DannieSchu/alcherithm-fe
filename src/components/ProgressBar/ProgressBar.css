@@ -4,6 +4,21 @@
   align-items: center;
 
   progress {
-      height: 4rem;
+    color: var(--white);
+    border-radius: 5rem;
+    background: var(--white);
+    height: 1.6rem;
+    width: 25rem;
+  }
+
+  progress::-webkit-progress-value {
+    transition: width 1s;
+    background: var(--green);
+    border-radius: 5px;
+  }
+
+  progress::-webkit-progress-bar {
+    background: var(--muted-gray);
+    border-radius: 10px;
   }
 }
