@@ -1,6 +1,7 @@
 import React from 'react';
+// import Button from '../Button/Button';
 import styles from './Header.css';
-import logo from '../../assets/LogoWhiteTextLeft.png';
+import logo from '../../assets/logos/CenterAlignLogo.png';
 import { Link } from 'react-router-dom';
 import { useLogout, useCurrentUser, useLoading, useUserPassed, useUserTotal } from '../../hooks/AuthProvider';
 
@@ -21,7 +22,7 @@ const Header = () => {
 
         <div className={styles.User}>
           {user && <h3>Hello <Link className={styles.nameLink} to='/'>{user?.firstName}</Link></h3>}
-          {passed && <h4>Successful Challenges: {passed} / {total}</h4>}
+          {total && <h4>Successful Challenges: {passed} / {total}</h4>}
         </div>
 
         <nav className={styles.navbar}>
@@ -39,9 +40,10 @@ const Header = () => {
           <Link className={styles.navLink} to='/about'>About</Link>
           {user &&
           <>
-            <Link className={styles.navLink} onClick={logout}>Logout</Link>
+            <Link onClick={logout}>Logout</Link>
           </>
           }
+          {/* {user && <Button buttonStyle="secondary" backgroundColor="mainBlue" buttonText="Logout" buttonSize="small" onClick={logout} />} */}
         </nav>
       </header>
     </>
@@ -49,3 +51,4 @@ const Header = () => {
 };
 
 export default Header; 
+        

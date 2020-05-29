@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import styles from './CodeChallenges.css';
 
 const CodeChallenges = () => {
-  const { selectedChallenges, setCategory, loading } = useGetChallenges(fetchChallenges);
+  const { selectedChallenges, category, setCategory, loading } = useGetChallenges(fetchChallenges);
 
   const codeElements = selectedChallenges.map(challenge => (
     <li key={challenge._id}>
@@ -19,7 +19,7 @@ const CodeChallenges = () => {
 
   return (
     <section className={styles.CodeChallenges}>
-      <Dropdown setCategory={setCategory} />
+      <Dropdown setCategory={setCategory} category={category} />
       {loading && <h3>Loading</h3>}
       <ul className={styles.row}>
         {codeElements}

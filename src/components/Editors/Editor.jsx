@@ -17,7 +17,7 @@ const Editor = ({ code, handleCodeChange, readOnly = false }) => {
       name="root"
       // onLoad={this.onLoad}
       onChange={handleCodeChange}
-      fontSize={10}
+      fontSize={15}
       showPrintMargin={true}
       showGutter={true}
       highlightActiveLine={true}
