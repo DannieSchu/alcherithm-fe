@@ -1,43 +1,55 @@
 .Splash {
 
-    background-color: #31e89f93;
     height: 100vh;
-    
-    h2 {
-        color: white;
-    }
-
-    img {
-        width: 5.5rem;
-        margin: 1rem 1.6rem 1rem 3rem;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 
     .hexagon {
-        width: 80vw;
+        top: -2rem;
+        width: 50rem;
         height: auto;
-
-        &:first-of-type {
-            top: -10em;
-            right: -10em;
-        }
-
-        &:nth-of-type(2) {
-            top: -10em;
-            left: -10em;
-        }
-
-        &:last-of-type {
-            bottom: -10em;
-        }
+        left: calc(50% - 25rem);
+        position: absolute;
+        z-index: -1;
+        animation: spin 7s linear infinite forwards;
+        display: block;
+        transform-origin: center calc(50% + 4rem);
     }
 
-    .container {
-        display: flex;
+    aside img {
+        height: 8rem;
+        width: auto;
+    }
+    
+    .links {
+        padding: 0.5rem;
+        margin: 0.5rem;
+        font-size: 2rem;
     }
 
+    a {
+        color: #4D4D4D;
+    }
+
+    a:hover {
+        color: hotpink;
+    }
 }
 
 
+@keyframes spin{
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 
 
