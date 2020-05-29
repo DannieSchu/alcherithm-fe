@@ -7,23 +7,21 @@ const PassedByCategoryChart = () => {
 
   const categories = ['forEach', 'variables', 'sort', 'string methods', 'object iteration', 'map', 'filter', 'reduce', 'nested for loops'];
 
-  const counts = userSolutionsByCategory.map(solution => {
+  const categoryCounts = categories.map(category => {
+    const foundCategory = userSolutionsByCategory.find(obj => obj._id ===  'category');
+    if(!foundCategory) {
+      return ({ _id: category, count: 0 });
+    }
+    return foundCategory;
+  });
+
+  const counts = categoryCounts.map(solution => {
     return solution.count;
   });
 
-  const labels = userSolutionsByCategory.map(solution => {
+  const labels = categoryCounts.map(solution => {
     return solution._id;
-  })
-
-  const newArray = categories.map(category => {
-    const foundCategory = userSolutionsByCategory.find(obj => obj._id ===  'category');
-    if(!foundCategory) {
-      return ({ _id: category, count: 0 })
-    }
-    return foundCategory;
-  })
-
-  
+  });
 
   console.log(userSolutionsByCategory);
   
@@ -46,8 +44,8 @@ const PassedByCategoryChart = () => {
   return (
     <section>
       <Pie 
-        data={counts}
-        options={labels}
+        data={data}
+        options={}
       />
     </section>
   )
