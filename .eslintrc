@@ -10,7 +10,8 @@
     "jest": true
   },
   "globals": {
-    "process": true
+    "process": true,
+    "QUnit": true
   },
   "plugins": [
     "babel",
