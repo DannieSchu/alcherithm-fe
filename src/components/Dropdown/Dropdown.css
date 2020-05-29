@@ -2,6 +2,11 @@
   width: 11rem;
   height: 2.2rem;
   font-size: .8rem;
+  
+  border: none;
+  border-radius: 6px;
+  
 	box-shadow: inset -1px -1px 10px rgb(106, 198, 235);
   background-color: var(--secondary-blue);
+  color: var(--gray);
 }

@@ -16,10 +16,12 @@ const Editor = ({ code, handleCodeChange, readOnly = false }) => {
       name="root"
       onChange={handleCodeChange}
       fontSize={15}
-      showPrintMargin={true}
+      showPrintMargin={false}
       showGutter={true}
       highlightActiveLine={true}
       value={code}
+      width="100%"
+      wrapEnabled={true}
       setOptions={{
         enableBasicAutocompletion: true,
         enableLiveAutocompletion: true,

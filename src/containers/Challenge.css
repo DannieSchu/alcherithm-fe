@@ -30,6 +30,8 @@
   }
 
   .solution {
+    width: 45vw;
+
     .tabs {
       margin: 0;
       background-color: white;
@@ -51,7 +53,7 @@
     }
 
     .content {
-      width: 50%;
+      width: 100%;
       background-color: var(--muted-gray);
       margin-top: 0.75rem;
       min-width: 37rem;

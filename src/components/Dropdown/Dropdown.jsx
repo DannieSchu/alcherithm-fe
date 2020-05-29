@@ -17,7 +17,8 @@ const Dropdown = ({ setCategory, category }) => {
 };
 
 Dropdown.propTypes = {
-  setCategory: PropTypes.func.isRequired
+  setCategory: PropTypes.func.isRequired,
+  category: PropTypes.string.isRequired
 };
 
 export default Dropdown;
