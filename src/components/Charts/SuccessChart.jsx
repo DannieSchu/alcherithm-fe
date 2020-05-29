@@ -27,7 +27,8 @@ const SuccessChart = () => {
         options={{
           title:{
             display:true,
-            text:'Challenges Completed Successfully',
+            // text:'Challenges Completed Successfully',
+            text:'Passed vs Failed Challenges',
             fontSize:20
           },
           legend:{
