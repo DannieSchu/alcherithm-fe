@@ -62,7 +62,7 @@ const About = () => (
               <img src={linkedInIcon} alt="linkedin-icon" className={styles.icons}></img>
             </a>
           </div>
-          <p>JANELLE MELLOR Takimata duo dolor ea et sanctus sadipscing takimata, ut et ut vero duo amet takimata. Eirmod et est sit et sed lorem clita lorem accusam, kasd invidunt no stet aliquyam diam labore ipsum, ea consetetur rebum est labore dolor sed duo, no duo stet gubergren et. No invidunt diam magna.</p>
+          <p>JANELLE MELLOR is a fullstack developer who enjoys leveraging her technical experience with her community building background to develop meaningful tools. She uses her lived/learned experience and privilege to support the creation of more human-centered teams, processes, and programs and finds grounding in nature and in connection with others.</p>
         </div>
 
         <div className={styles.dev}>
