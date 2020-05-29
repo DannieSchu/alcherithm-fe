@@ -1,5 +1,4 @@
 import React from 'react';
-// import Button from '../Button/Button';
 import styles from './Header.css';
 import logo from '../../assets/logos/CenterAlignLogo.png';
 import { Link } from 'react-router-dom';
@@ -43,7 +42,6 @@ const Header = () => {
             <Link onClick={logout}>Logout</Link>
           </>
           }
-          {/* {user && <Button buttonStyle="secondary" backgroundColor="mainBlue" buttonText="Logout" buttonSize="small" onClick={logout} />} */}
         </nav>
       </header>
     </>
@@ -51,4 +49,3 @@ const Header = () => {
 };
 
 export default Header; 
-        

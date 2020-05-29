@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
-import { useLoading } from '../../hooks/AuthProvider';
+import { useLoading, usePassingSolutionsByCategory, useCurrentUser } from '../../hooks/AuthProvider';
 import styles from './Dashboard.css'; 
 import PieChart from '../Chart.js/chart.js';
 
 const Dashboard = () => {
   const loading = useLoading();
+  const userSolutionsByCategory = usePassingSolutionsByCategory();
+  const user = useCurrentUser();
+
+
+  console.log(userSolutionsByCategory);
   
   if(loading) return (
     <section>
