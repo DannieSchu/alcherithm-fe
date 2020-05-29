@@ -1,26 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
-import { useLoading, usePassingSolutionsByCategory, useCurrentUser, useUserPassed, useUserFailed, useUserAttempted, useUserTotal } from '../../hooks/AuthProvider';
+import { useLoading, useCurrentUser } from '../../hooks/AuthProvider';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import SuccessChart from '../Charts/SuccessChart';
 import PassedByCategoryChart from '../Charts/PassedByCategoryChart';
 import styles from './Dashboard.css'; 
 
 const Dashboard = () => {
-  const loading = useLoading();
   const user = useCurrentUser();
-  const userSolutionsByCategory = usePassingSolutionsByCategory();
-  const passed = useUserPassed();
-  const failed = useUserFailed();
-  const attempted = useUserAttempted();
-  const total = useUserTotal();
-
-  console.log(userSolutionsByCategory);
-  console.log('passed: ' + passed);
-  console.log('failed: ' + failed);
-  console.log('attempted: ' + attempted);
-  console.log('total: ' + total);
+  const loading = useLoading();
   
   if(loading) return (
     <section>
