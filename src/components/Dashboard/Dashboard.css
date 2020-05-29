@@ -50,8 +50,6 @@
   }
 
   .DashboardAttemptedZero {
-    height: 55vh;
-    width: 150vh;
     display: flex;
     flex-direction: column;
     margin-left: 10rem;
@@ -69,7 +67,7 @@
       justify-content: center;
       margin: auto;
       width: 100%;
-      margin-top: -3rem;
+      margin-top: 1rem;
     }
 
     .userProgress {
