@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 const ReactMarkdown = require('react-markdown');
 import CodeBlock from './CodeBlock';
 import styles from './ChallengeDisplay.css';
+import tabStyle from '../../styles/tabs.css';
 
 const ChallengeDisplay = ({ category, challengeNumber, instructions, overview, documentation, video }) => {
   const [selectedTab, setSelectedTab] = useState('Instructions');
@@ -19,14 +20,14 @@ const ChallengeDisplay = ({ category, challengeNumber, instructions, overview, d
   return (
     <main className={styles.ChallengeDisplay}>
 
-      <section className={styles.tabs}>
+      <section className={tabStyle.tabs}>
         <input type="radio" id="Instructions" name="tabbed" onChange={handleTabChange}></input>
         <input type="radio" id="Resources" name="tabbed" onChange={handleTabChange}></input>
         <input type="radio" id="Video" name="tabbed" onChange={handleTabChange}></input>
 
-        <label htmlFor="Instructions" className={selectedTab === 'Instructions' && styles.active}>Instructions</label>
-        <label htmlFor="Resources" className={selectedTab === 'Resources' && styles.active}>Resources</label>
-        <label htmlFor="Video" className={selectedTab === 'Video' && styles.active}>Video</label>
+        <label htmlFor="Instructions" className={selectedTab === 'Instructions' && tabStyle.active}>Instructions</label>
+        <label htmlFor="Resources" className={selectedTab === 'Resources' && tabStyle.active}>Resources</label>
+        <label htmlFor="Video" className={selectedTab === 'Video' && tabStyle.active}>Video</label>
       </section>
 
       {selectedTab === 'Instructions' && <section className={styles.content}>
