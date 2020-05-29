@@ -1,28 +1,36 @@
 .Dashboard {
     display: flex;
     flex-direction: column;
-    /* align-items: center;
-    justify-content: center; */
     margin-left: 10rem;
     margin-right: 10rem;
     margin-top: -3rem;
     margin-bottom: -5rem;
 
-    section {
+
+    .userProgress {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-top: 5%;
     }
-    
-    section:first-child {
+
+    .charts {
+      flex-direction: row;
+    }
+
+    .textContainer {
+      display: flex;
+      flex-direction: column;
+    }
+    /* section:first-child {
       min-width: 100%;
       max-width: 70rem;
       min-height: 20rem;
       margin: 2rem;
-  
+
       border: 1px solid rgb(187, 186, 186);
       border-radius: 5px;
-    }
+    }  */
 
   
     button {
@@ -33,12 +41,18 @@
       min-width: 20rem;
       max-width: 20rem;
       min-height: 12rem;
-      margin: 1rem;
   
       border: 1px solid rgb(187, 186, 186);
       border-radius: 5px;
       box-shadow: 5px 10px 10px rgb(187, 186, 186);
     }
+
+    .buttons {
+      display: flex;
+      flex-direction: row;
+    
+    }
+
 
     p {
       font-size: 20px;

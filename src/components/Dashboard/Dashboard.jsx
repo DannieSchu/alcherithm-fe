@@ -18,18 +18,20 @@ const Dashboard = () => {
 
   return (
     <main className={styles.Dashboard}>
-      <section>
-        <h2>{user.firstName}'s Dashboard!</h2>
-        <h3>Cohort: {user.cohort}</h3>
-        <section>
-          <ProgressBar />
+   
+      <section className={styles.userProgress}>
+        <section className={styles.textContainer}>
+          <h2>{user.firstName}'s Dashboard!</h2>
+          <h3>Cohort: {user.cohort}</h3>
         </section>
-        <section>
-          <SuccessChart />
-        </section>
+        <ProgressBar />
+      </section>
+      <section className={styles.charts}>
+        <SuccessChart />
       </section>
       
-      <section>
+      
+      <section className={styles.buttons}>
         <Link to="/challenges">
           <Button buttonStyle="primary" backgroundColor="green" buttonSize="large" buttonText="Find a Challenge" />
         </Link>
