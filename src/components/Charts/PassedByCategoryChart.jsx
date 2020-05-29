@@ -4,7 +4,6 @@ import { Pie } from 'react-chartjs-2';
 
 const PassedByCategoryChart = () => {
   const userSolutionsByCategory = usePassingSolutionsByCategory();
-  console.log(userSolutionsByCategory);
 
   const categories = ['forEach', 'variables', 'sort', 'string methods', 'object iteration', 'map', 'filter', 'reduce', 'nested for loops'];
 
@@ -19,12 +18,10 @@ const PassedByCategoryChart = () => {
   const counts = categoryCounts.map(solution => {
     return solution.count;
   });
-  console.log(counts);
 
   const labels = categoryCounts.map(solution => {
     return solution._id;
   });
-  console.log(labels);
   
   const data = {
     datasets: [
