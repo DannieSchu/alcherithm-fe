@@ -25,7 +25,7 @@
         color: #728FCB;
 
         &:hover {
-            color: var(--secondary-blue)
+            color: var(--pink)
         }
     }
 }
