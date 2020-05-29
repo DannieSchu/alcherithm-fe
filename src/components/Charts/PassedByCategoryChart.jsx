@@ -45,7 +45,7 @@ const PassedByCategoryChart = () => {
   };
 
   return (
-    <section>
+    <section style={{ width: '100%', maxWidth: '500px' }}>
       <Pie 
         data={data}
         options={{
@@ -56,7 +56,7 @@ const PassedByCategoryChart = () => {
           },
           legend:{
             display:true,
-            position:'right'
+            position:'right',
           }
         }}
       />
