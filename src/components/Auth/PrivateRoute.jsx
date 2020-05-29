@@ -13,8 +13,7 @@ const PrivateRoute = (props) => {
   if(loading) {
     return <h2>loading...</h2>;
   }
-
-  // if we are logged in route normally
+  
   return <Route {...props} />;
 };
 

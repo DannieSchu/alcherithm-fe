@@ -38,7 +38,6 @@ Editor.propTypes = {
   code: PropTypes.string.isRequired,
   handleCodeChange: PropTypes.func,
   readOnly: PropTypes.bool
-//   not required so you can use this for the code and the test
 };
 
 export default Editor;

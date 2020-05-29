@@ -7,4 +7,3 @@ export const fetchAllSolutionsToChallenge = challengeId => get(`/api/v1/solution
 export const fetchUserChallengesWithSolutions = userId => get(`/api/v1/solutions?userId=${userId}`);
 
 export const fetchResults = solutionId => get(`/api/v1/solutions/results/${solutionId}`);
-
