@@ -1,0 +1,9 @@
+.ProgressBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  progress {
+      height: 4rem;
+  }
+}
