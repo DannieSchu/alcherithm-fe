@@ -7,7 +7,9 @@
   .overview {
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     width: 43vw;
+    height: 75vh;
   }
   
   article {
@@ -23,10 +25,9 @@
   
   .testResults {
     margin-top: 2rem;
-    background-color: var(--green);
-    background-color: var(--main-blue);
     padding: .6rem 2rem;
     color: var(--gray);
+    background-color: var(--main-blue);
   }
 
   .solution {
@@ -41,12 +42,12 @@
       }
 
       label {
-        font-family: var(--display-font);
         display: inline;
         padding: 0.75rem;
         margin: 0 0.08rem;
         border-top-left-radius: 1.5rem;
         border-top-right-radius: 1.5rem;
+        font-family: var(--display-font);
         background-color: var(--muted-gray);
         border-bottom: 1px solid var(--muted-gray);
       }
@@ -54,20 +55,27 @@
 
     .content {
       width: 100%;
-      background-color: var(--muted-gray);
-      margin-top: 0.75rem;
       min-width: 37rem;
+      max-height: 73vh;
+      min-height: 60vh;
+      margin-top: 0.75rem;
       padding: 1rem;
-      min-height: 24rem;
+
       border-top: .9rem solid var(--muted-gray);
       border-bottom: .9rem solid var(--muted-gray);
+      background-color: var(--muted-gray);
+      overflow: scroll;
+
+      hr {
+        margin-top: 3.5rem;
+    }
 
       h3 {
         margin-top: 0;
       }
 
       article {
-        width: 90%
+        width: 90%;
       }
     }
   }
