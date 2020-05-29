@@ -57,9 +57,9 @@ const SignUp = () => {
           <option value="allCohorts">&nbsp;&nbsp;choose cohort</option>
           {cohortOptions}
         </select>
-        
+
         <div className={styles.signUpButton}>
-          <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="small" buttonText="SignUp" />
+          <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="small" buttonText="Sign Up" />
         </div>
       </form>
       <h4 className={styles.haveAccount}>Already have an account? <Link to='/login'>Login</Link></h4>

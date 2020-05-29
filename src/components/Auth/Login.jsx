@@ -35,9 +35,10 @@ const Login = () => {
     <>
       <form className={styles.formWrap} onSubmit={handleLoginSubmit}>
         <input className={styles.inputForm} type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
-
         <input className={styles.inputForm} type="password" name="password" value={password} onChange={handleChange} placeholder="password" />
-        <Button className={styles.loginButton} buttonStyle="primary" backgroundColor="blue" buttonSize="small" buttonText="Login" />
+        <div className={styles.loginButton}>
+          <Button className={styles.loginButton} buttonStyle="primary" backgroundColor="mainBlue" buttonSize="small" buttonText="Login" />
+        </div>
       </form>
       <h4 className={styles.needAccount}>Don't have an account? <Link to='/signup'>Sign Up</Link></h4>
       {error && (<section className={styles.errorDisplay}><h4>{error.message}</h4></section>)}
