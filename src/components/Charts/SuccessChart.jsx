@@ -33,7 +33,7 @@ const SuccessChart = () => {
           legend:{
             display:true,
             position:'bottom'
-          }
+          },
         }}
       />
     </section>
