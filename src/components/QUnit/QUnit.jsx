@@ -14,11 +14,16 @@ const Tester = ({ tests, setPassed }) => {
 
     const testScript  = document.createElement('script');
     qunitScript.addEventListener('load', () => {
-      testScript.innerHTML = tests;
+      testScript.innerHTML = `(function() { ${tests} })()`;
       document.body.appendChild(testScript);
       QUnit.done((details) => {
-        setDetails(details);
-        setPassed(details.passed);
+        console.log(details);
+        setDetails({ 
+          passed: details.failed ? 0 : 1, 
+          failed: details.failed ? 1 : 0,
+          total: 1
+        });
+        setPassed(!details.failed);
       });
     });
 
