@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './QUnit.css';
 
 const Tester = ({ tests, setPassed }) => {
@@ -16,8 +17,8 @@ const Tester = ({ tests, setPassed }) => {
     qunitScript.addEventListener('load', () => {
       testScript.innerHTML = `(function() { ${tests} })()`;
       document.body.appendChild(testScript);
+
       QUnit.done((details) => {
-        console.log(details);
         setDetails({ 
           passed: details.failed ? 0 : 1, 
           failed: details.failed ? 1 : 0,
@@ -40,6 +41,11 @@ const Tester = ({ tests, setPassed }) => {
       <p>Failed: {details.failed}</p>
     </section>
   );
+};
+
+Tester.propTypes = {
+  tests: PropTypes.array,
+  setPassed: PropTypes.func
 };
 
 export default Tester;

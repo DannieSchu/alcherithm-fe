@@ -62,11 +62,10 @@
 
  :global(#confetti) {
   position: absolute;
-  top: 8rem;
+  top: -2rem;
   left: 0;
   right: 0;
-  bottom: 0;
-  width: 100vw;
+  width: 100%;
   z-index: 5;
   }
 }
