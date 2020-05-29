@@ -1,5 +1,4 @@
 import React from 'react';
-// import { useLoading } from '../../hooks/AuthProvider';
 import githubIcon from '../../assets/profile/Github-Icon.png';
 import linkedInIcon from '../../assets/profile/LinkedIn-Icon.png';
 import Dakota from '../../assets/profile/Dakota.png';
@@ -18,8 +17,7 @@ const About = () => (
             <h1 className={styles.alcherithmHeader}>Alcherithm</h1>
             <img src={githubIcon} alt="github-icon" className={styles.icons}/>
           </a>
-          <p className={styles.para}>Alcherithm is a project... 
-            Magna et amet dolor ut accusam ut no amet sed, diam vero sit rebum erat, takimata clita at dolor aliquyam, amet consetetur dolore lorem diam at eirmod clita, takimata stet et sit et et clita eos sanctus. Ipsum sed lorem.
+          <p className={styles.para}>Alcherithm - a code companion. Junior software developers often struggle with the learning process of code challenges. This learning platform combines resources, videos and documentation to help developers build a foundation. Users can not only practice from our library of code challenges, but they can also review past attempts at various problems. We invite you take the Alcherithm challenge; happy coding!
           </p>
                   
         </div>    
@@ -75,7 +73,7 @@ const About = () => (
               <img src={linkedInIcon} alt="linkedin-icon" className={styles.icons}></img>
             </a> 
           </div>   
-          <p>MICHAEL ROMAY is an installation artist and musician who makes weird digital visual and interactive art.  Code, music and art go hand in hand for him.  He also has a baby bird named Rico that is very sweet.</p>
+          <p>MICHAEL ROMAY is a fullstack engineer, installation artist and musician who makes weird digital visual and interactive art.  Code, music and art go hand in hand for him.  He also has a baby bird named Rico that is very sweet.</p>
         </div>
 
         <div className={styles.dev}>
@@ -88,9 +86,8 @@ const About = () => (
               <img src={linkedInIcon} alt="linkedin-icon" className={styles.icons}></img>
             </a>
           </div>
-          <p>WILL PIRO Est kasd duo no stet et sanctus tempor duo duo nonumy. Nonumy tempor est stet erat et ea. Ipsum erat nonumy eirmod no ea no dolore eirmod, ipsum dolor invidunt sea at stet consetetur, diam et voluptua et et kasd, et ipsum et ea diam amet lorem tempor dolor eos,.</p>
+          <p>WILL PIRO is full stack software engineer who relishes in the mentality that every project deserves a clear goal, detailed plan, sensible testing framework, and the grit to execute. As a former City Planner, he looks forward to building applications that exist at the intersection of sustainable community development and web-based technologies that produce positive, tangible, and equitable outcomes.</p>
         </div>
-
       </div>
     </main>
   </>

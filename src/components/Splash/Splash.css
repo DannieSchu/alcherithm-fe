@@ -1,5 +1,4 @@
 .Splash {
-
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -50,6 +49,3 @@
         transform: rotate(360deg);
     }
 }
-
-
-

@@ -2,11 +2,7 @@ import React from 'react';
 import { useLoading, useCurrentUser } from '../../hooks/AuthProvider';
 import { useHistory, Link } from 'react-router-dom';
 import styles from './Splash.css';
-import blue1 from '../../assets/hexagons/BlueHexagon.png';
-import green from '../../assets/hexagons/GreenHexagon.png';
-import blue2 from '../../assets/hexagons/SecondaryBlueHexagon.png';
 import combo from '../../assets/hexagons/hexagons.png';
-import logo from '../../assets/logos/CenterAlignLogo.png';
 import logo2 from '../../assets/logos/LogoCharcoal.png';
 
 const Splash = () => {

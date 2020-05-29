@@ -31,7 +31,7 @@ const History = () => {
   return (
     <section className={styles.CodeChallenges}>
       <article>
-        <h1>Completed Challenges</h1>
+        <h1>History of Completed Challenges</h1>
         <div className={history.Styles}><Dropdown setCategory={setCategory} /></div>
         {visible && <PopUp toggle={togglePopUp} solutions={selectedSolutions} />}
         <ul className={styles.column}>

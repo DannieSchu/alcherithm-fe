@@ -1,20 +1,38 @@
+.loginButton {
+  margin: auto;
+  margin-top: -2rem;
+}
+
 .inputForm {
   padding: 1rem 1rem;
   line-height: .5rem;
   border: dotted .1vw rgb(197, 197, 197);
-  border-radius: 1rem;
+  border-radius: 6px;
   font-size: 1rem;
   margin: auto;
+  width: 11rem;
+  height: 2.2rem;
+  margin-bottom: 1rem;
 }
 
 .formWrap {
   display: flex;
   margin: auto;
+  flex-direction: column;
   justify-items: center;
-  border: 1px solid rgb(187, 186, 186);
+  border: .1vw solid rgb(197, 197, 197);
   border-radius: 1rem;
   width: 50%;
   margin-bottom: 1rem;
+  padding-top: 1rem;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);  
+}
+
+.formWrap:hover {
+  border: 1px solid rgba(49, 232, 232, 0.6);
+  box-shadow: var(--hover-box-shadow);
 }
 
 .errorDisplay {
@@ -32,7 +50,6 @@
   margin: auto;
   justify-items: center;
   width: 50%;
-  margin-top: -.5rem;
   padding-left: .5rem;
 
   a {

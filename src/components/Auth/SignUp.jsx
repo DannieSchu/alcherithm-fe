@@ -53,12 +53,14 @@ const SignUp = () => {
         <input className={styles.inputForm} type="text" name="firstName" value={firstName} onChange={handleChange} placeholder="first name" />
         <input className={styles.inputForm} type="text" name="lastName" value={lastName} onChange={handleChange} placeholder="last name" />
 
-        <select className={styles.SignUp} id="cohort" onChange={({ target }) => setCohort(target.value)}>
-          <option value="allCohorts">choose cohort</option>
+        <select className={styles.cohortDropdown} id="cohort" onChange={({ target }) => setCohort(target.value)}>
+          <option value="allCohorts">&nbsp;&nbsp;choose cohort</option>
           {cohortOptions}
         </select>
-        
-        <Button className={styles.signUpButton} buttonStyle="primary" backgroundColor="blue" buttonSize="small" buttonText="SignUp" />
+
+        <div className={styles.signUpButton}>
+          <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="small" buttonText="Sign Up" />
+        </div>
       </form>
       <h4 className={styles.haveAccount}>Already have an account? <Link to='/login'>Login</Link></h4>
       {error && (<section className={styles.errorDisplay}> <h4>{error.message}</h4></section>)}
