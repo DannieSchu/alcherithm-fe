@@ -27,6 +27,28 @@ const Dashboard = () => {
     </section>
   );
 
+  if(attempted === 0) return (
+    <main className={styles.Dashboard}>
+      <section className={styles.userProgress}>
+        <section className={styles.textContainer}>
+          <h2>{user.firstName}'s Dashboard!</h2>
+          <h3>Cohort: {user.cohort}</h3>
+        </section>    
+      </section>
+      <h2>try some challenges to see your stats!</h2>
+    
+      <section className={styles.buttons}>
+        <Link to="/challenges">
+          <Button buttonStyle="primary" backgroundColor="green" buttonSize="large" buttonText="Find a Challenge" />
+        </Link>
+        <Link to="/history">
+          <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="large" buttonText="View Completed Challenges" />
+        </Link>
+      </section>
+    </main>
+
+  );
+
   return (
     <main className={styles.Dashboard}>
       <section className={styles.userProgress}>
