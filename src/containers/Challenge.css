@@ -27,7 +27,7 @@
     margin-top: 2rem;
     padding: .6rem 2rem;
     color: var(--gray);
-    background-color: var(--main-blue);
+    background-color: var(--muted-gray);
   }
 
   .solution {
@@ -57,7 +57,7 @@
       width: 100%;
       min-width: 37rem;
       max-height: 73vh;
-      min-height: 60vh;
+      min-height: 61vh;
       margin-top: 0.75rem;
       padding: 1rem;
 
