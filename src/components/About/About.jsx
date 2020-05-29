@@ -36,7 +36,7 @@ const About = () => (
               <img src={linkedInIcon} alt="linkedin-icon" className={styles.icons}></img>
             </a>  
           </div>
-          <p>DAKOTA DRULEY enjoys the full stack process .</p>
+          <p>DAKOTA DRULEY enjoys the full stack process and is passionate about problem solving, integrations, and efficient code. She is also a dancer, painter, social justice advocate and proud cat mom.</p>
         </div>
 
         <div className={styles.dev}>
