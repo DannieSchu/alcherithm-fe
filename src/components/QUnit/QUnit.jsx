@@ -14,7 +14,7 @@ const Tester = ({ tests, setPassed }) => {
 
     const testScript  = document.createElement('script');
     qunitScript.addEventListener('load', () => {
-      testScript.innerHTML = tests;
+      testScript.innerHTML = `(function() { ${tests} })()`;
       document.body.appendChild(testScript);
       QUnit.done((details) => {
         console.log(details);
