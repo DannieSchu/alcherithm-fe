@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
-import { useLoading, useCurrentUser } from '../../hooks/AuthProvider';
+import { useLoading, usePassingSolutionsByCategory, useCurrentUser, useUserPassed, useUserFailed, useUserAttempted, useUserTotal } from '../../hooks/AuthProvider';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import SuccessChart from '../Charts/SuccessChart';
 import styles from './Dashboard.css'; 
@@ -9,6 +9,17 @@ import styles from './Dashboard.css';
 const Dashboard = () => {
   const loading = useLoading();
   const user = useCurrentUser();
+  const userSolutionsByCategory = usePassingSolutionsByCategory();
+  const passed = useUserPassed();
+  const failed = useUserFailed();
+  const attempted = useUserAttempted();
+  const total = useUserTotal();
+
+  console.log(userSolutionsByCategory);
+  console.log('passed: ' + passed);
+  console.log('failed: ' + failed);
+  console.log('attempted: ' + attempted);
+  console.log('total: ' + total);
   
   if(loading) return (
     <section>
@@ -18,7 +29,6 @@ const Dashboard = () => {
 
   return (
     <main className={styles.Dashboard}>
-   
       <section className={styles.userProgress}>
         <section className={styles.textContainer}>
           <h2>{user.firstName}'s Dashboard!</h2>
@@ -29,7 +39,6 @@ const Dashboard = () => {
       <section className={styles.charts}>
         <SuccessChart />
       </section>
-      
       
       <section className={styles.buttons}>
         <Link to="/challenges">

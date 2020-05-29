@@ -13,5 +13,3 @@ The process of learning and studying code challenges can be difficult for many c
 
 # Libraries/Packages
 - react-ace
-
-
