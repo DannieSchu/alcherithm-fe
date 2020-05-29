@@ -17,8 +17,13 @@ const Tester = ({ tests, setPassed }) => {
       testScript.innerHTML = tests;
       document.body.appendChild(testScript);
       QUnit.done((details) => {
-        setDetails(details);
-        setPassed(details.passed);
+        console.log(details);
+        setDetails({ 
+          passed: Math.min(details.passed, 1), 
+          failed: Math.min(details.failed, 1),
+          total: Math.min(details.total, 1)
+        });
+        setPassed(!!details.passed);
       });
     });
 

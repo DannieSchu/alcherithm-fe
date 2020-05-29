@@ -13,12 +13,26 @@
     }
 
     .hexagon {
-        width: 0;
-        height: 0;
-        border-top: 25px solid transparent;
-        border-right: 50px solid #555;
-        border-bottom: 25px solid transparent;
-        margin-top: 0px;
+        width: 80vw;
+        height: auto;
+
+        &:first-of-type {
+            top: -10em;
+            right: -10em;
+        }
+
+        &:nth-of-type(2) {
+            top: -10em;
+            left: -10em;
+        }
+
+        &:last-of-type {
+            bottom: -10em;
+        }
+    }
+
+    .container {
+        display: flex;
     }
 
 }
