@@ -1,6 +1,8 @@
 .Results {
   display: flex;
   width: 100vw;
+  margin: 1vw;
+  padding: 1vw;
   
   li {
     list-style-type: none;
@@ -13,13 +15,32 @@
   }
 
   .editors {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+    background-color: var(--gray);
+    margin: 1rem;
+    padding: 1rem;
+    color: white;
+
+    ul {
+      padding: 0;
+    }
+  }
+
+  .editorBox {
 
   }
 
+ :global(#confetti) {
+  position: absolute;
+  top: 8rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  z-index: 5;
+  }
 
-  
+  .panda {
+    margin-top: 50%;
+  }
 
 }

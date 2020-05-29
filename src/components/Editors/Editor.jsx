@@ -7,7 +7,6 @@ import 'ace-builds/src-noconflict/theme-monokai';
 import 'ace-builds/src-noconflict/ext-language_tools.js';
 
 const Editor = ({ code, handleCodeChange, readOnly = false }) => {
-// dynamically pass in the code 
 
   return (
     <AceEditor
@@ -15,9 +14,8 @@ const Editor = ({ code, handleCodeChange, readOnly = false }) => {
       mode="javascript"
       theme="monokai"
       name="root"
-      // onLoad={this.onLoad}
       onChange={handleCodeChange}
-      fontSize={10}
+      fontSize={15}
       showPrintMargin={true}
       showGutter={true}
       highlightActiveLine={true}
@@ -28,7 +26,7 @@ const Editor = ({ code, handleCodeChange, readOnly = false }) => {
         enableSnippets: true,
         showLineNumbers: true,
         tabSize: 2,
-        maxLines: 15,
+        maxLines: 20,
         readOnly
       }}/>
   );
