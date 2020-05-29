@@ -33,15 +33,15 @@ const PassedByCategoryChart = () => {
         backgroundColor: [
           'rgba(48, 232, 159, 0.6)',
           'rgba(49, 232, 232, 0.6)',
+          'rgba(48, 198, 232, 0.6)',
           'rgba(48, 232, 159, 0.6)',
           'rgba(49, 232, 232, 0.6)',
-          '#B21F00',
-          '#C9DE00',
-          '#2FDE00',
-          '#00A6B4',
-          '#6800B4'
+          'rgba(48, 198, 232, 0.6)',
+          'rgba(48, 232, 159, 0.6)',
+          'rgba(49, 232, 232, 0.6)',
+          'rgba(48, 198, 232, 0.6)',
         ],
-        hoverBackgroundColor: 'rgba(48, 198, 232, 0.6)'
+        hoverBackgroundColor: '#E6DB74'
       }
     ],
     labels: [labels]
