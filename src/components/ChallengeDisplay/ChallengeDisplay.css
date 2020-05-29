@@ -2,14 +2,14 @@
     width: 100%;
 
     .content {
-        min-width: 37rem;
         height: 26rem;
         margin-top: 0.75rem;
         padding: 1rem;
-        overflow: scroll;
+
         border-top: .9rem solid var(--muted-gray);
         border-bottom: .9rem solid var(--muted-gray);
         background-color: var(--muted-gray);
+        overflow: scroll;
 
         .video {
             text-align: center;

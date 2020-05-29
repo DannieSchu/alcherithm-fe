@@ -2,14 +2,16 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  padding: 1rem 4rem;
+  padding: 1rem 5%;
   
   .overview {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 43vw;
-    height: 75vh;
+    min-width: 20rem;
+    width: 50%;
+    height: 75%;
+    margin-right: 1rem;
   }
   
   article {
@@ -24,6 +26,7 @@
   }
   
   .testResults {
+    width: 100%;
     margin-top: 2rem;
     padding: .6rem 2rem;
     color: var(--gray);
@@ -31,12 +34,13 @@
   }
 
   .solution {
-    width: 45vw;
+    width: 45%;
+    min-width: 20rem;
+    margin-right: 1rem;
 
     .content {
       width: 100%;
-      min-width: 37rem;
-      max-height: 73vh;
+      height: 75%;
       min-height: 61vh;
       margin-top: 0.75rem;
       padding: 1rem;
