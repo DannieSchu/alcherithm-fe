@@ -1,6 +1,6 @@
 .Dashboard {
-    height: 140vh;
-    widows: 150vh;
+    height: 145vh;
+    width: 150vh;
     display: flex;
     flex-direction: column;
     margin-left: 10rem;
