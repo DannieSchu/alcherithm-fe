@@ -7,6 +7,7 @@ import { fetchChallengeById } from '../services/challengesAPI.js';
 import { useParams, useHistory } from 'react-router-dom';
 import { post } from '../services/request.js';
 import styles from './Challenge.css';
+import { useFetchPassedFailed } from '../hooks/AuthProvider.jsx';
 
 const Challenge = () => {
   const [runCode, setRunCode] = useState('');
@@ -15,6 +16,7 @@ const Challenge = () => {
 
   const { id } = useParams();
   const history = useHistory();
+  const fetchPassedFailed = useFetchPassedFailed();
 
   useEffect(() => {
     fetchChallengeById(id)
@@ -37,7 +39,8 @@ const Challenge = () => {
       passed,
       solution: challenge.starterCode
     })
-      .then(solution => history.push(`/results/solution/${solution._id}`));
+      .then(solution => history.push(`/results/solution/${solution._id}`))
+      .then(() => fetchPassedFailed());
   };
 
   if(!challenge)

@@ -18,6 +18,17 @@ export const AuthProvider = ({ children }) => {
   
   const history = useHistory();
 
+  const fetchPassedFailed = () => {
+    return getUserPassFailAttempted(user._id)
+      .then(({ passed, failed, attempted, totalNumberOfChallenges, passingSolutionsByCategory }) => {
+        setPassed(passed);
+        setFailed(failed);
+        setAttempted(attempted);
+        setTotal(totalNumberOfChallenges);
+        setPassingSolutionsByCategory(passingSolutionsByCategory);
+      });
+  };
+
   useEffect(() => {
     getVerify()
       .then(user => setUser(user))
@@ -26,14 +37,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if(!user) return;
-    getUserPassFailAttempted(user._id)
-      .then(({ passed, failed, attempted, totalNumberOfChallenges, passingSolutionsByCategory }) => {
-        setPassed(passed);
-        setFailed(failed);
-        setAttempted(attempted);
-        setTotal(totalNumberOfChallenges);
-        setPassingSolutionsByCategory(passingSolutionsByCategory);
-      });
+    fetchPassedFailed();
   }, [user]);
 
   const signup = (email, password, firstName, lastName, cohort, avatar) => {
@@ -61,7 +65,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, signup, login, logout, error, loading, passed, failed, attempted, total, passingSolutionsByCategory }}>
+    <AuthContext.Provider value={{ user, signup, login, logout, error, loading, passed, failed, attempted, total, passingSolutionsByCategory, fetchPassedFailed }}>
       {children}
     </AuthContext.Provider>
   );
@@ -124,4 +128,9 @@ export const useUserTotal = () => {
 export const usePassingSolutionsByCategory = () => {
   const { passingSolutionsByCategory } = useContext(AuthContext);
   return passingSolutionsByCategory;
+};
+
+export const useFetchPassedFailed = () => {
+  const { fetchPassedFailed } = useContext(AuthContext);
+  return fetchPassedFailed;
 };

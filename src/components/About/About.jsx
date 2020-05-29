@@ -18,8 +18,7 @@ const About = () => (
             <h1 className={styles.alcherithmHeader}>Alcherithm</h1>
             <img src={githubIcon} alt="github-icon" className={styles.icons}/>
           </a>
-          <p className={styles.para}>Alcherithm is a project... 
-            Magna et amet dolor ut accusam ut no amet sed, diam vero sit rebum erat, takimata clita at dolor aliquyam, amet consetetur dolore lorem diam at eirmod clita, takimata stet et sit et et clita eos sanctus. Ipsum sed lorem.
+          <p className={styles.para}>Alcherithm - a code companion. Junior software developers often struggle with the learning process of code challenges. This learning platform combines resources, videos and documentation to help developers build a foundation. Users can not only practice from our library of code challenges, but they can also review past attempts at various problems. We invite you take the Alcherithm challenge; happy coding!
           </p>
                   
         </div>    
