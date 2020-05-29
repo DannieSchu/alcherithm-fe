@@ -43,5 +43,21 @@
 
     a {
         color: #728FCB;
+      }
+    
+      a:link {
+        color: #728FCB;
+      }
+    
+      a:visited {
+        color: hotpink
+      }
+    
+      a:hover {
+        color: hotpink;
+      }
+    
+      a:active {
+        color: hotpink;
+      }
     }
-}
