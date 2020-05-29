@@ -5,14 +5,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  border: solid .1vw rgb(197, 197, 197);
+  border-radius: 1rem;
   width: 50%;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);  
   min-width: 35rem;
   padding: 1rem;
-
-  background-color: rgba(49, 232, 232, 0.739);
-  background-color: rgba(87, 87, 87, 0.739);
-
+  background-color: rgba(48, 198, 232, 0.6);
+  
   article {
     width: 505px;
     margin-left: 0;
@@ -30,7 +34,12 @@
   }
 
   h3 {
-    color: #86DDF1;
+    color: white;
+    margin-left: 2rem;
   }
 }
 
+.PopUp:hover {
+  border: 1px solid rgb(197, 197, 197);
+  box-shadow: var(--hover-box-shadow);
+}
