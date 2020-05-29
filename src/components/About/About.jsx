@@ -88,7 +88,7 @@ const About = () => (
               <img src={linkedInIcon} alt="linkedin-icon" className={styles.icons}></img>
             </a>
           </div>
-          <p>WILL PIRO Est kasd duo no stet et sanctus tempor duo duo nonumy. Nonumy tempor est stet erat et ea. Ipsum erat nonumy eirmod no ea no dolore eirmod, ipsum dolor invidunt sea at stet consetetur, diam et voluptua et et kasd, et ipsum et ea diam amet lorem tempor dolor eos,.</p>
+          <p>WILL PIRO As a full stack software engineer, I relish in the mentality that every project deserves a clear goal, detailed plan, sensible testing framework, and the grit to execute. As a former City Planner, I enjoy building applications that exist at the intersection of sustainable community development and web-based technologies that produce positive, tangible, and equitable outcomes.</p>
         </div>
 
       </div>
