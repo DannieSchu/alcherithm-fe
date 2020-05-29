@@ -8,7 +8,7 @@ import PieChart from '../Chart.js/chart.js';
 const Dashboard = () => {
   const loading = useLoading();
   const userSolutionsByCategory = usePassingSolutionsByCategory();
-  const user = useCurrentUser();
+  // const user = useCurrentUser();
 
 
   console.log(userSolutionsByCategory);
