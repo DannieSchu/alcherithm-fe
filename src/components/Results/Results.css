@@ -25,10 +25,6 @@
     }
   }
 
-  .editorBox {
-
-  }
-
  :global(#confetti) {
   position: absolute;
   top: 8rem;

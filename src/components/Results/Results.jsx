@@ -26,7 +26,7 @@ const Results = () => {
   useEffect(() => {
     const id = setTimeout(() => {
       setConfetti(false);
-    }, 89000);
+    }, 9000);
     return () => {
       clearTimeout(id);
     };
