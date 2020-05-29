@@ -60,6 +60,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = (user) => {
     setUser(null);
+    setTotal(null);
     return getLogout(user)
       .then(history.push('/login'));
   };
