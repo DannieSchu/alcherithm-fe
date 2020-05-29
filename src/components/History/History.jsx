@@ -8,6 +8,7 @@ import { useLoading } from '../../hooks/AuthProvider';
 import { fetchUserChallengesWithSolutions } from '../../services/solutionsAPI';
 import { useToggleSolutions } from '../../hooks/toggleSolutions';
 import styles from '../CodeChallenges/CodeChallenges.css';
+import history from '../History/History.css';
 
 const History = () => {
   const loading = useLoading();
@@ -31,9 +32,8 @@ const History = () => {
     <section className={styles.CodeChallenges}>
       <article>
         <h1>Completed Challenges</h1>
-        <div><Dropdown setCategory={setCategory} />
-          {visible && <PopUp toggle={togglePopUp} solutions={selectedSolutions} />}
-        </div>
+        <div className={history.Styles}><Dropdown setCategory={setCategory} /></div>
+        {visible && <PopUp toggle={togglePopUp} solutions={selectedSolutions} />}
         <ul className={styles.column}>
           {codeElements}
         </ul>
