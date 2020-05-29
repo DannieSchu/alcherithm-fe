@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
-import { useLoading, useCurrentUser } from '../../hooks/AuthProvider';
+import { useLoading, useCurrentUser, useUserAttempted } from '../../hooks/AuthProvider';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import SuccessChart from '../Charts/SuccessChart';
 import PassedByCategoryChart from '../Charts/PassedByCategoryChart';
@@ -10,6 +10,7 @@ import styles from './Dashboard.css';
 const Dashboard = () => {
   const user = useCurrentUser();
   const loading = useLoading();
+  const attempted = useUserAttempted();
   
   if(loading) return (
     <section>
@@ -18,7 +19,7 @@ const Dashboard = () => {
   );
 
   if(user.cohort === 'N/A' && attempted === 0) return (
-    <main className={styles.Dashboard}>
+    <main className={styles.DashboardAttemptedZero}>
       <section className={styles.userProgress}>
         <section className={styles.textContainer}>
           <h2>{user.firstName}'s Dashboard!</h2>
@@ -38,6 +39,7 @@ const Dashboard = () => {
   );
 
   if(user.cohort === 'N/A') return (
+
     <main className={styles.Dashboard}>
       <section className={styles.userProgress}>
         <section className={styles.textContainer}>
@@ -47,8 +49,9 @@ const Dashboard = () => {
       </section>
       <section className={styles.charts}>
         <SuccessChart />
+        <PassedByCategoryChart />
       </section>
-    
+
       <section className={styles.buttons}>
         <Link to="/challenges">
           <Button buttonStyle="primary" backgroundColor="green" buttonSize="large" buttonText="Find a Challenge" />
@@ -61,7 +64,7 @@ const Dashboard = () => {
   );
 
   if(attempted === 0) return (
-    <main className={styles.Dashboard}>
+    <main className={styles.DashboardAttemptedZero}>
       <section className={styles.userProgress}>
         <section className={styles.textContainer}>
           <h2>{user.firstName}'s Dashboard!</h2>
@@ -79,7 +82,6 @@ const Dashboard = () => {
         </Link>
       </section>
     </main>
-
   );
 
   return (
