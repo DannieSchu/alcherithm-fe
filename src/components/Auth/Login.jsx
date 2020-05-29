@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useLogin, useError, useLoading, useCurrentUser } from '../../hooks/AuthProvider';
+import Button from '../../components/Button/Button';
 import { Link, Redirect } from 'react-router-dom';
+import styles from './Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -31,15 +33,14 @@ const Login = () => {
 
   return (
     <>
-      <form onSubmit={handleLoginSubmit}>
-        <input type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
+      <form className={styles.formWrap} onSubmit={handleLoginSubmit}>
+        <input className={styles.inputForm} type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
 
-        <input type="password" name="password" value={password} onChange={handleChange} placeholder="password" />
-
-        <button>Login</button>
+        <input className={styles.inputForm} type="password" name="password" value={password} onChange={handleChange} placeholder="password" />
+        <Button className={styles.loginButton} buttonStyle="primary" backgroundColor="blue" buttonSize="small" buttonText="Login" />
       </form>
-      {error && (<section> <h4>{error.message}</h4></section>)}
-      <h4>Need an account? <Link to='/signup'>Sign Up</Link></h4>
+      <h4 className={styles.needAccount}>Don't have an account? <Link to='/signup'>Sign Up</Link></h4>
+      {error && (<section className={styles.errorDisplay}><h4>{error.message}</h4></section>)}
     </>
   );
 };

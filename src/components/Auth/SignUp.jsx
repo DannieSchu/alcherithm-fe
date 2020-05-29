@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSignUp, useError, useLoading, useCurrentUser } from '../../hooks/AuthProvider';
 import { Link, Redirect } from 'react-router-dom';
+import Button from '../../components/Button/Button';
 import { cohortsDropdown } from '../../utils/cohorts';
 import styles from './SignUp.css';
 
@@ -46,26 +47,21 @@ const SignUp = () => {
 
   return (
     <>
-      <form onSubmit={handleSignUpSubmit}>
-        <input type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
-
-        <input type="password" name="password" value={password} onChange={handleChange} placeholder="password" />
-
-        <input type="text" name="firstName" value={firstName} onChange={handleChange} placeholder="first name" />
-
-        <input type="text" name="lastName" value={lastName} onChange={handleChange} placeholder="last name" />
+      <form className={styles.formWrap} onSubmit={handleSignUpSubmit}>
+        <input className={styles.inputForm} type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
+        <input className={styles.inputForm} type="password" name="password" value={password} onChange={handleChange} placeholder="password" />
+        <input className={styles.inputForm} type="text" name="firstName" value={firstName} onChange={handleChange} placeholder="first name" />
+        <input className={styles.inputForm} type="text" name="lastName" value={lastName} onChange={handleChange} placeholder="last name" />
 
         <select className={styles.SignUp} id="cohort" onChange={({ target }) => setCohort(target.value)}>
-          <option value="allCohorts">Choose Cohort</option>
+          <option value="allCohorts">choose cohort</option>
           {cohortOptions}
         </select>
-
-        <input type="text" name="avatar" value={avatar} onChange={handleChange} placeholder="avatar" />
-
-        <button>Sign up</button>
+        
+        <Button className={styles.signUpButton} buttonStyle="primary" backgroundColor="blue" buttonSize="small" buttonText="SignUp" />
       </form>
-      {error && (<section> <h4>{error.message}</h4></section>)}
-      <h4>Already have an account? <Link to='/login'>Login</Link></h4>
+      <h4 className={styles.haveAccount}>Already have an account? <Link to='/login'>Login</Link></h4>
+      {error && (<section className={styles.errorDisplay}> <h4>{error.message}</h4></section>)}
     </>
   );
 };
