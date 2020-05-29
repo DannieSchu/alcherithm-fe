@@ -1,51 +1,28 @@
 .Dashboard {
+    height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-left: 10rem;
-    margin-right: 10rem;
-    margin-top: -3rem;
-    margin-bottom: -5rem;
+    justify-content: space-evenly;
 
     section:first-child {
-      min-width: 100%;
+      width: 100%;
       max-width: 70rem;
       min-height: 20rem;
       margin: 2rem;
   
       border: 1px solid rgb(187, 186, 186);
       border-radius: 5px;
-    }
 
-    section {
       display: flex;
       align-items: center;
       justify-content: center;
     }
   
-    button {
+    section:last-child {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 10rem;
-      min-width: 20rem;
-      max-width: 20rem;
-      min-height: 12rem;
-      margin: 1rem;
-  
-      border: 1px solid rgb(187, 186, 186);
-      border-radius: 5px;
-      box-shadow: 5px 10px 10px rgb(187, 186, 186);
-    }
-
-    p {
-      font-size: 20px;
-    }
-  
-    button:hover {
-      border: 1px solid rgba(49, 232, 232, 0.6);
-      box-shadow: 10px 12px 15px rgb(170, 169, 169);
-      box-shadow: 10px 12px 15px rgba(48, 198, 232, 0.6);  
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
     }
   }

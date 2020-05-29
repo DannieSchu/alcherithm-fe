@@ -1,4 +1,5 @@
 .ChallengeDisplay {
+    width: 100%;
 
     .tabs {
         margin: 0rem;
@@ -9,31 +10,38 @@
         }
         
         label {
-            font-family: monospace;
+            font-family: var(--display-font);
             display: inline;
             padding: 0.75rem;
             margin: 0 0.08rem;
             border-top-left-radius: 1.5rem;
             border-top-right-radius: 1.5rem;
-            background-color:rgb(230, 228, 228);
-            box-shadow: 0 4px 2px rgba(0, 0, 0, 0.125);
+            background-color: var(--muted-gray);
+            box-shadow: inset -1px -1px 10px rgba(0, 0, 0, 0.125);
         }
         
         .active {
-            border-bottom: 1px solid rgb(230, 228, 228);
-            font-weight: bolder;
+            border-bottom: 1px solid var(--muted-gray);
             box-shadow: none;
         }
     }
 
     .content {
-        background-color:rgb(230, 228, 228);
+        background-color: var(--muted-gray);
         margin-top: 0.75rem;
+        min-width: 37rem;
+        padding: 1rem;
+        overflow: scroll;
+        height: 24rem;
+        border-top: .9rem solid var(--muted-gray);
+        border-bottom: .9rem solid var(--muted-gray);
 
         h3 {
             margin: 0rem;
         }
     }
 
-
+    a {
+        color: #728FCB;
+    }
 }
