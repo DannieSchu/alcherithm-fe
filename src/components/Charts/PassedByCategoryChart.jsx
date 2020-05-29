@@ -29,7 +29,7 @@ const PassedByCategoryChart = () => {
   const data = {
     datasets: [
       {
-        data: [counts],
+        data: counts,
         backgroundColor: [
           'rgba(48, 232, 159, 0.6)',
           'rgba(49, 232, 232, 0.6)',
@@ -44,7 +44,7 @@ const PassedByCategoryChart = () => {
         hoverBackgroundColor: '#E6DB74'
       }
     ],
-    labels: [labels]
+    labels
   };
 
   return (
