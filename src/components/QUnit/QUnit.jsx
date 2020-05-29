@@ -19,11 +19,11 @@ const Tester = ({ tests, setPassed }) => {
       QUnit.done((details) => {
         console.log(details);
         setDetails({ 
-          passed: Math.min(details.passed, 1), 
-          failed: Math.min(details.failed, 1),
-          total: Math.min(details.total, 1)
+          passed: details.failed ? 0 : 1, 
+          failed: details.failed ? 1 : 0,
+          total: 1
         });
-        setPassed(!!details.passed);
+        setPassed(!details.failed);
       });
     });
 
