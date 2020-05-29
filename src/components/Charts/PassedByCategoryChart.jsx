@@ -1,23 +1,37 @@
 import React from 'react';
+import { usePassingSolutionsByCategory } from '../../hooks/AuthProvider';
 import { Pie } from 'react-chartjs-2';
 
 const PassedByCategoryChart = () => {
   const userSolutionsByCategory = usePassingSolutionsByCategory();
-  const passed = useUserPassed();
-  const failed = useUserFailed();
-  const attempted = useUserAttempted();
-  const total = useUserTotal();
+
+  const categories = ['forEach', 'variables', 'sort', 'string methods', 'object iteration', 'map', 'filter', 'reduce', 'nested for loops'];
+
+  const counts = userSolutionsByCategory.map(solution => {
+    return solution.count;
+  });
+
+  const labels = userSolutionsByCategory.map(solution => {
+    return solution._id;
+  })
+
+  const newArray = categories.map(category => {
+    const foundCategory = userSolutionsByCategory.find(obj => obj._id ===  'category');
+    if(!foundCategory) {
+      return ({ _id: category, count: 0 })
+    }
+    return foundCategory;
+  })
+
   
+
   console.log(userSolutionsByCategory);
-  console.log('passed: ' + passed);
-  console.log('failed: ' + failed);
-  console.log('attempted: ' + attempted);
-  console.log('total: ' + total);
+  
 
   const data = {
     datasets: [
       {
-        data: [passed, failed],
+        data: [counts],
         backgroundColor: [
           'rgba(48, 232, 159, 0.6)',
           'rgba(49, 232, 232, 0.6)'
@@ -25,14 +39,15 @@ const PassedByCategoryChart = () => {
         hoverBackgroundColor: 'rgba(48, 198, 232, 0.6)'
       }
     ],
-    labels: ['forEach', 'variables', 'sort', 'string methods', 'object iteration', 'map', 'filter', 'reduce', 'nested for loops']
+    labels: [labels]
+
   };
 
   return (
     <section>
       <Pie 
-        data={}
-        options={}
+        data={counts}
+        options={labels}
       />
     </section>
   )
