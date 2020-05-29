@@ -18,10 +18,12 @@ const Editor = ({ code, handleCodeChange, readOnly = false }) => {
       // onLoad={this.onLoad}
       onChange={handleCodeChange}
       fontSize={15}
-      showPrintMargin={true}
+      showPrintMargin={false}
       showGutter={true}
       highlightActiveLine={true}
       value={code}
+      width="100%"
+      wrapEnabled={true}
       setOptions={{
         enableBasicAutocompletion: true,
         enableLiveAutocompletion: true,
