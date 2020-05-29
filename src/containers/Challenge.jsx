@@ -66,7 +66,6 @@ const Challenge = () => {
         <section className={styles.content}>
           <h3>Starter Code</h3>
           <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} />
-          <hr />
           <article>
             <h3>Test</h3>
             <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="small" buttonText="Run" onClick={onClick} />
