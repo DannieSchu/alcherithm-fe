@@ -19,13 +19,6 @@
       margin-top: -3rem;
     }
 
-    .userProgress {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      margin-top: 5%;
-    }
-
     .charts {
       display: flex;
       flex-direction: row;
@@ -33,11 +26,6 @@
      
       margin-top: 5%;
       width: 100vw;
-    }
-
-    .textContainer {
-      display: flex;
-      flex-direction: column;
     }
 
     section:last-child {
