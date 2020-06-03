@@ -2,10 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 import Button from '../Button/Button';
-// import ProgressBar from '../ProgressBar/ProgressBar';
 import DashboardHeader from './DashboardHeader';
-import SuccessChart from '../Charts/SuccessChart';
-import PassedByCategoryChart from '../Charts/PassedByCategoryChart';
+import DashboardAnalytics from './DashboardAnalytics';
+
 import { useCurrentUser, useUserAttempted } from '../../hooks/AuthProvider';
 import styles from './Dashboard.css'; 
 
@@ -87,10 +86,7 @@ const Dashboard = () => {
         <ProgressBar />
       </section> */}
       <DashboardHeader {...user} attempted={attempted} />
-      <section className={styles.charts}>
-        <SuccessChart />
-        <PassedByCategoryChart />
-      </section>
+      <DashboardAnalytics />
       <section className={styles.buttons}>
         <Link to="/challenges">
           <Button buttonStyle="primary" backgroundColor="green" buttonSize="large">Find a Challenge</Button>
