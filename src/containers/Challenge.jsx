@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import Editor from '../components/Editors/Editor.jsx';
-import Tester from '../components/QUnit/QUnit.jsx';
-import Button from '../components/Button/Button';
-import ChallengeDisplay from '../components/ChallengeDisplay/ChallengeDisplay.jsx';
-import { fetchChallengeById } from '../services/challengesAPI.js';
 import { useParams, useHistory } from 'react-router-dom';
+import Editor from '../components/Editors/Editor';
+import Tester from '../components/QUnit/QUnit';
+import Button from '../components/Button/Button';
+import ChallengeDisplay from '../components/ChallengeDisplay/ChallengeDisplay';
+import Loading from '../components/Loading/Loading';
+import { useFetchPassedFailed } from '../hooks/AuthProvider';
+import { fetchChallengeById } from '../services/challengesAPI';
 import { post } from '../services/request.js';
 import styles from './Challenge.css';
-import { useFetchPassedFailed } from '../hooks/AuthProvider.jsx';
 import tabStyle from '../styles/tabs.css';
 
 const Challenge = () => {
@@ -45,7 +46,7 @@ const Challenge = () => {
   };
 
   if(!challenge)
-    return <h1>loading</h1>;
+    return <Loading />;
 
   return (
     <section className={styles.Challenge}>

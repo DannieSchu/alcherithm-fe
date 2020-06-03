@@ -3,6 +3,7 @@ import CodeChallenge from './CodeChallenge';
 import Dropdown from '../Dropdown/Dropdown';
 import { useGetChallenges } from '../../hooks/getChallenges';
 import { fetchChallenges } from '../../services/challengesAPI';
+import { useGetCombinedLoading } from '../../hooks/getLoading';
 import { Link } from 'react-router-dom';
 import styles from './CodeChallenges.css';
 
@@ -20,7 +21,7 @@ const CodeChallenges = () => {
   return (
     <section className={styles.CodeChallenges}>
       <Dropdown setCategory={setCategory} category={category} />
-      {loading && <h3>Loading</h3>}
+      {useGetCombinedLoading(loading)}
       <ul className={styles.row}>
         {codeElements}
       </ul>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useLogin, useError, useLoading, useCurrentUser } from '../../hooks/AuthProvider';
-import Button from '../../components/Button/Button';
 import { Link, Redirect } from 'react-router-dom';
+import Button from '../../components/Button/Button';
+import { useLogin, useError, useCurrentUser } from '../../hooks/AuthProvider';
 import styles from './Login.css';
 
 const Login = () => {
@@ -11,7 +11,6 @@ const Login = () => {
   const user = useCurrentUser();
   const login = useLogin();
   const error = useError();
-  const loading = useLoading();
 
   if(user) return <Redirect to = '/' />;
 
@@ -24,12 +23,6 @@ const Login = () => {
     event.preventDefault(); 
     login(email, password); 
   };
-
-  if(loading) return (
-    <section>
-      <h2>loading...</h2>
-    </section>
-  );
 
   return (
     <>

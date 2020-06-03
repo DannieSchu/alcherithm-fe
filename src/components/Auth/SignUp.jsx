@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useSignUp, useError, useLoading, useCurrentUser } from '../../hooks/AuthProvider';
 import { Link, Redirect } from 'react-router-dom';
 import Button from '../../components/Button/Button';
+import { useSignUp, useError, useCurrentUser } from '../../hooks/AuthProvider';
 import { cohortsDropdown } from '../../utils/cohorts';
 import styles from './SignUp.css';
 
@@ -32,18 +32,11 @@ const SignUp = () => {
   };
 
   const error = useError();
-  const loading = useLoading();
 
   const handleSignUpSubmit = event => {
     event.preventDefault();
     signup(email, password, firstName, lastName, cohort, avatar);
   };
-
-  if(loading) return (
-    <section>
-      <h2>loading...</h2>
-    </section>
-  );
 
   return (
     <>

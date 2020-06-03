@@ -1,20 +1,13 @@
 import React from 'react';
-import { useLoading, useCurrentUser } from '../../hooks/AuthProvider';
+import { useCurrentUser } from '../../hooks/AuthProvider';
 import { useHistory, Link } from 'react-router-dom';
-import styles from './Splash.css';
 import combo from '../../assets/hexagons/hexagons.png';
 import logo2 from '../../assets/logos/LogoCharcoal.png';
+import styles from './Splash.css';
 
 const Splash = () => {
   const user = useCurrentUser();
   const history = useHistory();
-  const loading = useLoading();
-
-  if(loading) return (
-    <section>
-      <h2>loading...</h2>
-    </section>
-  );
 
   if(user)
     history.push('/dashboard');
@@ -40,7 +33,6 @@ const Splash = () => {
 
     </main>
   );
-
 };
 
 export default Splash;

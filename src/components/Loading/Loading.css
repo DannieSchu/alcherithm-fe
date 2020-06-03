@@ -1,0 +1,29 @@
+.Loading {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  
+  .hexagons {
+    width: 20rem;
+    left: calc(50% - 10rem);
+    position: absolute;
+    animation: spin 7s linear infinite forwards;
+    display: block;
+    transform-origin: center calc(50%);
+  }
+  }
+
+  @keyframes spin{
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
