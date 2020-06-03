@@ -4,7 +4,7 @@ import ProgressBar from '../ProgressBar/ProgressBar';
 import styles from './DashboardHeader.css';
 
 const DashboardHeader = ({ firstName, cohort, attempted }) => (
-  <section className={styles.userProgress}>
+  <section className={styles.DashboardHeader}>
     <section className={styles.textContainer}>
       <h2>{firstName}'s Dashboard!</h2>
       {cohort !== 'N/A' && <h3>Cohort: {cohort}</h3>}

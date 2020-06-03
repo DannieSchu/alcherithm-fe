@@ -1,10 +1,9 @@
 .DashboardHeader {
-  .userProgress {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: space-evenly;
+    align-items: center;
     margin-top: 5%;
-  }
   
   .textContainer {
     display: flex;
