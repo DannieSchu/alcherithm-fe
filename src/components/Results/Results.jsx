@@ -66,10 +66,10 @@ const Results = () => {
         </section>
         <aside className={styles.buttons}>
           <Link to="/challenges">
-            <Button buttonStyle="primary" buttonSize="small" backgroundColor="green" buttonText="New Challenge" />
+            <Button buttonStyle="primary" buttonSize="small" backgroundColor="green">New Challenge</Button>
           </Link>
           <Link to="/history">
-            <Button buttonStyle="primary" buttonSize="small" backgroundColor="mainBlue" buttonText="History" />
+            <Button buttonStyle="primary" buttonSize="small" backgroundColor="mainBlue">History</Button>
           </Link>
         </aside>
       </section>

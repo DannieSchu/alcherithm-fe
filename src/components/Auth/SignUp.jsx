@@ -52,7 +52,7 @@ const SignUp = () => {
         </select>
 
         <div className={styles.signUpButton}>
-          <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="small" buttonText="Sign Up" />
+          <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="small">Sign Up</Button>
         </div>
       </form>
       <h4 className={styles.haveAccount}>Already have an account? <Link to='/login'>Login</Link></h4>
