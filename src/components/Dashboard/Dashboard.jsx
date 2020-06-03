@@ -1,22 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 import Button from '../Button/Button';
-import { useLoading, useCurrentUser, useUserAttempted } from '../../hooks/AuthProvider';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import SuccessChart from '../Charts/SuccessChart';
 import PassedByCategoryChart from '../Charts/PassedByCategoryChart';
+import { useCurrentUser, useUserAttempted } from '../../hooks/AuthProvider';
 import styles from './Dashboard.css'; 
 
 const Dashboard = () => {
   const user = useCurrentUser();
-  const loading = useLoading();
   const attempted = useUserAttempted();
-  
-  if(loading) return (
-    <section>
-      <h2>loading...</h2>
-    </section>
-  );
+
+  if(!user) return <Loading />;
 
   if(user.cohort === 'N/A' && attempted === 0) return (
     <main className={styles.DashboardAttemptedZero}>
@@ -26,7 +22,6 @@ const Dashboard = () => {
         </section>    
       </section>
       <h2 className={styles.trySome}>try some challenges to see your stats!</h2>
-    
       <section className={styles.buttons}>
         <Link to="/challenges">
           <Button buttonStyle="primary" backgroundColor="green" buttonSize="large" buttonText="Find a Challenge" />
@@ -39,7 +34,6 @@ const Dashboard = () => {
   );
 
   if(user.cohort === 'N/A') return (
-
     <main className={styles.Dashboard}>
       <section className={styles.userProgress}>
         <section className={styles.textContainer}>
@@ -51,7 +45,6 @@ const Dashboard = () => {
         <SuccessChart />
         <PassedByCategoryChart />
       </section>
-
       <section className={styles.buttons}>
         <Link to="/challenges">
           <Button buttonStyle="primary" backgroundColor="green" buttonSize="large" buttonText="Find a Challenge" />
@@ -72,7 +65,6 @@ const Dashboard = () => {
         </section>    
       </section>
       <h2 className={styles.trySome}>try some challenges to see your stats!</h2>
-    
       <section className={styles.buttons}>
         <Link to="/challenges">
           <Button buttonStyle="primary" backgroundColor="green" buttonSize="large" buttonText="Find a Challenge" />
@@ -97,7 +89,6 @@ const Dashboard = () => {
         <SuccessChart />
         <PassedByCategoryChart />
       </section>
-      
       <section className={styles.buttons}>
         <Link to="/challenges">
           <Button buttonStyle="primary" backgroundColor="green" buttonSize="large" buttonText="Find a Challenge" />
