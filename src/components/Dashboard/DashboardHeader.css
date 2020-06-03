@@ -1,0 +1,11 @@
+.DashboardHeader {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}
