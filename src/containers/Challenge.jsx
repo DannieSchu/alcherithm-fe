@@ -58,7 +58,7 @@ const Challenge = () => {
               <h3>Test Results</h3>
               <Tester className={styles.testResults} tests={runCode} setPassed={setPassed} />
             </div>
-            <Button buttonStyle="primary" buttonSize="medium" backgroundColor="green" buttonText="Submit" onClick={onSubmit} />
+            <Button buttonStyle="primary" buttonSize="medium" backgroundColor="green" onClick={onSubmit}>Submit</Button>
           </article>
         </section>
       </section>
@@ -72,7 +72,7 @@ const Challenge = () => {
           <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} />
           <article>
             <h3>Test</h3>
-            <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="small" buttonText="Run" onClick={onClick} />
+            <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="small" onClick={onClick}>Run</Button>
           </article>
           <Editor code={challenge.qunitTest} />
         </section>

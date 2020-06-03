@@ -18,7 +18,7 @@ const History = () => {
   const codeElements = selectedChallenges.map((challenge) => (
     <li key={challenge._id}>
       <CodeChallenge {...challenge} char={300} />
-      <Button buttonStyle="primary" backgroundColor="green" buttonSize="medium" buttonText="Your Solutions" onClick={() => handleClick(challenge.solutions)} />
+      <Button buttonStyle="primary" backgroundColor="green" buttonSize="medium" onClick={() => handleClick(challenge.solutions)}>Your Solutions</Button>
     </li>
   ));
 
@@ -26,12 +26,14 @@ const History = () => {
     <section className={styles.CodeChallenges}>
       <article>
         <h1>History of Completed Challenges</h1>
-        <div className={history.Styles}><Dropdown setCategory={setCategory} /></div>
-        {/* {useGetCombinedLoading(loading)} */}
-        {visible && <PopUp toggle={togglePopUp} solutions={selectedSolutions} />}
+        <div className={history.Styles}>
+          <Dropdown setCategory={setCategory} />
+        </div>
+        {useGetCombinedLoading(loading)}
         <ul className={styles.column}>
           {codeElements}
         </ul>
+        {visible && <PopUp toggle={togglePopUp} solutions={selectedSolutions} />}
       </article>
     </section>
   );

@@ -24,10 +24,10 @@ const Dashboard = () => {
       <h2 className={styles.trySome}>try some challenges to see your stats!</h2>
       <section className={styles.buttons}>
         <Link to="/challenges">
-          <Button buttonStyle="primary" backgroundColor="green" buttonSize="large" buttonText="Find a Challenge" />
+          <Button buttonStyle="primary" backgroundColor="green" buttonSize="large">Find a Challenge</Button>
         </Link>
         <Link to="/history">
-          <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="large" buttonText="View Completed Challenges" />
+          <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="large">View History</Button>
         </Link>
       </section>
     </main>
@@ -46,11 +46,11 @@ const Dashboard = () => {
         <PassedByCategoryChart />
       </section>
       <section className={styles.buttons}>
-        <Link to="/challenges">
-          <Button buttonStyle="primary" backgroundColor="green" buttonSize="large" buttonText="Find a Challenge" />
+      <Link to="/challenges">
+          <Button buttonStyle="primary" backgroundColor="green" buttonSize="large">Find a Challenge</Button>
         </Link>
         <Link to="/history">
-          <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="large" buttonText="View Completed Challenges" />
+          <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="large">View History</Button>
         </Link>
       </section>
     </main>
@@ -67,10 +67,10 @@ const Dashboard = () => {
       <h2 className={styles.trySome}>try some challenges to see your stats!</h2>
       <section className={styles.buttons}>
         <Link to="/challenges">
-          <Button buttonStyle="primary" backgroundColor="green" buttonSize="large" buttonText="Find a Challenge" />
+          <Button buttonStyle="primary" backgroundColor="green" buttonSize="large">Find a Challenge</Button>
         </Link>
         <Link to="/history">
-          <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="large" buttonText="View Completed Challenges" />
+          <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="large">View History</Button>
         </Link>
       </section>
     </main>
@@ -91,10 +91,10 @@ const Dashboard = () => {
       </section>
       <section className={styles.buttons}>
         <Link to="/challenges">
-          <Button buttonStyle="primary" backgroundColor="green" buttonSize="large" buttonText="Find a Challenge" />
+          <Button buttonStyle="primary" backgroundColor="green" buttonSize="large">Find a Challenge</Button>
         </Link>
         <Link to="/history">
-          <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="large" buttonText="View Completed Challenges" />
+          <Button buttonStyle="primary" backgroundColor="mainBlue" buttonSize="large">View History</Button>
         </Link>
       </section>
     </main>

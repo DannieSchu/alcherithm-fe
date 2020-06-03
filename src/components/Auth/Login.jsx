@@ -30,7 +30,7 @@ const Login = () => {
         <input className={styles.inputForm} type="text" name="email" value={email} onChange={handleChange} placeholder="email" />
         <input className={styles.inputForm} type="password" name="password" value={password} onChange={handleChange} placeholder="password" />
         <div className={styles.loginButton}>
-          <Button className={styles.loginButton} buttonStyle="primary" backgroundColor="mainBlue" buttonSize="small" buttonText="Login" />
+          <Button className={styles.loginButton} buttonStyle="primary" backgroundColor="mainBlue" buttonSize="small">Log In</Button>
         </div>
       </form>
       <h4 className={styles.needAccount}>Don't have an account? <Link to='/signup'>Sign Up</Link></h4>
