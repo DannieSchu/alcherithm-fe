@@ -22,8 +22,7 @@ const Overview = ({ category, challengeNumber, instructions, overview, documenta
       <Tabs 
         tabNames={['Instructions', 'Resources', 'Video']} 
         selectedTab={selectedTab} 
-        onChange={handleTabChange} 
-      />
+        onChange={handleTabChange} />
 
       {selectedTab === 'Instructions' && <section className={styles.content}>
         <h3>{category} {challengeNumber}</h3>
@@ -37,8 +36,7 @@ const Overview = ({ category, challengeNumber, instructions, overview, documenta
         <ReactMarkdown
           source={overview}
           language='javascript'
-          renderers={{ code: CodeBlock }}
-        />
+          renderers={{ code: CodeBlock }} />
         <h4>References</h4>
         <ul>
           {documentationList}
@@ -54,8 +52,7 @@ const Overview = ({ category, challengeNumber, instructions, overview, documenta
             src={`https://www.youtube.com/embed/${video}`} f
             rameBorder="0" 
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowFullScreen 
-          />
+            allowFullScreen />
         </div>
       </section>}
 

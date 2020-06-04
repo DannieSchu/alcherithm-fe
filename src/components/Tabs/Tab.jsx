@@ -9,8 +9,7 @@ const Tab = ({ selectedTab, tabName, onChange }) => (
       id={tabName}
       name="tabbed"
       onChange={onChange}
-      className={styles.tabInput}
-    />
+      className={styles.tabInput} />
     <label
       htmlFor={tabName}
       className={selectedTab === tabName ? `${styles.tabLabel} ${styles.active}` : styles.tabLabel}>{tabName}</label>
