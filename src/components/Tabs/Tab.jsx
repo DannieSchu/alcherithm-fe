@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Tab.css';
 
-const Tab = ({ selectedTab, tabName, onChange }) => (
+const Tab = ({ tabName, selectedTab, onChange }) => (
   <>
     <input
       type="radio"
@@ -17,9 +17,9 @@ const Tab = ({ selectedTab, tabName, onChange }) => (
 );
 
 Tab.propTypes = {
-  selectedTab: PropTypes.string.isRequired,
   tabName: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired
+  selectedTab: PropTypes.string,
+  onChange: PropTypes.func
 };
 
 export default Tab;
