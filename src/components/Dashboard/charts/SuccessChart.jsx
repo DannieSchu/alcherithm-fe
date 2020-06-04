@@ -1,6 +1,6 @@
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
-import { useUserPassed, useUserFailed } from '../../hooks/AuthProvider';
+import { useUserPassed, useUserFailed } from '../../../hooks/AuthProvider';
 
 const SuccessChart = () => {
   const passed = useUserPassed();

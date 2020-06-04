@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-const ReactMarkdown = require('react-markdown');
+import ReactMarkdown from 'react-markdown';
 import CodeBlock from './CodeBlock';
-import styles from './ChallengeDisplay.css';
+import styles from './Overview.css';
 import tabStyle from '../../styles/tabs.css';
 
-const ChallengeDisplay = ({ category, challengeNumber, instructions, overview, documentation, video }) => {
+const Overview = ({ category, challengeNumber, instructions, overview, documentation, video }) => {
   const [selectedTab, setSelectedTab] = useState('Instructions');
 
   const handleTabChange = ({ target }) => {
@@ -18,7 +18,7 @@ const ChallengeDisplay = ({ category, challengeNumber, instructions, overview, d
     </li>));
 
   return (
-    <main className={styles.ChallengeDisplay}>
+    <main className={styles.Overview}>
 
       <section className={tabStyle.tabs}>
         <input type="radio" id="Instructions" name="tabbed" onChange={handleTabChange}></input>
@@ -61,7 +61,7 @@ const ChallengeDisplay = ({ category, challengeNumber, instructions, overview, d
   );
 };
 
-ChallengeDisplay.propTypes = {
+Overview.propTypes = {
   category: PropTypes.string.isRequired,
   challengeNumber: PropTypes.number.isRequired,
   instructions: PropTypes.string.isRequired,
@@ -70,4 +70,4 @@ ChallengeDisplay.propTypes = {
   video: PropTypes.string.isRequired
 };
 
-export default ChallengeDisplay;
+export default Overview;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useUserTotal, useUserPassed } from '../../hooks/AuthProvider';
+import { useUserTotal, useUserPassed } from '../../../hooks/AuthProvider';
 import styles from './ProgressBar.css';
 
 const ProgressBar = () => {

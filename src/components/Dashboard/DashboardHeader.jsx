@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ProgressBar from '../ProgressBar/ProgressBar';
+import ProgressBar from './charts/ProgressBar';
 import styles from './DashboardHeader.css';
 
 const DashboardHeader = ({ firstName, cohort, attempted }) => (

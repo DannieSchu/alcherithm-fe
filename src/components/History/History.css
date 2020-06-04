@@ -1,6 +1,33 @@
-.Styles {
+.History {
+  padding-inline-start: 0px;
+
+  h1 {
+    text-align: center;
+  }
+
+  ul {
+    width: 100%;
+    padding-inline-start: 0px;
+  }
+
+  li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: 100em;
+    min-width: 40em;
+    min-height: 20em;
+    padding: 2rem;
+
+    section {
+      width: 70%;
+    }
+  }
+}
+
+.dropdown {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
-  
 }

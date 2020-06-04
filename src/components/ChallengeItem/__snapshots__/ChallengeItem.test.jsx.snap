@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CodeChallenge component renders CodeChallenge 1`] = `
+exports[`ChallengeItem component renders ChallengeItem 1`] = `
 <section
-  className="CodeChallenge"
+  className="ChallengeItem"
 >
   <h3>
     forEach

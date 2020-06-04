@@ -1,6 +1,6 @@
 import React from 'react';
-import SuccessChart from '../Charts/SuccessChart';
-import PassedByCategoryChart from '../Charts/PassedByCategoryChart';
+import SuccessChart from './charts/SuccessChart';
+import PassedByCategoryChart from './charts/PassedByCategoryChart';
 import styles from './DashboardAnalytics.css';
 
 const DashboardAnalytics = () => {
