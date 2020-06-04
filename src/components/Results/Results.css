@@ -13,14 +13,6 @@
     width: 45vw;
   }
 
-  .displayName {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    width: 100%;
-  }
-
   .buttons {
     display: flex;
     justify-content: space-evenly;
@@ -34,30 +26,6 @@
     width: 45%;
     min-width: 20rem;
   }
-  
-  .content {
-    width: 100%;
-    height: 70vh;
-    margin-bottom: 2rem;
-    margin-top: 0.75rem;
-    padding: 1rem;
-
-    border-top: .9rem solid var(--muted-gray);
-    border-bottom: .9rem solid var(--muted-gray);
-    background-color: var(--muted-gray);
-    overflow: scroll;
-
-    ul {
-      padding-inline-start: 0px;
-
-      li {
-        list-style-type: none;
-      }
-    }
-
-    h3 {
-      margin-top: 0rem;
-  }
 }
 
  :global(#confetti) {
@@ -67,5 +35,4 @@
   right: 0;
   width: 100%;
   z-index: 5;
-  }
 }
