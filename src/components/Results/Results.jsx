@@ -1,32 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ConfettiCanvas from 'react-confetti-canvas';
-import Button from '../Button/Button';
-import Tabs from '../Tabs/Tabs';
 import PandaGreeting from './PandaGreeting';
 import SolutionsViewer from './SolutionsViewer';
+import Button from '../Button/Button';
+import Tabs from '../Tabs/Tabs';
 import { useCurrentUser } from '../../hooks/AuthProvider';
 import { useGetSolutions } from '../../hooks/getSolutions';
+import { useGetConfetti } from '../../hooks/getConfetti';
 import styles from './Results.css';
 
 const Results = () => {
-  const { userSolutions, sampleSolution } = useGetSolutions();
   const { firstName } = useCurrentUser();
-  const [confetti, setConfetti] = useState(true);
+  const { userSolutions, sampleSolution } = useGetSolutions();
+  const confetti = useGetConfetti();
   const [selectedTab, setSelectedTab] = useState('Your Solutions');
 
   const handleTabChange = ({ target }) => {
     setSelectedTab(target.id);
   };
-
-  useEffect(() => {
-    const id = setTimeout(() => {
-      setConfetti(false);
-    }, 9000);
-    return () => {
-      clearTimeout(id);
-    };
-  }, []);
 
   return (
     <main className={styles.Results}>
