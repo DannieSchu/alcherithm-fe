@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import ConfettiCanvas from 'react-confetti-canvas';
 import PandaGreeting from './PandaGreeting';
 import SolutionsViewer from './SolutionsViewer';
@@ -14,6 +14,7 @@ const Results = () => {
   const { firstName } = useCurrentUser();
   const { userSolutions, sampleSolution } = useGetSolutions();
   const confetti = useGetConfetti();
+  const history = useHistory();
   const [selectedTab, setSelectedTab] = useState('Your Solutions');
 
   const handleTabChange = ({ target }) => {
@@ -33,12 +34,8 @@ const Results = () => {
       <section className={styles.left}>
         <PandaGreeting firstName={firstName} />
         <aside className={styles.buttons}>
-          <Link to="/challenges">
-            <Button buttonStyle="primary" buttonSize="small" backgroundColor="green">New Challenge</Button>
-          </Link>
-          <Link to="/history">
-            <Button buttonStyle="primary" buttonSize="small" backgroundColor="mainBlue">History</Button>
-          </Link>
+          <Button buttonStyle="primary" buttonSize="small" backgroundColor="green" onClick={() => history.push('/challenges')}>New Challenge</Button>
+          <Button buttonStyle="primary" buttonSize="small" backgroundColor="mainBlue" onClick={() => history.push('/history')}>History</Button>
         </aside>
       </section>
 
