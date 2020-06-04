@@ -6,20 +6,20 @@ Understanding how to approach code challenges is a major hurdle for aspiring dev
 Deployed site: [alcherithm.netlify.app/](https://alcherithm.netlify.app/)
 
 ## Contributors
-- **Dakota Druley** - [GitHub](https://github.com/dakotadruley)
-- **Dannie Schumaker** - [GitHub](https://github.com/DannieSchu)
-- **Janelle Mellor** - [GitHub](https://github.com/janellemellor)
-- **Mikey Romay** - [GitHub](https://github.com/mikeymasonic)
-- **Will Piro** - [GitHub](https://github.com/Shaka2Pass)
+- **Dakota Druley:** [GitHub](https://github.com/dakotadruley)
+- **Dannie Schumaker:** [GitHub](https://github.com/DannieSchu)
+- **Janelle Mellor:** [GitHub](https://github.com/janellemellor)
+- **Mikey Romay:** [GitHub](https://github.com/mikeymasonic)
+- **Will Piro:** [GitHub](https://github.com/Shaka2Pass)
 
 ## Technologies
 [React](https://reactjs.org/), [Jest](https://jestjs.io/), [Enzyme](https://enzymejs.github.io/enzyme/), [NodeJS](https://nodejs.org/), [Express](https://expressjs.com/), [MongoDB](https://www.mongodb.com/), [Mongoose](https://mongoosejs.com/)
 
 ### Packages
-**Code Editor:** [react-ace](https://www.npmjs.com/package/react-ace)
+* **Code editor:** [react-ace](https://www.npmjs.com/package/react-ace)
 
-**Markdown Rendering:** [react-markdown](https://www.npmjs.com/package/react-markdown), [react-syntax-highlighter](https://www.npmjs.com/package/react-syntax-highlighter)
+* **Markdown rendering:** [react-markdown](https://www.npmjs.com/package/react-markdown), [react-syntax-highlighter](https://www.npmjs.com/package/react-syntax-highlighter)
 
-**Data Visualizations:** [chart.js](https://www.chartjs.org/), [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2)
+* **Data visualizations:** [chart.js](https://www.chartjs.org/), [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2)
 
-**Results Graphics:** [react-confetti-canvas](https://www.npmjs.com/package/react-confetti-canvas), [react-gif-loader](https://www.npmjs.com/package/react-gif-loader)
+* **Results graphics:** [react-confetti-canvas](https://www.npmjs.com/package/react-confetti-canvas), [react-gif-loader](https://www.npmjs.com/package/react-gif-loader)
