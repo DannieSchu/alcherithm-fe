@@ -1,0 +1,12 @@
+.SolutionsViewer {
+    width: 100%;
+    height: 70vh;
+    margin-bottom: 2rem;
+    margin-top: 0.75rem;
+    padding: 1rem;
+
+    border-top: .9rem solid var(--muted-gray);
+    border-bottom: .9rem solid var(--muted-gray);
+    background-color: var(--muted-gray);
+    overflow: scroll;
+}

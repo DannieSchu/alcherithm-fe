@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ConfettiCanvas from 'react-confetti-canvas';
 import GifLoader from 'react-gif-loader';
-import moment from 'moment';
-import Editor from '../Editors/Editor';
 import Button from '../Button/Button';
 import Tabs from '../Tabs/Tabs';
+import SolutionsViewer from './SolutionsViewer';
 import { useCurrentUser } from '../../hooks/AuthProvider';
 import { useGetSolutions } from '../../hooks/getSolutions';
 import styles from './Results.css';
@@ -19,12 +18,6 @@ const Results = () => {
   const handleTabChange = ({ target }) => {
     setSelectedTab(target.id);
   };
-  const solutionElements = userSolutions.map(userSolution => (
-    <li key={userSolution._id}>
-      <p>Challenge Attempted:  {moment(userSolution.updatedAt).format('MM/D/YYYY')}</p>
-      <Editor code={userSolution.solution} readOnly={true} />
-    </li>
-  ));
 
   useEffect(() => {
     const id = setTimeout(() => {
@@ -79,21 +72,10 @@ const Results = () => {
           tabNames={['Your Solutions', 'Sample Solution']} 
           selectedTab={selectedTab} 
           onChange={handleTabChange} />
-
-        {selectedTab === 'Your Solutions' && <section className={styles.content}>
-          <h3>Your Solutions</h3>
-          <ul>
-            {solutionElements}
-          </ul>
-        </section>}
-
-        {selectedTab === 'Sample Solution' && <section className={styles.content}>
-          <h3>Sample Solution</h3>
-          <Editor code={sampleSolution} readOnly={true} />
-        </section>}
-
+        {selectedTab === 'Your Solutions' && <SolutionsViewer solutions={userSolutions} heading={selectedTab} />}
+        {selectedTab === 'Sample Solution' && 
+        <SolutionsViewer solutions={[sampleSolution]} heading={selectedTab} />}
       </section>
-
     </main>
   );
 };
