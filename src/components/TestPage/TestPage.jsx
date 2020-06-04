@@ -2,11 +2,11 @@ import React from 'react';
 import Editor from '../Editors/Editor';
 import Tester from './QUnit';
 import Button from '../Button/Button';
+import Tab from '../Tabs/Tab';
 import Overview from './Overview';
 import Loading from '../Loading/Loading';
 import { useHandleTest } from '../../hooks/handleTest';
 import styles from './TestPage.css';
-import tabStyle from '../../styles/tabs.css';
 
 const TestPage = () => {
   const { challenge, runCode, setPassed, handleRun, handleCodeChange, handleSubmit } = useHandleTest();
@@ -29,10 +29,7 @@ const TestPage = () => {
         </section>
       </section>
       <section className={styles.solution}>
-        <section className={tabStyle.tabs}>
-          <input type="radio" id="solution" />
-          <label htmlFor="solution" className={tabStyle.active}>Challenge</label>
-        </section>
+        <Tab tabName={'Challenge'} selectedTab={'Challenge'} />
         <section className={styles.content}>
           <h3>Starter Code</h3>
           <Editor code={challenge.starterCode} handleCodeChange={handleCodeChange} />

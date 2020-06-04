@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { useGetSolutions } from '../../hooks/getSolutions';
 import { Link } from 'react-router-dom';
-import Editor from '../Editors/Editor';
-import { useCurrentUser } from '../../hooks/AuthProvider';
-import Button from '../Button/Button';
-import moment from 'moment';
 import ConfettiCanvas from 'react-confetti-canvas';
 import GifLoader from 'react-gif-loader';
+import moment from 'moment';
+import Editor from '../Editors/Editor';
+import Button from '../Button/Button';
+import Tabs from '../Tabs/Tabs';
+import { useCurrentUser } from '../../hooks/AuthProvider';
+import { useGetSolutions } from '../../hooks/getSolutions';
 import styles from './Results.css';
-import tabStyle from '../../styles/tabs.css';
 
 const Results = () => {
   const { userSolutions, sampleSolution } = useGetSolutions();
   const user = useCurrentUser();
   const [confetti, setConfetti] = useState(true);
-  const [selectedTab, setSelectedTab] = useState('YourSolutions');
+  const [selectedTab, setSelectedTab] = useState('Your Solutions');
 
   const handleTabChange = ({ target }) => {
     setSelectedTab(target.id);
@@ -75,22 +75,19 @@ const Results = () => {
       </section>
 
       <section className={styles.right}>
-        <section className={tabStyle.tabs}>
-          <input type="radio" id="YourSolutions" name="tabbed" onChange={handleTabChange} />
-          <input type="radio" id="SampleSolution" name="tabbed" onChange={handleTabChange} />
+        <Tabs 
+          tabNames={['Your Solutions', 'Sample Solution']} 
+          selectedTab={selectedTab} 
+          onChange={handleTabChange} />
 
-          <label htmlFor="YourSolutions" className={selectedTab === 'YourSolutions' && tabStyle.active}>Your Solutions</label>
-          <label htmlFor="SampleSolution" className={selectedTab === 'SampleSolution' && tabStyle.active}>Sample Solution</label>
-        </section>
-
-        {selectedTab === 'YourSolutions' && <section className={styles.content}>
+        {selectedTab === 'Your Solutions' && <section className={styles.content}>
           <h3>Your Solutions</h3>
           <ul>
             {solutionElements}
           </ul>
         </section>}
 
-        {selectedTab === 'SampleSolution' && <section className={styles.content}>
+        {selectedTab === 'Sample Solution' && <section className={styles.content}>
           <h3>Sample Solution</h3>
           <Editor code={sampleSolution} readOnly={true} />
         </section>}
