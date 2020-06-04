@@ -7,7 +7,7 @@ import Overview from './Overview';
 import Loading from '../Loading/Loading';
 import { useFetchPassedFailed } from '../../hooks/AuthProvider';
 import { fetchChallengeById } from '../../services/challengesAPI';
-import { post } from '../../services/request.js';
+import { createSolution } from '../../services/solutionsAPI';
 import styles from './TestPage.css';
 import tabStyle from '../../styles/tabs.css';
 
@@ -36,11 +36,7 @@ const TestPage = () => {
   };
 
   const onSubmit = () => {
-    post('/api/v1/solutions', {
-      challengeId: id,
-      passed,
-      solution: challenge.starterCode
-    })
+    createSolution(id, passed, challenge)
       .then(solution => history.push(`/results/solution/${solution._id}`))
       .then(() => fetchPassedFailed());
   };
