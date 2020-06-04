@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import Editor from '../components/Editors/Editor';
-import Tester from '../components/QUnit/QUnit';
-import Button from '../components/Button/Button';
-import ChallengeDisplay from '../components/ChallengeDisplay/ChallengeDisplay';
-import Loading from '../components/Loading/Loading';
-import { useFetchPassedFailed } from '../hooks/AuthProvider';
-import { fetchChallengeById } from '../services/challengesAPI';
-import { post } from '../services/request.js';
-import styles from './Challenge.css';
-import tabStyle from '../styles/tabs.css';
+import Editor from '../Editors/Editor';
+import Tester from './QUnit';
+import Button from '../Button/Button';
+import Overview from './Overview';
+import Loading from '../Loading/Loading';
+import { useFetchPassedFailed } from '../../hooks/AuthProvider';
+import { fetchChallengeById } from '../../services/challengesAPI';
+import { post } from '../../services/request.js';
+import styles from './TestPage.css';
+import tabStyle from '../../styles/tabs.css';
 
-const Challenge = () => {
+const TestPage = () => {
   const [runCode, setRunCode] = useState('');
   const [challenge, setChallenge] = useState(null);
   const [passed, setPassed] = useState(false);
@@ -49,9 +49,9 @@ const Challenge = () => {
     return <Loading />;
 
   return (
-    <section className={styles.Challenge}>
+    <section className={styles.TestPage}>
       <section className={styles.overview}>
-        <ChallengeDisplay {...challenge} {...challenge.resources} />
+        <Overview {...challenge} {...challenge.resources} />
         <section className={styles.testResults}>
           <article>
             <div>
@@ -81,4 +81,4 @@ const Challenge = () => {
   );
 };
 
-export default Challenge; 
+export default TestPage; 
