@@ -9,4 +9,16 @@
     border-bottom: .9rem solid var(--muted-gray);
     background-color: var(--muted-gray);
     overflow: scroll;
+
+    ul {
+        padding-inline-start: 0px;
+  
+        li {
+          list-style-type: none;
+        }
+      }
+  
+      h3 {
+        margin-top: 0rem;
+    }
 }
