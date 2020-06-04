@@ -1,5 +1,5 @@
 import React from 'react';
-import { usePassingSolutionsByCategory } from '../../hooks/AuthProvider';
+import { usePassingSolutionsByCategory } from '../../../hooks/AuthProvider';
 import { Pie } from 'react-chartjs-2';
 
 const PassedByCategoryChart = () => {
